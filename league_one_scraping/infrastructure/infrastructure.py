@@ -20,6 +20,16 @@ class Game:
     referee_name: str
 
 
+@dataclass
+class Player:
+    number: int
+    name: str
+    position: str
+    height: int
+    weight: int
+    age: int
+
+
 # ================= Variables ========================
 info_selector = "#container > header > div.title > h2"
 host_team_selector = "#info > table.info1 > tr:nth-child(5) > td"
@@ -44,6 +54,7 @@ class Infrastructure:
 
         if response.status_code == 200:
             soup = BeautifulSoup(response.content, "html.parser")
+            get_player_list_from_bs(soup)
             # CSSセレクタを使って要素を取得
             info = re.sub(r'\s+', ' ', soup.select_one(
                 info_selector).text).strip()
@@ -73,7 +84,6 @@ class Infrastructure:
     def get_game_id_list_from_year(year):
         url = f"https://league-one.jp/schedule/?year={year}"
         response = requests.get(url)
-
         if response.status_code == 200:
             soup = BeautifulSoup(response.text, "html.parser")
             game_id_list = []
@@ -86,3 +96,36 @@ class Infrastructure:
             return game_id_list
         else:
             print("Could not retrieve data from {year} season")
+
+
+def get_player_list_from_bs(soup):
+    playerList = []
+    # 子要素に
+    team_1_players_selector = '#team > div.team.home > table > tr'
+    team_2_players_selector = '#team > div.team.away > table > tr:nth-child(3)'
+    rows = soup.select(team_1_players_selector)
+    for row in rows:
+        print(rows)
+        print('============================')
+        print(row)
+        cells = row.find_all('td')
+        if cells:
+            number = cells[0].text.strip()
+            raw_player_basic_info = cells[1].text.strip()
+            # TODO ポジションが取得できない場合がある
+            position = cells[2].text.strip() or None
+
+            # 正規表現を使用して文字列を抽出
+            match = re.match(r"(\S+)\（(\d+)\/(\d+)\/(\d+)）",
+                             raw_player_basic_info)
+            if match:
+                name = match.group(1)
+                height = int(match.group(2))
+                weight = int(match.group(3))
+                age = int(match.group(4))
+            else:
+                print("パターンがマッチしませんでした。")
+            player = Player(number=number, name=name, position=position,
+                            height=height, weight=weight, age=age)
+            playerList.append(player)
+    print(playerList)
