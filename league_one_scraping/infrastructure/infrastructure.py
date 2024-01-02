@@ -4,6 +4,16 @@ from bs4 import BeautifulSoup
 import re
 
 
+@dataclass
+class Player:
+    number: int
+    name: str
+    position: str
+    height: int
+    weight: int
+    age: int
+
+
 @dataclass()
 class Game:
     id: str
@@ -13,21 +23,13 @@ class Game:
     stadium: str
     spectator: int
     weather: str
-    team_1: str
-    team_2: str
-    team_1_score: int
-    team_2_score: int
+    home_team: str
+    away_team: str
+    home_team_score: int
+    home_team_player_list: [Player]
+    away_team_score: int
+    away_team_player_list: [Player]
     referee_name: str
-
-
-@dataclass
-class Player:
-    number: int
-    name: str
-    position: str
-    height: int
-    weight: int
-    age: int
 
 
 # ================= Variables ========================
@@ -39,22 +41,22 @@ weather_selector = "#info > table.info1 > tr:nth-child(3) > td:nth-child(2)"
 game_date_selector = "#info > table.info1 > tr:nth-child(1) > td:nth-child(2)"
 ref_selector = "#info > table.info2 > tr:nth-child(1) > td:nth-child(2)"
 
-team_1_selector = "#team > div.team.home > table > tr > th.title"
-team_2_selector = "#team > div.team.away > table > tr > th.title"
+home_team_selector = "#team > div.team.home > table > tr > th.title"
+away_team_selector = "#team > div.team.away > table > tr > th.title"
 
-team_1_score_selector = "#team > div.result > table.score > tr:nth-child(10) > td:nth-child(1)"
-team_2_score_selector = "#team > div.result > table.score > tr:nth-child(10) > td:nth-child(3)"
+home_team_score_selector = "#team > div.result > table.score > tr:nth-child(10) > td:nth-child(1)"
+away_team_score_selector = "#team > div.result > table.score > tr:nth-child(10) > td:nth-child(3)"
 # ====================================================
 
 
 class Infrastructure:
-    def get_individual_match_data(game_id):
+    @classmethod
+    def get_individual_match_data(cls, game_id):
         url = f"https://league-one.jp/match/{game_id}/print"
         response = requests.get(url)
 
         if response.status_code == 200:
             soup = BeautifulSoup(response.content, "html.parser")
-            get_player_list_from_bs(soup)
             # CSSセレクタを使って要素を取得
             info = re.sub(r'\s+', ' ', soup.select_one(
                 info_selector).text).strip()
@@ -65,15 +67,20 @@ class Infrastructure:
             spectator = int(soup.select_one(
                 spectator_selector).text.strip().replace(",", "").replace("人", ""))
             weather = soup.select_one(weather_selector).text.strip()
-            team_1 = soup.select_one(team_1_selector).text.strip()
-            team_2 = soup.select_one(team_2_selector).text.strip()
-            team_1_score = int(soup.select_one(
-                team_1_score_selector).text.strip())
-            team_2_score = int(soup.select_one(
-                team_2_score_selector).text.strip())
+            home_team = soup.select_one(home_team_selector).text.strip()
+            away_team = soup.select_one(away_team_selector).text.strip()
+            home_team_score = int(soup.select_one(
+                home_team_score_selector).text.strip())
+            away_team_score = int(soup.select_one(
+                away_team_score_selector).text.strip())
             ref = soup.select_one(ref_selector).text.strip()
+            # 選手リストを取得
+            home_team_player_list = cls.get_player_list_from_table_by_selector(
+                soup, 'home')
+            away_team_player_list = cls.get_player_list_from_table_by_selector(
+                soup, 'away')
             game = Game(id=game_id, basic_info=info, date=game_date, host_team=host_team, stadium=stadium, spectator=spectator,
-                        weather=weather, team_1=team_1, team_2=team_2, team_1_score=team_1_score, team_2_score=team_2_score, referee_name=ref)
+                        weather=weather, home_team=home_team, home_team_player_list=home_team_player_list, away_team=away_team, away_team_player_list=away_team_player_list, home_team_score=home_team_score, away_team_score=away_team_score, referee_name=ref)
             print(game)
             return game
 
@@ -97,35 +104,33 @@ class Infrastructure:
         else:
             print("Could not retrieve data from {year} season")
 
+    def get_player_list_from_table_by_selector(soup, team_descriptor):
+        team_selector = f'#team > div.team.{team_descriptor} > table > tr'
+        rows = soup.select(team_selector)
+        playerList = []
+        for row in rows:
+            cells = row.find_all('td')
+            if cells:
+                number = cells[0].text.strip() if cells[0] else None
+                raw_player_basic_info = cells[1].text.strip(
+                ) if cells[1] else None
+                # セル結合している場合はポジションを取得できないのでRe.であると判定する
+                if len(cells) > 2:
+                    position = cells[2].text.strip() if cells[2] else None
+                else:
+                    position = 'Re.'
 
-def get_player_list_from_bs(soup):
-    playerList = []
-    # 子要素に
-    team_1_players_selector = '#team > div.team.home > table > tr'
-    team_2_players_selector = '#team > div.team.away > table > tr:nth-child(3)'
-    rows = soup.select(team_1_players_selector)
-    for row in rows:
-        print(rows)
-        print('============================')
-        print(row)
-        cells = row.find_all('td')
-        if cells:
-            number = cells[0].text.strip()
-            raw_player_basic_info = cells[1].text.strip()
-            # TODO ポジションが取得できない場合がある
-            position = cells[2].text.strip() or None
-
-            # 正規表現を使用して文字列を抽出
-            match = re.match(r"(\S+)\（(\d+)\/(\d+)\/(\d+)）",
-                             raw_player_basic_info)
-            if match:
-                name = match.group(1)
-                height = int(match.group(2))
-                weight = int(match.group(3))
-                age = int(match.group(4))
-            else:
-                print("パターンがマッチしませんでした。")
-            player = Player(number=number, name=name, position=position,
-                            height=height, weight=weight, age=age)
-            playerList.append(player)
-    print(playerList)
+                # 正規表現を使用して結合された文字列から情報を抽出
+                match = re.match(r"(\S+)\（(\d+)\/(\d+)\/(\d+)）",
+                                 raw_player_basic_info)
+                if match:
+                    name = match.group(1)
+                    height = int(match.group(2))
+                    weight = int(match.group(3))
+                    age = int(match.group(4))
+                else:
+                    print("パターンがマッチしませんでした。")
+                player = Player(number=number, name=name, position=position,
+                                height=height, weight=weight, age=age)
+                playerList.append(player)
+        return playerList
