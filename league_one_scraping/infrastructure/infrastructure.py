@@ -15,6 +15,17 @@ class Player:
 
 
 @dataclass()
+class Score:
+    time: int
+    team_name: str
+    player_number: int
+    player_name: str
+    score_type: str
+    host_team_score: int
+    away_team_score: int
+
+
+@dataclass()
 class Game:
     id: str
     basic_info: str
@@ -30,6 +41,7 @@ class Game:
     away_team_score: int
     away_team_player_list: [Player]
     referee_name: str
+    score_progress: [Score]
 
 
 # ================= Variables ========================
@@ -79,8 +91,10 @@ class Infrastructure:
                 soup, 'home')
             away_team_player_list = cls.get_player_list_from_table_by_selector(
                 soup, 'away')
+            # 得点経過を取得
+            score_progress = cls.get_score_progress(soup)
             game = Game(id=game_id, basic_info=info, date=game_date, host_team=host_team, stadium=stadium, spectator=spectator,
-                        weather=weather, home_team=home_team, home_team_player_list=home_team_player_list, away_team=away_team, away_team_player_list=away_team_player_list, home_team_score=home_team_score, away_team_score=away_team_score, referee_name=ref)
+                        weather=weather, home_team=home_team, home_team_player_list=home_team_player_list, away_team=away_team, away_team_player_list=away_team_player_list, home_team_score=home_team_score, away_team_score=away_team_score, referee_name=ref, score_progress=score_progress)
             print(game)
             return game
 
@@ -134,3 +148,45 @@ class Infrastructure:
                                 height=height, weight=weight, age=age)
                 playerList.append(player)
         return playerList
+
+    # 反則数取得 定義不明のため保留にするか。
+    def get_infringement_count(soup, team_descriptor):
+        print('yeah')
+
+    # 得点経過取得
+    def get_score_progress(soup):
+        score_div = soup.find(id='score')
+        rows = score_div.find_all('tr')
+        score_progress = []
+        # TODO 前半か後半かの判定の仕組みを作る
+        for row in rows:
+            cells = row.find_all('td')
+            if cells:
+                time = cells[0].text.strip()
+                team_name = cells[1].text.strip()
+                player_info = cells[2].text.strip()
+                player_number = player_info.split('.')[0]
+                player_name = player_info.split('.')[1]
+                score_type = cells[3].text.strip()
+                host_team_score = cells[4].text.strip()
+                away_team_score = cells[6].text.strip()
+                score = Score(time=time, team_name=team_name, player_number=player_number, player_name=player_name,
+                              score_type=score_type, host_team_score=host_team_score, away_team_score=away_team_score)
+                score_progress.append(score)
+                print(score)
+        return score_progress
+
+    # 選手交代取得
+    def get_player_replacement(soup, team_descriptor):
+        change = soup.find(id='change')
+        replacement_table = change.find(id=f'{team_descriptor} change')
+
+    # 選手一時交代取得
+    def get_player_temporary_replacement(soup, team_descriptor):
+        change = soup.find(id='change')
+        temporary_replacement_table = change.find(
+            id=f'{team_descriptor} tmpchange')
+
+    # カード取得
+    def get_card_for_penalty(soup, team_descriptor):
+        print('yeah')
