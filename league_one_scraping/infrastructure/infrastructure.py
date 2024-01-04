@@ -25,6 +25,14 @@ class Score:
     away_team_score: int
 
 
+@dataclass
+class Replacement:
+    type: str
+    time: str
+    from_player_number: int
+    to_player_number: int
+
+
 @dataclass()
 class Game:
     id: str
@@ -70,6 +78,7 @@ class Infrastructure:
         if response.status_code == 200:
             soup = BeautifulSoup(response.content, "html.parser")
             # CSSセレクタを使って要素を取得
+            cls.get_player_replacement(soup=soup, team_descriptor='home')
             info = re.sub(r'\s+', ' ', soup.select_one(
                 info_selector).text).strip()
             game_date = soup.select_one(
@@ -177,11 +186,27 @@ class Infrastructure:
         return score_progress
 
     # 選手交代取得
+    # TODO 時間処理、交代をGameオブジェクトに格納する処理の追加
     def get_player_replacement(soup, team_descriptor):
         change = soup.find(id='change')
-        replacement_table = change.find(id=f'{team_descriptor} change')
+        replacement_table = change.find(
+            class_=f'{team_descriptor} change')
+        rows = replacement_table.find_all('tr')
+        replacement_list = []
+        for row in rows:
+            cells = row.find_all('td')
+            if cells:
+                replacement_type = cells[0].text.strip()
+                replacement_time = cells[1].text.strip()
+                replace_from = cells[2].text.strip().split('→')[0]
+                replace_to = cells[2].text.strip().split('→')[1]
+                replacement = Replacement(type=replacement_type, time=replacement_time,
+                                          from_player_number=replace_from, to_player_number=replace_to)
+                replacement_list.append(replacement)
+        return replacement_list
 
     # 選手一時交代取得
+
     def get_player_temporary_replacement(soup, team_descriptor):
         change = soup.find(id='change')
         temporary_replacement_table = change.find(
