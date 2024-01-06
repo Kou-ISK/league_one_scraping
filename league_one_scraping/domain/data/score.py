@@ -3,6 +3,7 @@ from dataclasses import dataclass
 
 @dataclass()
 class Score:
+    half_type: str
     time: int
     team_name: str
     player_number: int

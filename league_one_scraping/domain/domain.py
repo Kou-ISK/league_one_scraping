@@ -6,7 +6,6 @@ from league_one_scraping.domain.data.score import Score
 from ..infrastructure import infrastructure
 from time import sleep
 import json
-from bs4 import BeautifulSoup
 import re
 
 # ================= Variables ========================
@@ -67,6 +66,7 @@ class Domain:
             soup, 'away')
         # 得点経過を取得
         score_progress = cls.parse_soup_to_score_progress(soup)
+        print("=================================")
         # 選手交代情報を取得
         home_team_replacement_list = cls.parse_soup_to_player_replacement(
             soup=soup, team_descriptor='home')
@@ -124,10 +124,16 @@ class Domain:
         score_div = soup.find(id='score')
         rows = score_div.find_all('tr')
         score_progress = []
-        # TODO 前半か後半かの判定の仕組みを作る
+        current_half_type = None
+
         for row in rows:
-            cells = row.find_all('td')
-            if cells:
+            th_element = row.find('th')
+            # 前半か後半かをth要素をもとに判定
+            if th_element and ("前半" in th_element.text or "後半" in th_element.text):
+                current_half_type = "前半" if "前半" in th_element.text else "後半"
+
+            if not th_element:
+                cells = row.find_all('td')
                 time = cells[0].text.strip()
                 team_name = cells[1].text.strip()
                 player_info = cells[2].text.strip()
@@ -136,10 +142,17 @@ class Domain:
                 score_type = cells[3].text.strip()
                 host_team_score = cells[4].text.strip()
                 away_team_score = cells[6].text.strip()
-                score = Score(time=time, team_name=team_name, player_number=player_number, player_name=player_name,
-                              score_type=score_type, host_team_score=host_team_score, away_team_score=away_team_score)
+                score = Score(
+                    time=time,
+                    team_name=team_name,
+                    player_number=player_number,
+                    player_name=player_name,
+                    score_type=score_type,
+                    host_team_score=host_team_score,
+                    away_team_score=away_team_score,
+                    half_type=current_half_type
+                )
                 score_progress.append(score)
-                print(score)
         return score_progress
 
     # 選手交代取得
