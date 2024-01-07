@@ -156,7 +156,6 @@ class Domain:
         return score_progress
 
     # 選手交代取得
-    # TODO 時間処理
     def parse_soup_to_player_replacement(soup, team_descriptor):
         change = soup.find(id='change')
         replacement_table = change.find(
@@ -167,10 +166,17 @@ class Domain:
             cells = row.find_all('td')
             if cells:
                 replacement_type = cells[0].text.strip()
-                replacement_time = cells[1].text.strip()
+                raw_replacement_time = cells[1].text.strip()
+                match = re.match(r"(\D+)(\d+)", raw_replacement_time)
+                if match:
+                    half_type = match.group(1)
+                    replacement_time = int(match.group(2))
+                else:
+                    print("パターンがマッチしませんでした。")
+
                 replace_from = cells[2].text.strip().split('→')[0].strip()
                 replace_to = cells[2].text.strip().split('→')[1].strip()
-                replacement = Replacement(type=replacement_type, time=replacement_time,
+                replacement = Replacement(type=replacement_type, half_type=half_type, time=replacement_time,
                                           from_player_number=replace_from, to_player_number=replace_to)
                 replacement_list.append(replacement)
         return replacement_list
@@ -185,12 +191,21 @@ class Domain:
         for row in rows:
             cells = row.find_all('td')
             if cells:
-                print(cells)
                 replacement_type = cells[2].text.strip()
-                replacement_time = cells[0].text.strip()
+                raw_replacement_time = cells[0].text.strip().replace(" ", "")
+
+                match = re.match(r"(\D+)(\d+)\D*(\d+)",
+                                 raw_replacement_time)
+                if match:
+                    half_type = match.group(1)
+                    replacement_time = int(match.group(2))
+                    replacement_back_time = int(match.group(3))
+                else:
+                    print("パターンがマッチしませんでした。")
+
                 replace_from = cells[1].text.strip().split('→')[0].strip()
                 replace_to = cells[1].text.strip().split('→')[1].strip()
-                replacement = Replacement(type=replacement_type, time=replacement_time,
+                replacement = Replacement(type=replacement_type, half_type=half_type, time=replacement_time, back_time=replacement_back_time,
                                           from_player_number=replace_from, to_player_number=replace_to)
                 replacement_list.append(replacement)
         return replacement_list
