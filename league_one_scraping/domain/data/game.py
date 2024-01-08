@@ -1,4 +1,4 @@
-from dataclasses import dataclass
+from dataclasses import asdict, dataclass
 from league_one_scraping.domain.data.replacement import Replacement
 from league_one_scraping.domain.data.score import Score
 from .player import Player
@@ -23,3 +23,7 @@ class Game:
     away_team_replacement_list: [Replacement]
     referee_name: str
     score_progress: [Score]
+
+    def to_dict(self):
+        # asdictを使用してdataclassを辞書に変換
+        return asdict(self)
