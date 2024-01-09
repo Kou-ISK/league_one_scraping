@@ -71,7 +71,7 @@ class Domain:
             soup=soup, team_descriptor='home')
         away_team_replacement_list = cls.parse_soup_to_player_replacement(
             soup=soup, team_descriptor='away')
-        # 選手一時交代情報を取得 TODO Gameオブジェクトに格納する
+        # 選手一時交代情報を取得
         home_team_temporary_replacement_list = cls.parse_soup_to_player_temporary_replacement(
             soup, 'home')
         away_team_temporary_replacement_list = cls.parse_soup_to_player_temporary_replacement(
