@@ -18,9 +18,11 @@ class Game:
     home_team_score: int
     home_team_player_list: [Player]
     home_team_replacement_list: [Replacement]
+    home_team_temporary_replacement_list: [Replacement]
     away_team_score: int
     away_team_player_list: [Player]
     away_team_replacement_list: [Replacement]
+    away_team_temporary_replacement_list: [Replacement]
     referee_name: str
     score_progress: [Score]
 

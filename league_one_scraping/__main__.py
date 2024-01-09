@@ -2,7 +2,9 @@ from .application import application
 
 
 def main():
-    application.Application.get_game_info_from_year(2022)
+    year_input = input("Which year?")
+    application.Application.get_game_info_from_year(year_input)
+    print('Job Completed')
 
 
 if __name__ == '__main__':

@@ -5,7 +5,6 @@ from league_one_scraping.domain.data.replacement import Replacement
 from league_one_scraping.domain.data.score import Score
 from ..infrastructure import infrastructure
 from time import sleep
-import json
 import re
 
 # ================= Variables ========================
@@ -39,9 +38,7 @@ class Domain:
                 game = cls.parse_soup_to_game_info(soup, game_id)
                 game_datas.append(game)
                 sleep(1)
-        with open('game_data.json', 'w') as f:
-            json.dump(game_datas, f, ensure_ascii=False,
-                      indent=2, default=lambda x: x.to_dict())
+        return game_datas
 
     @classmethod
     def parse_soup_to_game_info(cls, soup, game_id):
@@ -69,7 +66,6 @@ class Domain:
             soup, 'away')
         # 得点経過を取得
         score_progress = cls.parse_soup_to_score_progress(soup)
-        print("=================================")
         # 選手交代情報を取得
         home_team_replacement_list = cls.parse_soup_to_player_replacement(
             soup=soup, team_descriptor='home')
@@ -82,7 +78,7 @@ class Domain:
             soup, 'away')
         game = Game(id=game_id, basic_info=info, date=game_date, host_team=host_team, stadium=stadium, spectator=spectator,
                     weather=weather, home_team=home_team, home_team_player_list=home_team_player_list, home_team_replacement_list=home_team_replacement_list,
-                    away_team=away_team, away_team_player_list=away_team_player_list, away_team_replacement_list=away_team_replacement_list, home_team_score=home_team_score, away_team_score=away_team_score,
+                    away_team=away_team, away_team_player_list=away_team_player_list, away_team_replacement_list=away_team_replacement_list, home_team_score=home_team_score, away_team_score=away_team_score, home_team_temporary_replacement_list=home_team_temporary_replacement_list, away_team_temporary_replacement_list=away_team_temporary_replacement_list,
                     referee_name=ref, score_progress=score_progress)
         print(game)
         return game
