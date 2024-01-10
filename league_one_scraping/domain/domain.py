@@ -143,7 +143,7 @@ class Domain:
                     player_name = None
                     player_name = None
                 score_type = cells[3].text.strip()
-                host_team_score = cells[4].text.strip()
+                home_team_score = cells[4].text.strip()
                 away_team_score = cells[6].text.strip()
                 score = Score(
                     time=time,
@@ -151,7 +151,7 @@ class Domain:
                     player_number=player_number,
                     player_name=player_name,
                     score_type=score_type,
-                    host_team_score=host_team_score,
+                    home_team_score=home_team_score,
                     away_team_score=away_team_score,
                     half_type=current_half_type
                 )
