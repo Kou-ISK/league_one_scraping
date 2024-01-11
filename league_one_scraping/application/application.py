@@ -1,5 +1,5 @@
 import datetime
-from ..domain import domain
+from ..domain import scraping_service
 import json
 
 
@@ -7,7 +7,8 @@ class Application:
     @classmethod
     def get_game_info_from_year(cls):
         year = cls.input_year()
-        game_datas = domain.Domain.get_game_info_from_year(year=year)
+        game_datas = scraping_service.ScrapingService.get_game_info_from_year(
+            year=year)
         with open(f'{year}_league_one_game_data.json', 'w') as f:
             json.dump(game_datas, f, ensure_ascii=False,
                       indent=2, default=lambda x: x.to_dict())

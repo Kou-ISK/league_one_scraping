@@ -24,7 +24,7 @@ away_team_score_selector = "#team > div.result > table.score > tr:nth-child(10) 
 # ====================================================
 
 
-class Domain:
+class ScrapingService:
     @classmethod
     def get_game_info_from_year(cls, year):
         game_datas = []
