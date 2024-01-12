@@ -17,5 +17,11 @@ class AnalyzeService:
                    "home_team_score",
                    "away_team_score",
                    "referee_name"]
-        df[columns].to_excel(
-            '/Users/isakakou/Desktop/2023_league_one_game_data.xlsx', sheet_name='new_sheet_name')
+        # df[columns].to_excel(
+        #     '/Users/isakakou/Desktop/2023_league_one_game_data.xlsx', sheet_name='new_sheet_name')
+        get_score_progress(df)
+
+
+def get_score_progress(df):
+    for index, row in df.iterrows():
+        print(row['score_progress'])
