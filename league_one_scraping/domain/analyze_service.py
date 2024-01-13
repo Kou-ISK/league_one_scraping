@@ -22,6 +22,8 @@ class AnalyzeService:
         get_score_progress(df)
 
 
+# TODO 試合ごとに取得できるようにする
 def get_score_progress(df):
     for index, row in df.iterrows():
-        print(row['score_progress'])
+        df = pd.DataFrame(row['score_progress'])
+        print(df)
