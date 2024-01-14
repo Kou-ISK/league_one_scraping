@@ -2,9 +2,10 @@ import pandas as pd
 
 
 class AnalyzeService:
-    def create_table():
+    @classmethod
+    def create_table(cls):
         file_path = "/Users/isakakou/Desktop/2023_league_one_game_data.json"
-        df = pd.read_json(file_path)
+        cls.df = pd.read_json(file_path)
         pd.set_option('display.max_columns', 1000)
         columns = ["id",
                    "basic_info",
@@ -19,11 +20,15 @@ class AnalyzeService:
                    "referee_name"]
         # df[columns].to_excel(
         #     '/Users/isakakou/Desktop/2023_league_one_game_data.xlsx', sheet_name='new_sheet_name')
-        get_score_progress(df)
 
+    @classmethod
+    def get_score_progress_by_id(cls, id):
+        # TODO 配列をdataframe形式にする
+        score_progress = cls.df.loc[cls.df["id"] == id].score_progress
+        print(score_progress)
+        return score_progress
 
-# TODO 試合ごとに取得できるようにする
-def get_score_progress(df):
-    for index, row in df.iterrows():
-        df = pd.DataFrame(row['score_progress'])
-        print(df)
+    def get_score_progress(self):
+        for index, row in self.df.iterrows():
+            df = pd.DataFrame(row['score_progress'])
+            print(df)
