@@ -1,4 +1,9 @@
 import pandas as pd
+import matplotlib.pyplot as plt
+import matplotlib.font_manager as fm
+
+# Hiragino Sansのパスを取得
+font_path = fm.findfont(fm.FontProperties(family="Hiragino Sans"))
 
 
 class AnalyzeService:
@@ -23,12 +28,26 @@ class AnalyzeService:
 
     @classmethod
     def get_score_progress_by_id(cls, id):
-        # TODO 配列をdataframe形式にする
-        score_progress = cls.df.loc[cls.df["id"] == id].score_progress
-        print(score_progress)
-        return score_progress
+        score_progress = cls.df.loc[cls.df["id"]
+                                    == id].score_progress.values[0]
+        df = pd.DataFrame(score_progress)
+        return df
+
+    @classmethod
+    def get_team_names_by_id(cls, id):
+        game = cls.df.loc[cls.df["id"] == id]
+        return {"home_team_name": game.home_team.values[0], "away_team_name": game.away_team.values[0]}
 
     def get_score_progress(self):
         for index, row in self.df.iterrows():
             df = pd.DataFrame(row['score_progress'])
             print(df)
+
+    # 横軸を時間にしたい。前半と後半で分けてグラフに起こす？
+    def create_score_progress_graph(home_team_name, away_team_name, df):
+        df[['home_team_score', 'away_team_score']] = df[[
+            'home_team_score', 'away_team_score']].apply(pd.to_numeric)
+        df[['home_team_score', 'away_team_score']].plot()
+        plt.legend([home_team_name, away_team_name],
+                   prop={'family': 'Hiragino Sans'})
+        plt.show()
