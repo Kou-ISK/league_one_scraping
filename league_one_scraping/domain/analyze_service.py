@@ -1,6 +1,7 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 import matplotlib.font_manager as fm
+from pathlib import Path
 
 # Hiragino Sansのパスを取得
 font_path = fm.findfont(fm.FontProperties(family="Hiragino Sans"))
@@ -8,8 +9,9 @@ font_path = fm.findfont(fm.FontProperties(family="Hiragino Sans"))
 
 class AnalyzeService:
     @classmethod
-    def create_table(cls):
-        file_path = "/Users/isakakou/Desktop/2023_league_one_game_data.json"
+    def create_table(cls, year):
+        file_path = Path(
+            f'./datas/{year}_league_one_game_data.json').resolve()
         cls.df = pd.read_json(file_path)
         pd.set_option('display.max_columns', 1000)
         columns = ["id",

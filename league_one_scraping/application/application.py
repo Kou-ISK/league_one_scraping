@@ -1,6 +1,7 @@
 import datetime
 from ..domain import scraping_service
 import json
+from pathlib import Path
 
 
 class Application:
@@ -9,7 +10,8 @@ class Application:
         year = cls.input_year()
         game_datas = scraping_service.ScrapingService.get_game_info_from_year(
             year=year)
-        with open(f'{year}_league_one_game_data.json', 'w') as f:
+        file_path = Path(f'./datas/{year}_league_one_game_data.json')
+        with open(file_path.resolve(), 'w') as f:
             json.dump(game_datas, f, ensure_ascii=False,
                       indent=2, default=lambda x: x.to_dict())
         print('Job Completed')

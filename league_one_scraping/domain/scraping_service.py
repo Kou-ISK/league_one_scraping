@@ -176,9 +176,14 @@ class ScrapingService:
                     replacement_time = int(match.group(2))
                 else:
                     print("パターンがマッチしませんでした。")
-
-                replace_from = cells[2].text.strip().split('→')[0].strip()
-                replace_to = cells[2].text.strip().split('→')[1].strip()
+                replace_cell = cells[2].text.strip()
+                print(f"ここ: {replace_cell}")
+                if '→' in replace_cell:
+                    replace_from = replace_cell.split('→')[0].strip()
+                    replace_to = replace_cell.split('→')[1].strip()
+                else:
+                    replace_from = replace_cell
+                    replace_to = None
                 replacement = Replacement(type=replacement_type, half_type=half_type, time=replacement_time,
                                           from_player_number=replace_from, to_player_number=replace_to)
                 replacement_list.append(replacement)
@@ -212,9 +217,14 @@ class ScrapingService:
                         replacement_back_time = None
                     else:
                         print("パターンがマッチしませんでした。")
-
-                replace_from = cells[1].text.strip().split('→')[0].strip()
-                replace_to = cells[1].text.strip().split('→')[1].strip()
+                replace_cell = cells[1].text.strip()
+                print(replace_cell)
+                if '→' in replace_cell:
+                    replace_from = replace_cell.split('→')[0].strip()
+                    replace_to = replace_cell.split('→')[1].strip()
+                else:
+                    replace_from = replace_cell
+                    replace_to = None
                 replacement = Replacement(type=replacement_type, half_type=half_type, time=replacement_time, back_time=replacement_back_time,
                                           from_player_number=replace_from, to_player_number=replace_to)
                 replacement_list.append(replacement)
