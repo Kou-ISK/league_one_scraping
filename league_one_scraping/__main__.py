@@ -3,7 +3,7 @@ from .domain import analyze_service
 
 
 def main():
-    year = 2023
+    year = 2022
     game_id = 25557
 
     application.Application.get_game_info_from_year()
@@ -14,6 +14,8 @@ def main():
     print(team_names)
     analyzeService.create_score_progress_graph(
         home_team_name=team_names['home_team_name'], away_team_name=team_names['away_team_name'], df=df)
+    analyzeService.create_team_spectator_graph()
+    analyzeService.create_team_total_spectator_bar_graph()
 
 
 if __name__ == '__main__':

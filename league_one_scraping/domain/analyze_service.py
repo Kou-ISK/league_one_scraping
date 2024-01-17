@@ -1,10 +1,9 @@
 import pandas as pd
 import matplotlib.pyplot as plt
-import matplotlib.font_manager as fm
 from pathlib import Path
 
-# Hiragino Sansのパスを取得
-font_path = fm.findfont(fm.FontProperties(family="Hiragino Sans"))
+# フォント設定
+plt.rcParams['font.family'] = 'Hiragino Sans'
 
 
 class AnalyzeService:
@@ -52,4 +51,30 @@ class AnalyzeService:
         df[['home_team_score', 'away_team_score']].plot()
         plt.legend([home_team_name, away_team_name],
                    prop={'family': 'Hiragino Sans'})
+        plt.show()
+
+    @classmethod
+    def create_team_spectator_graph(cls):
+        team_list = cls.df['home_team'].drop_duplicates()
+        df = cls.df.sort_values(by='date')
+        for team in team_list:
+            team_data = df[df['home_team'] == team]
+            plt.plot(team_data['date'], team_data['spectator'], label=team)
+
+        plt.legend(prop={'family': 'Hiragino Sans'})
+        plt.xticks(rotation=45)
+        plt.show()
+
+    @classmethod
+    def create_team_total_spectator_bar_graph(cls):
+        team_totals = cls.df.groupby('home_team')['spectator'].sum()
+        print(team_totals)
+        plt.bar(team_totals.index, team_totals.values)
+        plt.xlabel('Team')
+        plt.ylabel('Total Spectators')
+        plt.title('Total Spectators by Team')
+        plt.xticks(rotation=45, ha='right')
+
+        plt.legend(prop={'family': 'Hiragino Sans'})
+
         plt.show()
