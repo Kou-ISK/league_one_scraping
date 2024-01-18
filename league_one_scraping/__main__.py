@@ -16,6 +16,7 @@ def main():
         home_team_name=team_names['home_team_name'], away_team_name=team_names['away_team_name'], df=df)
     analyzeService.create_team_spectator_graph()
     analyzeService.create_team_total_spectator_bar_graph()
+    analyzeService.create_stadium_total_spectator_bar_graph()
 
 
 if __name__ == '__main__':

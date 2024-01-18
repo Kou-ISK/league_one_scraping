@@ -78,3 +78,17 @@ class AnalyzeService:
         plt.legend(prop={'family': 'Hiragino Sans'})
 
         plt.show()
+
+    @classmethod
+    def create_stadium_total_spectator_bar_graph(cls):
+        stadium_totals = cls.df.groupby('stadium')['spectator'].sum()
+        print(stadium_totals)
+        plt.bar(stadium_totals.index, stadium_totals.values)
+        plt.xlabel('Stadium')
+        plt.ylabel('Total Spectators')
+        plt.title('Total Spectators by Stadium')
+        plt.xticks(rotation=45, ha='right')
+
+        plt.legend(prop={'family': 'Hiragino Sans'})
+
+        plt.show()
