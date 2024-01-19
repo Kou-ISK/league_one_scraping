@@ -1,6 +1,7 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 from pathlib import Path
+import numpy as np
 
 # フォント設定
 plt.rcParams['font.family'] = 'Hiragino Sans'
@@ -24,6 +25,8 @@ class AnalyzeService:
                    "home_team_score",
                    "away_team_score",
                    "referee_name"]
+        print(cls.df[["home_team", "away_team",
+              "home_team_score", "away_team_score"]])
         # df[columns].to_excel(
         #     '/Users/isakakou/Desktop/2023_league_one_game_data.xlsx', sheet_name='new_sheet_name')
 
@@ -43,6 +46,12 @@ class AnalyzeService:
         for index, row in self.df.iterrows():
             df = pd.DataFrame(row['score_progress'])
             print(df)
+
+    @classmethod
+    def get_score_progress_by_id(cls, id):
+        game = cls.df.loc[cls.df["id"] == id]
+        df = pd.DataFrame(game['score_progress'].values[0])
+        return df
 
     # 横軸を時間にしたい。前半と後半で分けてグラフに起こす？
     def create_score_progress_graph(home_team_name, away_team_name, df):
