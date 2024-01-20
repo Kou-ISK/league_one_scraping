@@ -7,7 +7,7 @@ on:
 
 defaults:
   run:
-    working-directory: league_one_scraping
+    working-directory: ./
 
 jobs:
   get-raw-data:
