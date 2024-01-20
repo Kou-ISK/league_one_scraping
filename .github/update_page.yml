@@ -1,0 +1,21 @@
+name: update page
+
+on:
+  push:
+
+defaults:
+  run:
+    working-directory: league_one_scraping
+
+jobs:
+  get-raw-data:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v4
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+      - run: python -m league_one_scraping
+      - run: cat ./datas/datas/2023_league_one_game_data.json
