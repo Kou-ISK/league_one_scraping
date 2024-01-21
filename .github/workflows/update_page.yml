@@ -10,7 +10,7 @@ defaults:
     working-directory: ./
 
 jobs:
-  get-raw-data:
+  create-page:
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository code
@@ -24,3 +24,13 @@ jobs:
       - name: Run script
         run: python -m league_one_scraping
       - run: cat datas/2023_league_one_game_data.json
+      - name: Use Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20.x'
+      - name: Install dependencies for node
+        run: npm ci
+      # jsonファイルをもとに静的ページを作成
+      - name: Create page from json
+        run: npm run start
+      # 静的ページを別のリポジトリに自動コミット
