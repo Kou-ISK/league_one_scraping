@@ -37,7 +37,7 @@ jobs:
         working-directory: frontend
       - name: deploy
         run: |
-          git checkout gh-pages
+          git checkout -b gh-pages
           git add .
           set -x
           git config user.name github-actions
