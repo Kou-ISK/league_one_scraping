@@ -23,7 +23,7 @@ jobs:
         run: pip install -r requirements.txt
       - name: Run script
         run: python -m league_one_scraping
-      - run: cat datas/2023_league_one_game_data.json
+      - run: cat frontend/src/data/2023_league_one_game_data.json
       - name: Use Node.js
         uses: actions/setup-node@v3
         with:

@@ -10,7 +10,8 @@ class Application:
         year = cls.input_year()
         game_datas = scraping_service.ScrapingService.get_game_info_from_year(
             year=year)
-        file_path = Path(f'./datas/{year}_league_one_game_data.json')
+        file_path = Path(
+            f'./frontend/src/datas/{year}_league_one_game_data.json')
         with open(file_path.resolve(), 'w') as f:
             json.dump(game_datas, f, ensure_ascii=False,
                       indent=2, default=lambda x: x.to_dict())
