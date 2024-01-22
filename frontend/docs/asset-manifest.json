@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/league_one_datas/static/css/main.bcab4188.css",
-    "main.js": "/league_one_datas/static/js/main.e2ef06fd.js",
-    "static/js/787.9e9f4ffd.chunk.js": "/league_one_datas/static/js/787.9e9f4ffd.chunk.js",
-    "index.html": "/league_one_datas/index.html",
-    "main.bcab4188.css.map": "/league_one_datas/static/css/main.bcab4188.css.map",
-    "main.e2ef06fd.js.map": "/league_one_datas/static/js/main.e2ef06fd.js.map",
-    "787.9e9f4ffd.chunk.js.map": "/league_one_datas/static/js/787.9e9f4ffd.chunk.js.map"
+    "main.css": "/league_one_scraping/static/css/main.bcab4188.css",
+    "main.js": "/league_one_scraping/static/js/main.59a61868.js",
+    "static/js/787.9e9f4ffd.chunk.js": "/league_one_scraping/static/js/787.9e9f4ffd.chunk.js",
+    "index.html": "/league_one_scraping/index.html",
+    "main.bcab4188.css.map": "/league_one_scraping/static/css/main.bcab4188.css.map",
+    "main.59a61868.js.map": "/league_one_scraping/static/js/main.59a61868.js.map",
+    "787.9e9f4ffd.chunk.js.map": "/league_one_scraping/static/js/787.9e9f4ffd.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.bcab4188.css",
-    "static/js/main.e2ef06fd.js"
+    "static/js/main.59a61868.js"
   ]
 }

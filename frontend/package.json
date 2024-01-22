@@ -2,7 +2,7 @@
   "name": "frontend",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://Kou-ISK.github.io/league_one_datas/",
+  "homepage": "https://Kou-ISK.github.io/league_one_scraping/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
@@ -26,7 +26,7 @@
     "build-storybook": "storybook build",
     "rm": "rm -rf docs",
     "mv": "mv build docs",
-    "git": "git add . && git commit -m 'deploy pages' && git push origin master",
+    "git": "git add . && git commit -m 'deploy pages' && git push origin gh-pages",
     "deploy": "npm run rm && npm run build && npm run mv && npm run git"
   },
   "eslintConfig": {
