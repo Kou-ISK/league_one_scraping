@@ -10,7 +10,7 @@ defaults:
     working-directory: ./
 
 jobs:
-  create-page:
+  get-raw-data:
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository code
@@ -30,7 +30,8 @@ jobs:
           node-version: '20.x'
       - name: Install dependencies for node
         run: npm ci
+        working-directory: frontend
       # jsonファイルをもとに静的ページを作成
       - name: Create page from json
-        run: npm run start
-      # 静的ページを別のリポジトリに自動コミット
+        run: npm run deploy
+        working-directory: frontend
