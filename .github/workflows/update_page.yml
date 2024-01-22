@@ -10,7 +10,7 @@ defaults:
     working-directory: ./
 
 jobs:
-  get-raw-data:
+  create-page:
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository code
