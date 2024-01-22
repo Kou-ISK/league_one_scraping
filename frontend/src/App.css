@@ -46,7 +46,6 @@ td {
 
 table {
   text-align: center;
-  max-width: 90vw;
   border-collapse: collapse; /* セルの線を重ねる */
   width: 100%; /* 幅指定 */
 }
