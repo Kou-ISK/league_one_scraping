@@ -36,3 +36,22 @@
     transform: rotate(360deg);
   }
 }
+
+th,
+td {
+  border: solid 1px; /* 枠線指定 */
+  overflow: scroll;
+  max-height: 10px;
+}
+
+table {
+  text-align: center;
+  max-width: 90vw;
+  border-collapse: collapse; /* セルの線を重ねる */
+  width: 100%; /* 幅指定 */
+}
+
+th {
+  width: 100px; /* 幅指定 */
+  font-weight: normal; /* 文字の太さ指定 */
+}
