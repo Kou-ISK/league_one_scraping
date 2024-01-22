@@ -33,5 +33,14 @@ jobs:
         working-directory: frontend
       # jsonファイルをもとに静的ページを作成
       - name: Create page from json
-        run: npm run deploy
+        run: npm run deploy-prepare
         working-directory: frontend
+      - name: deploy
+        run: |
+          git checkout gh-pages
+          git add .
+          set -x
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git commit -m 'Deploy page' --no-verify
+          git push origin gh-pages --no-verify
