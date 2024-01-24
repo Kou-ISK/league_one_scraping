@@ -17,11 +17,11 @@ export const PlayerObject = (props: PlayerObjectProps) => {
         <Typography>{player.name}</Typography>
       </AccordionSummary>
       <AccordionDetails>
-        <Typography>{player.position}</Typography>
-        <Typography>{player.number}</Typography>
-        <Typography>{player.height}</Typography>
-        <Typography>{player.weight}</Typography>
-        <Typography>{player.age}</Typography>
+        <Typography>Position: {player.position}</Typography>
+        <Typography>Number: {player.number}</Typography>
+        <Typography>Height: {player.height}</Typography>
+        <Typography>Weight: {player.weight}</Typography>
+        <Typography>Age: {player.age}</Typography>
       </AccordionDetails>
     </Accordion>
   );
