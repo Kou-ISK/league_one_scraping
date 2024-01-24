@@ -1,14 +1,21 @@
+import sys
 from .application import application
 from .domain import analyze_service
 
 
-def main():
-    # year = 2023
-    # game_id = 25559
+def main(args):
+    print("実行中")
+    print(args)
+    function = args[1]
+    if (function == 'getInfo'):
+        year = args[2]
+        application.Application.get_game_info_from_year(year)
 
-    application.Application.get_game_info_from_year()
-    # analyzeService = analyze_service.AnalyzeService
-    # analyzeService.create_table(year=year)
+    if (function == 'analyze'):
+        print('準備中')
+        year = args[2]
+        analyzeService = analyze_service.AnalyzeService
+        analyzeService.create_table(year=year)
     # score_progress_df = analyzeService.get_score_progress_by_id(game_id)
     # df = analyzeService.get_score_progress_by_id(game_id)
     # print(df)
@@ -22,4 +29,5 @@ def main():
 
 
 if __name__ == '__main__':
-    main()
+    args = sys.argv
+    main(args)
