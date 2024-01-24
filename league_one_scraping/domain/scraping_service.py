@@ -76,11 +76,10 @@ class ScrapingService:
             soup, 'home')
         away_team_temporary_replacement_list = cls.parse_soup_to_player_temporary_replacement(
             soup, 'away')
-        game = Game(id=game_id, basic_info=info, date=game_date, host_team=host_team, stadium=stadium, spectator=spectator,
+        game = Game(id=int(game_id), basic_info=info, date=game_date, host_team=host_team, stadium=stadium, spectator=spectator,
                     weather=weather, home_team=home_team, home_team_player_list=home_team_player_list, home_team_replacement_list=home_team_replacement_list,
                     away_team=away_team, away_team_player_list=away_team_player_list, away_team_replacement_list=away_team_replacement_list, home_team_score=home_team_score, away_team_score=away_team_score, home_team_temporary_replacement_list=home_team_temporary_replacement_list, away_team_temporary_replacement_list=away_team_temporary_replacement_list,
                     referee_name=ref, score_progress=score_progress)
-        print(game)
         return game
 
     def parse_soup_to_player_list(soup, team_descriptor):
@@ -90,7 +89,7 @@ class ScrapingService:
         for row in rows:
             cells = row.find_all('td')
             if cells:
-                number = cells[0].text.strip() if cells[0] else None
+                number = int(cells[0].text.strip() if cells[0] else None)
                 raw_player_basic_info = cells[1].text.strip(
                 ) if cells[1] else None
                 # セル結合している場合はポジションを取得できないのでRe.であると判定する
@@ -133,18 +132,18 @@ class ScrapingService:
 
             if not th_element:
                 cells = row.find_all('td')
-                time = cells[0].text.strip()
+                time = int(cells[0].text.strip().replace('分', ''))
                 team_name = cells[1].text.strip()
                 player_info = cells[2].text.strip() if cells[2] else None
                 if player_info:
-                    player_number = player_info.split('.')[0]
+                    player_number = int(player_info.split('.')[0])
                     player_name = player_info.split('.')[1]
                 else:
-                    player_name = None
+                    player_number = None
                     player_name = None
                 score_type = cells[3].text.strip()
-                home_team_score = cells[4].text.strip()
-                away_team_score = cells[6].text.strip()
+                home_team_score = int(cells[4].text.strip())
+                away_team_score = int(cells[6].text.strip())
                 score = Score(
                     time=time,
                     team_name=team_name,
@@ -177,12 +176,11 @@ class ScrapingService:
                 else:
                     print("パターンがマッチしませんでした。")
                 replace_cell = cells[2].text.strip()
-                print(f"ここ: {replace_cell}")
                 if '→' in replace_cell:
-                    replace_from = replace_cell.split('→')[0].strip()
-                    replace_to = replace_cell.split('→')[1].strip()
+                    replace_from = int(replace_cell.split('→')[0].strip())
+                    replace_to = int(replace_cell.split('→')[1].strip())
                 else:
-                    replace_from = replace_cell
+                    replace_from = int(replace_cell)
                     replace_to = None
                 replacement = Replacement(type=replacement_type, half_type=half_type, time=replacement_time,
                                           from_player_number=replace_from, to_player_number=replace_to)
@@ -218,12 +216,11 @@ class ScrapingService:
                     else:
                         print("パターンがマッチしませんでした。")
                 replace_cell = cells[1].text.strip()
-                print(replace_cell)
                 if '→' in replace_cell:
-                    replace_from = replace_cell.split('→')[0].strip()
-                    replace_to = replace_cell.split('→')[1].strip()
+                    replace_from = int(replace_cell.split('→')[0].strip())
+                    replace_to = int(replace_cell.split('→')[1].strip())
                 else:
-                    replace_from = replace_cell
+                    replace_from = int(replace_cell)
                     replace_to = None
                 replacement = Replacement(type=replacement_type, half_type=half_type, time=replacement_time, back_time=replacement_back_time,
                                           from_player_number=replace_from, to_player_number=replace_to)
