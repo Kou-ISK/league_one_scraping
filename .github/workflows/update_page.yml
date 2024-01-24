@@ -22,8 +22,9 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
       - name: Run script
-        run: python -m league_one_scraping
-      - run: cat frontend/src/datas/2023_league_one_game_data.json
+        run: |
+          python -m league_one_scraping getInfo 2022
+          python -m league_one_scraping getInfo 2023
       - name: Use Node.js
         uses: actions/setup-node@v3
         with:
