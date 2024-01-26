@@ -14,11 +14,12 @@ export const PlayerObject = (props: PlayerObjectProps) => {
   return (
     <Accordion>
       <AccordionSummary expandIcon={<ArrowDropDownIcon />}>
-        <Typography>{player.name}</Typography>
+        <Typography>
+          {player.number}. {player.name}
+        </Typography>
       </AccordionSummary>
       <AccordionDetails>
         <Typography>Position: {player.position}</Typography>
-        <Typography>Number: {player.number}</Typography>
         <Typography>Height: {player.height}</Typography>
         <Typography>Weight: {player.weight}</Typography>
         <Typography>Age: {player.age}</Typography>
