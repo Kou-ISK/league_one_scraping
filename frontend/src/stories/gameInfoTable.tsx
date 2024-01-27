@@ -1,7 +1,6 @@
+import { Link } from 'react-router-dom';
 import { Game } from '../types/game';
-import { DataGrid, GridColDef, GridRowParams } from '@mui/x-data-grid';
-import { GameInfoModal } from './gameInfoModal';
-import { useState } from 'react';
+import { DataGrid, GridColDef, GridRenderCellParams } from '@mui/x-data-grid';
 
 interface GameInfoTableProps {
   gameList: Game[];
@@ -9,7 +8,19 @@ interface GameInfoTableProps {
 export const GameInfoTable = (props: GameInfoTableProps) => {
   const gameList = props.gameList;
   const columns: GridColDef[] = [
-    { field: 'id', headerName: 'ID', width: 70 },
+    {
+      field: 'id',
+      headerName: 'ID',
+      width: 70,
+      renderCell: (params: GridRenderCellParams<any>) => (
+        <Link
+          className='text-blue-400 underline'
+          to={`/league_one_scraping/game/${params.id}`}
+        >
+          {params.value}
+        </Link>
+      ),
+    },
     { field: 'basic_info', headerName: '基本情報', width: 600 },
     { field: 'home_team', headerName: 'ホストチーム', width: 300 },
     { field: 'home_team_score', headerName: 'ホストチーム得点', width: 150 },
@@ -22,24 +33,9 @@ export const GameInfoTable = (props: GameInfoTableProps) => {
     { field: 'stadium', headerName: 'スタジアム', width: 300 },
   ];
 
-  const [selectedGame, setSelectedGame] = useState<Game | null>(null);
-  const [open, setOpen] = useState(true);
-  const showModalonClick = (id: number) => {
-    setOpen(true);
-    const selectedGame = gameList.find((game: Game) => game.id === id) as Game;
-    setSelectedGame(selectedGame);
-  };
-
   return (
     <>
-      <DataGrid
-        rows={gameList}
-        columns={columns}
-        onRowClick={(params: GridRowParams) => showModalonClick(params.row.id)}
-      />
-      {open && selectedGame && (
-        <GameInfoModal open={open} setOpen={setOpen} game={selectedGame} />
-      )}
+      <DataGrid rows={gameList} columns={columns} />
     </>
   );
 };
