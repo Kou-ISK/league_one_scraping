@@ -1,0 +1,16 @@
+.custom-tooltip {
+  padding: 5px;
+}
+
+.current-score {
+  display: flex;
+}
+.home-team-score {
+  color: #3ba2f6;
+  font-weight: 500;
+}
+
+.away-team-score {
+  font-weight: 500;
+  color: #8884d8;
+}

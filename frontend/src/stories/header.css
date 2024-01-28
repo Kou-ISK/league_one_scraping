@@ -1,9 +1,13 @@
 #header-body {
-  background-color: teal;
+  background-color: #1ea7fd;
 }
 
 #header-link {
   color: white;
   font-weight: 700;
   font-size: 32px;
+}
+
+a.top {
+  margin: 20px;
 }

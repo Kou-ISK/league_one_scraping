@@ -12,7 +12,11 @@ import { Header } from './stories/Header';
 export const dataOf2021 = leagueData2021 as Game[];
 export const dataOf2022 = leagueData2022 as Game[];
 export const dataOf2023 = leagueData2023 as Game[];
-export const allGame: Game[] = [...leagueData2022, ...leagueData2023];
+export const allGame: Game[] = [
+  ...leagueData2021,
+  ...leagueData2022,
+  ...leagueData2023,
+];
 
 function App() {
   const dataSet: { [key: number]: Game[] } = {
