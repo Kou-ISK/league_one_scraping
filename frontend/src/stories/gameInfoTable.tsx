@@ -21,7 +21,7 @@ export const GameInfoTable = (props: GameInfoTableProps) => {
         </Link>
       ),
     },
-    { field: 'basic_info', headerName: '基本情報', width: 600 },
+    { field: 'basic_info', headerName: '基本情報', width: 400 },
     { field: 'home_team', headerName: 'ホストチーム', width: 300 },
     { field: 'home_team_score', headerName: 'ホストチーム得点', width: 150 },
     { field: 'away_team_score', headerName: 'ビジターチーム得点', width: 150 },

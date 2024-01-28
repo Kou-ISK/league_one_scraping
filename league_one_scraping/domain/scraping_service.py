@@ -44,7 +44,7 @@ class ScrapingService:
     def parse_soup_to_game_info(cls, soup, game_id):
         # CSSセレクタを使って要素を取得
         info = re.sub(r'\s+', ' ', soup.select_one(
-            info_selector).text).strip()
+            info_selector).text).strip().replace("NTTジャパンラグビー リーグワン", "")
         game_date = soup.select_one(
             game_date_selector).text.strip().split()[0]
         host_team = soup.select_one(host_team_selector).text.strip()
