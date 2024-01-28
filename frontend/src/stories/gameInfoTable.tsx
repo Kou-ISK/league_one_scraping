@@ -1,6 +1,12 @@
 import { Link } from 'react-router-dom';
 import { Game } from '../types/game';
-import { DataGrid, GridColDef, GridRenderCellParams } from '@mui/x-data-grid';
+import {
+  DataGrid,
+  GridColDef,
+  GridRenderCellParams,
+  GridToolbar,
+} from '@mui/x-data-grid';
+import './gameInfoTable.css';
 
 interface GameInfoTableProps {
   gameList: Game[];
@@ -35,7 +41,12 @@ export const GameInfoTable = (props: GameInfoTableProps) => {
 
   return (
     <>
-      <DataGrid rows={gameList} columns={columns} />
+      <DataGrid
+        className='game-info-table'
+        rows={gameList}
+        columns={columns}
+        slots={{ toolbar: GridToolbar }}
+      />
     </>
   );
 };

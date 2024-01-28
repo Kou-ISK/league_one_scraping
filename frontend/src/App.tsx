@@ -13,7 +13,10 @@ export const dataOf2023 = leagueData2023 as Game[];
 export const allGame: Game[] = [...leagueData2022, ...leagueData2023];
 
 function App() {
-  const dataSet = { '2022': dataOf2022, '2023': dataOf2023 };
+  const dataSet: { [key: number]: Game[] } = {
+    '2022': dataOf2022,
+    '2023': dataOf2023,
+  };
   const [selectedGameList, setSelectedGameList] = useState<Game[]>(dataOf2022);
 
   return (
