@@ -16,6 +16,9 @@ export const GameDetailPage = () => {
     <>
       <h1>{game.basic_info}</h1>
       <h2>{game.date}</h2>
+      <h3 className='score'>
+        {game.home_team_score} - {game.away_team_score}
+      </h3>
       <div style={{ display: 'flex', justifyContent: 'center' }}>
         <div style={{ margin: '10px' }}>
           <h2>{game.home_team}</h2>

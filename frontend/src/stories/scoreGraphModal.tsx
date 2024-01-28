@@ -10,6 +10,7 @@ import {
   YAxis,
 } from 'recharts';
 import { Dispatch } from 'react';
+import { Paper } from '@mui/material';
 
 const customStyles = {
   content: {
@@ -32,6 +33,17 @@ interface ScoreGraphModalProps {
 }
 
 export const ScoreGraphModal = (props: ScoreGraphModalProps) => {
+  const CustomTooltip = ({ active, payload, label }: any) => {
+    if (active && payload && payload.length) {
+      return (
+        <Paper className='custom-tooltip'>
+          <p className='score-type'>{`Score Type: ${payload[0].payload.score_type}`}</p>
+        </Paper>
+      );
+    }
+
+    return null;
+  };
   return (
     <>
       <Modal
@@ -68,7 +80,7 @@ export const ScoreGraphModal = (props: ScoreGraphModalProps) => {
             stroke='#8884d8'
           />
           <Legend />
-          <Tooltip />
+          <Tooltip content={<CustomTooltip />} />
         </LineChart>
       </Modal>
     </>

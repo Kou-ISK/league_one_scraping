@@ -33,7 +33,7 @@ function App() {
           />
           <Route
             path='/league_one_scraping/game/:id'
-            Component={(params: any) => <GameDetailPage />}
+            Component={() => <GameDetailPage />}
           />
         </Routes>
       </Router>

@@ -11,6 +11,12 @@ h2 {
   line-height: 1;
   text-align: center;
 }
+h3.score {
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 1;
+  text-align: center;
+}
 
 p {
   margin: 1em 0;
