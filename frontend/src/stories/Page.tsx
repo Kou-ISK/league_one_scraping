@@ -12,7 +12,7 @@ interface PageProps {
 }
 
 export const Page = (props: PageProps) => {
-  const [year, setYear] = useState(2022);
+  const [year, setYear] = useState(2023);
   const handleChange = (event: React.ChangeEvent<{}>, value: number) => {
     setYear(value);
     props.setSelectedGameList(props.dataSet[value]);
@@ -27,8 +27,9 @@ export const Page = (props: PageProps) => {
           textColor='primary'
           centered
         >
-          <Tab label='2022' value={2022} />
-          <Tab label='2023' value={2023} />
+          <Tab label='2022' value={2021} />
+          <Tab label='2022-2023' value={2022} />
+          <Tab label='2023-2024' value={2023} />
         </Tabs>
       </Paper>
       <h1>{year}シーズン</h1>

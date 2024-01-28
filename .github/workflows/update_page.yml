@@ -27,6 +27,7 @@ jobs:
         run: pip install -r requirements.txt
       - name: Run script
         run: |
+          python -m league_one_scraping getInfo 2021
           python -m league_one_scraping getInfo 2022
           python -m league_one_scraping getInfo 2023
       - name: Use Node.js
