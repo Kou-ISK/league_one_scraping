@@ -5,11 +5,12 @@ import { useParams } from 'react-router-dom';
 import { allGame } from '../App';
 import { Button } from './Button';
 import { useState } from 'react';
+import { ScoreGraphModal } from './scoreGraphModal';
 
 export const GameDetailPage = () => {
   const param = useParams();
   const game = allGame.find((game) => game.id === Number(param.id)) as Game;
-  const [showGraphModal, setShowGraphModal] = useState(false);
+  const [showScoreGraphModal, setShowScoreGraphModal] = useState(false);
 
   return (
     <>
@@ -28,8 +29,17 @@ export const GameDetailPage = () => {
       <Button
         label='得点経過グラフを表示'
         primary={true}
-        onClick={() => setShowGraphModal(true)}
+        onClick={() => setShowScoreGraphModal(true)}
       />
+      {showScoreGraphModal && (
+        <ScoreGraphModal
+          showScoreGraphModal={showScoreGraphModal}
+          setShowScoreGraphModal={setShowScoreGraphModal}
+          scoreProgress={game.score_progress}
+          homeTeamName={game.home_team}
+          awayTeamName={game.away_team}
+        />
+      )}
     </>
   );
 };
