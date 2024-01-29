@@ -1,0 +1,9 @@
+div.pie-container {
+  display: flex;
+  overflow: scroll;
+  justify-content: center;
+}
+
+h1.player-name {
+  font-size: 12px;
+}
