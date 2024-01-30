@@ -30,11 +30,17 @@ export const GameDetailPage = () => {
       <div style={{ display: 'flex', justifyContent: 'center' }}>
         <div style={{ margin: '10px' }}>
           <h2>{game.home_team}</h2>
-          <PlayerObjectList playerList={game.home_team_player_list} />
+          <PlayerObjectList
+            playerList={game.home_team_player_list}
+            replacementList={game.home_team_replacement_list}
+          />
         </div>
         <div style={{ margin: '10px' }}>
           <h2>{game.away_team}</h2>
-          <PlayerObjectList playerList={game.away_team_player_list} />
+          <PlayerObjectList
+            playerList={game.away_team_player_list}
+            replacementList={game.away_team_replacement_list}
+          />
         </div>
       </div>
       {showGraphModal && (
