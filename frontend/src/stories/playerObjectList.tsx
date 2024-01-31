@@ -1,8 +1,8 @@
 import React from 'react';
 import { Player } from '../types/player';
-import { PlayerObject } from './playerObject';
 import { Replacement } from '../types/replacement';
-import ChangeCircleIcon from '@mui/icons-material/ChangeCircle';
+
+import { PlayerReplacementObject } from './playerReplacementObject';
 
 interface PlayerObjectListProps {
   playerList: Player[];
@@ -16,16 +16,13 @@ export const PlayerObjectList = (props: PlayerObjectListProps) => {
   const getReplacementInfo = (playerNumber: number) => {
     const replacementItem = props.replacementList.find(
       (value) => value.from_player_number === playerNumber
-    );
+    ) as Replacement | undefined;
     const toPlayerNumber = replacementItem?.to_player_number;
-    const replacementTimeInfo = ((replacementItem?.half_type as string) +
-      replacementItem?.time +
-      '分') as string;
     const replacedToPlayer = playerList.find(
       (player) => player.number === toPlayerNumber
     ) as Player;
-    const iconColor = playerNumber <= 15 ? 'primary' : 'error';
-    return { replacedToPlayer, replacementTimeInfo, iconColor };
+    const iconColor = replacementItem?.back_time ? 'error' : 'primary';
+    return { replacedToPlayer, replacementItem, iconColor };
   };
 
   const getParticipatedPlayerList = () => {
@@ -53,44 +50,27 @@ export const PlayerObjectList = (props: PlayerObjectListProps) => {
     );
   };
 
-  const createPlayerListObject = (player: Player) => {
-    const replacementInfo = getReplacementInfo(player.number);
-    return (
-      <>
-        <div
-          style={{ display: 'flex', justifyContent: 'space-between' }}
-          key={player?.number}
-        >
-          <PlayerObject player={player} />
-          {replacementInfo.replacedToPlayer && (
-            <>
-              <div
-                style={{
-                  display: 'flex',
-                  justifyContent: 'center',
-                }}
-              >
-                <ChangeCircleIcon
-                  color={replacementInfo.iconColor as 'error' | 'primary'}
-                  sx={{ paddingTop: '15px' }}
-                />
-                <p>{replacementInfo.replacementTimeInfo}</p>
-              </div>
-              <PlayerObject player={replacementInfo.replacedToPlayer} />
-            </>
-          )}
-        </div>
-      </>
-    );
-  };
-
   return (
     <>
-      {getParticipatedPlayerList().map(createPlayerListObject)}
+      {getParticipatedPlayerList().map((value) => {
+        return (
+          <PlayerReplacementObject
+            player={value}
+            replacementInfo={getReplacementInfo(value.number)}
+          />
+        );
+      })}
       {getNotParticipatedOrReReplacedPlayerList().length > 0 && (
         <p>未出場/再入替</p>
       )}
-      {getNotParticipatedOrReReplacedPlayerList().map(createPlayerListObject)}
+      {getNotParticipatedOrReReplacedPlayerList().map((value) => {
+        return (
+          <PlayerReplacementObject
+            player={value}
+            replacementInfo={getReplacementInfo(value.number)}
+          />
+        );
+      })}
     </>
   );
 };

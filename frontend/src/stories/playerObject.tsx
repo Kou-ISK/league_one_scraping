@@ -12,9 +12,9 @@ interface PlayerObjectProps {
 export const PlayerObject = (props: PlayerObjectProps) => {
   const player = props.player;
   return (
-    <Accordion>
+    <Accordion sx={{ marginTop: '3px', backgroundColor: 'whitesmoke' }}>
       <AccordionSummary expandIcon={<ArrowDropDownIcon />}>
-        <Typography>
+        <Typography sx={{ fontSize: '15px' }}>
           {player.number}. {player.name}
         </Typography>
       </AccordionSummary>

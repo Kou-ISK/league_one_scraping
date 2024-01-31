@@ -17,6 +17,7 @@ export const Page = (props: PageProps) => {
     setYear(value);
     props.setSelectedGameList(props.dataSet[value]);
   };
+
   return (
     <div>
       <Paper>
