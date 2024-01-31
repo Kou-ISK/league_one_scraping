@@ -14,17 +14,21 @@ export const PlayerObjectList = (props: PlayerObjectListProps) => {
 
   // getReplacementInfo 関数をここで定義
   const getReplacementInfo = (playerNumber: number) => {
-    const toPlayerNumber = props.replacementList.find(
+    const replacementItem = props.replacementList.find(
       (value) => value.from_player_number === playerNumber
-    )?.to_player_number;
+    );
+    const toPlayerNumber = replacementItem?.to_player_number;
+    const replacementTimeInfo = ((replacementItem?.half_type as string) +
+      replacementItem?.time +
+      '分') as string;
     const replacedToPlayer = playerList.find(
       (player) => player.number === toPlayerNumber
     ) as Player;
     const iconColor = playerNumber <= 15 ? 'primary' : 'error';
-    return { replacedToPlayer, iconColor };
+    return { replacedToPlayer, replacementTimeInfo, iconColor };
   };
 
-  const participatedPlayerList = () => {
+  const getParticipatedPlayerList = () => {
     return props.playerList.filter(
       (value) =>
         value.number <= 15 ||
@@ -33,80 +37,60 @@ export const PlayerObjectList = (props: PlayerObjectListProps) => {
     );
   };
 
-  // TODO　フィルター条件を修正
-  const notParticipatedPlayerList = () => {
-    console.log(
-      props.playerList.filter(
-        (player) =>
-          player.number > 15 &&
-          player.number in
-            props.replacementList.map((value) => value.to_player_number) ===
-            false
-      )
+  const getNotParticipatedOrReReplacedPlayerList = () => {
+    const replacedToPlayerNumber = props.replacementList.map(
+      (value) => value.to_player_number
     );
+    const replacedFromPlayerNumber = props.replacementList.map(
+      (value) => value.from_player_number
+    );
+
     return props.playerList.filter(
       (player) =>
-        player.number > 15 &&
-        player.number in
-          props.replacementList.map((value) => value.from_player_number) ===
-          false
+        (player.number > 15 &&
+          !replacedToPlayerNumber.includes(player.number)) ||
+        (player.number > 15 && replacedFromPlayerNumber.includes(player.number))
     );
   };
 
-  const participatedPlayerObject = participatedPlayerList().map(
-    (player: Player) => {
-      const replacementInfo = getReplacementInfo(player.number);
-      return (
-        <>
-          <div
-            style={{ display: 'flex', justifyContent: 'space-between' }}
-            key={player?.number}
-          >
-            <PlayerObject player={player} />
-            {replacementInfo.replacedToPlayer && (
-              <>
+  const createPlayerListObject = (player: Player) => {
+    const replacementInfo = getReplacementInfo(player.number);
+    return (
+      <>
+        <div
+          style={{ display: 'flex', justifyContent: 'space-between' }}
+          key={player?.number}
+        >
+          <PlayerObject player={player} />
+          {replacementInfo.replacedToPlayer && (
+            <>
+              <div
+                style={{
+                  display: 'flex',
+                  justifyContent: 'center',
+                }}
+              >
                 <ChangeCircleIcon
                   color={replacementInfo.iconColor as 'error' | 'primary'}
-                  sx={{ paddingTop: '10px' }}
+                  sx={{ paddingTop: '15px' }}
                 />
-                <PlayerObject player={replacementInfo.replacedToPlayer} />
-              </>
-            )}
-          </div>
-        </>
-      );
-    }
-  );
+                <p>{replacementInfo.replacementTimeInfo}</p>
+              </div>
+              <PlayerObject player={replacementInfo.replacedToPlayer} />
+            </>
+          )}
+        </div>
+      </>
+    );
+  };
 
-  const notParticipatedPlayerObject = notParticipatedPlayerList().map(
-    (player: Player) => {
-      const replacementInfo = getReplacementInfo(player.number);
-      return (
-        <>
-          <div
-            style={{ display: 'flex', justifyContent: 'space-between' }}
-            key={player?.number}
-          >
-            <PlayerObject player={player} />
-            {replacementInfo.replacedToPlayer && (
-              <>
-                <ChangeCircleIcon
-                  color={replacementInfo.iconColor as 'error' | 'primary'}
-                  sx={{ paddingTop: '10px' }}
-                />
-                <PlayerObject player={replacementInfo.replacedToPlayer} />
-              </>
-            )}
-          </div>
-        </>
-      );
-    }
-  );
   return (
     <>
-      {participatedPlayerObject}
-      <p>---</p>
-      {notParticipatedPlayerObject}
+      {getParticipatedPlayerList().map(createPlayerListObject)}
+      {getNotParticipatedOrReReplacedPlayerList().length > 0 && (
+        <p>未出場/再入替</p>
+      )}
+      {getNotParticipatedOrReReplacedPlayerList().map(createPlayerListObject)}
     </>
   );
 };

@@ -16,14 +16,16 @@ export const GameDetailPage = () => {
     <>
       <h1>{game.basic_info}</h1>
       <h2>{game.date}</h2>
-      <p>レフェリー: {game.referee_name}</p>
-      <p>天気: {game.weather}</p>
-      <p>観客動員数: {game.spectator}</p>
-      <Button
-        label='各種グラフを表示'
-        primary={true}
-        onClick={() => setShowGraphModal(true)}
-      />
+      <h2>レフェリー: {game.referee_name}</h2>
+      <h2>天気: {game.weather}</h2>
+      <h2>観客動員数: {game.spectator}</h2>
+      <div className='show-graph'>
+        <Button
+          label='各種グラフを表示'
+          primary={true}
+          onClick={() => setShowGraphModal(true)}
+        />
+      </div>
       <h3 className='score'>
         {game.home_team_score} - {game.away_team_score}
       </h3>
