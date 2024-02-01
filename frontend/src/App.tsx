@@ -24,7 +24,7 @@ function App() {
     '2022': dataOf2022,
     '2023': dataOf2023,
   };
-  const [selectedGameList, setSelectedGameList] = useState<Game[]>(dataOf2022);
+  const [selectedGameList, setSelectedGameList] = useState<Game[]>(dataOf2023);
 
   return (
     <>

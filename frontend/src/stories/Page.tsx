@@ -19,7 +19,7 @@ export const Page = (props: PageProps) => {
   };
 
   return (
-    <div>
+    <div className='page'>
       <Paper>
         <Tabs
           value={year}

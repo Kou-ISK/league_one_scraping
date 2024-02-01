@@ -36,3 +36,7 @@ ul {
   display: flex;
   justify-content: center;
 }
+
+.page {
+  background-color: whitesmoke;
+}

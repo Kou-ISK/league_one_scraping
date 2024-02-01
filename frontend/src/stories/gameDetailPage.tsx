@@ -13,7 +13,7 @@ export const GameDetailPage = () => {
   const [showGraphModal, setShowGraphModal] = useState(false);
 
   return (
-    <>
+    <div className='page'>
       <h1>{game.basic_info}</h1>
       <h2>{game.date}</h2>
       <h2>レフェリー: {game.referee_name}</h2>
@@ -58,6 +58,6 @@ export const GameDetailPage = () => {
           game={game}
         />
       )}
-    </>
+    </div>
   );
 };
