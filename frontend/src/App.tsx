@@ -8,6 +8,7 @@ import { Game } from './types/game';
 import { Page } from './stories/Page';
 import { GameDetailPage } from './stories/gameDetailPage';
 import { Header } from './stories/Header';
+import { RankingPage } from './stories/rankingPage';
 
 export const dataOf2021 = leagueData2021 as Game[];
 export const dataOf2022 = leagueData2022 as Game[];
@@ -17,15 +18,14 @@ export const allGame: Game[] = [
   ...leagueData2022,
   ...leagueData2023,
 ];
+export const dataSet: { [key: number]: Game[] } = {
+  '2021': dataOf2021,
+  '2022': dataOf2022,
+  '2023': dataOf2023,
+};
 
 function App() {
-  const dataSet: { [key: number]: Game[] } = {
-    '2021': dataOf2021,
-    '2022': dataOf2022,
-    '2023': dataOf2023,
-  };
   const [selectedGameList, setSelectedGameList] = useState<Game[]>(dataOf2023);
-
   return (
     <>
       <Header />
@@ -44,6 +44,10 @@ function App() {
           <Route
             path='/league_one_scraping/game/:id'
             Component={() => <GameDetailPage />}
+          />
+          <Route
+            path='/league_one_scraping/ranking'
+            Component={() => <RankingPage />}
           />
         </Routes>
       </Router>

@@ -9,5 +9,8 @@ export const Header = () => (
       <HomeIcon />
       TOPへ戻る
     </a>
+    <a className='top' href='/league_one_scraping/ranking' id='header-link'>
+      ランキング
+    </a>
   </header>
 );
