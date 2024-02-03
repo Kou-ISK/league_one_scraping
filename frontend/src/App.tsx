@@ -37,7 +37,6 @@ function App() {
               <Page
                 selectedGameList={selectedGameList}
                 setSelectedGameList={setSelectedGameList}
-                dataSet={dataSet}
               />
             }
           />
@@ -47,7 +46,12 @@ function App() {
           />
           <Route
             path='/league_one_scraping/ranking'
-            Component={() => <RankingPage />}
+            Component={() => (
+              <RankingPage
+                selectedGameList={selectedGameList}
+                setSelectedGameList={setSelectedGameList}
+              />
+            )}
           />
         </Routes>
       </Router>

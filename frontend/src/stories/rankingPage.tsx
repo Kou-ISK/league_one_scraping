@@ -1,24 +1,29 @@
+import { Dispatch, useState } from 'react';
 import { dataSet } from '../App';
-import {
-  ConcatOverAllScoreProgress,
-  GroupScoreObjectByPlayerName,
-} from '../utils/concatOverAllScoreProgress';
+import { Game } from '../types/game';
+import { YearSelectionTabs } from './yearSelectionTabs';
+import { ScoreRanking } from './scoreRanking';
 
-export const RankingPage = () => {
-  // TODO 年度を選択できるようにする
-  const gameList = dataSet['2023'];
-  const scoreProgress = GroupScoreObjectByPlayerName(
-    ConcatOverAllScoreProgress(gameList)
-  ).sort((a, b) => b.point - a.point);
+interface RankingPageProps {
+  selectedGameList: Game[];
+  setSelectedGameList: Dispatch<React.SetStateAction<Game[]>>;
+}
+
+export const RankingPage = (props: RankingPageProps) => {
+  const [year, setYear] = useState(2023);
+
+  // TODO 毎回yearの初期値のタブが選択される問題に対処する
+  const handleChange = (event: React.ChangeEvent<{}>, value: number) => {
+    setYear(value);
+    props.setSelectedGameList(dataSet[year]);
+  };
+
   return (
-    <ul>
-      {scoreProgress.map((scoreInfo: any, index: number) => {
-        return (
-          <li>
-            {index + 1}.{scoreInfo.scorer}: {scoreInfo.point}
-          </li>
-        );
-      })}
-    </ul>
+    <>
+      <YearSelectionTabs handleChange={handleChange} year={year} />
+      <h1>{year}シーズン 個人得点ランキング</h1>
+      <p>注意: タブ選択切り替え時に表示バグがあります</p>
+      <ScoreRanking selectedGameList={props.selectedGameList} />
+    </>
   );
 };
