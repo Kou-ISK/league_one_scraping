@@ -1,7 +1,5 @@
-import { Dispatch, useState } from 'react';
-import { dataSet } from '../App';
+import { Dispatch } from 'react';
 import { Game } from '../types/game';
-import { YearSelectionTabs } from '../stories/yearSelectionTabs';
 import { ScoreRanking } from '../stories/scoreRanking';
 import {
   ConcatOverAllScoreProgress,
