@@ -44,15 +44,6 @@ function App() {
             path='/league_one_scraping/game/:id'
             Component={() => <GameDetailPage />}
           />
-          <Route
-            path='/league_one_scraping/ranking'
-            Component={() => (
-              <RankingPage
-                selectedGameList={selectedGameList}
-                setSelectedGameList={setSelectedGameList}
-              />
-            )}
-          />
         </Routes>
       </Router>
     </>

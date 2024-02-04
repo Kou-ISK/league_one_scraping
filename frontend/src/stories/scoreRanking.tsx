@@ -1,14 +1,14 @@
 interface ScoreRankingProps {
-  scoreRankingTop10: any[];
+  rankingTop10: any[];
 }
 
 export const ScoreRanking = (props: ScoreRankingProps) => {
   return (
     <ul>
-      {props.scoreRankingTop10.map((scoreInfo: any, index: number) => {
+      {props.rankingTop10.map((scoreInfo: any, index: number) => {
         return (
           <li>
-            {index + 1} {scoreInfo.scorer}: {scoreInfo.point} pts
+            {index + 1} {scoreInfo.scorer}: {scoreInfo.point}
           </li>
         );
       })}

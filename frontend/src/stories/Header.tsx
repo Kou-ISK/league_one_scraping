@@ -7,10 +7,6 @@ export const Header = () => (
   <header id='header-body'>
     <a className='top' href='/league_one_scraping' id='header-link'>
       <HomeIcon />
-      TOPへ戻る
-    </a>
-    <a className='top' href='/league_one_scraping/ranking' id='header-link'>
-      ランキング
     </a>
   </header>
 );

@@ -60,3 +60,36 @@ export const GetTop10ScorerByPlayerName = (scoreProgressList: ScoreInfo[]) => {
     .sort((a, b) => b.point - a.point)
     .filter((_item, index) => index < 10);
 };
+
+export const GetTop10TryScorerByPlayerName = (
+  scoreProgressList: ScoreInfo[]
+) => {
+  var scoreObjectList: any[] = [];
+  // 選手名のリストを作成
+  const playerList: string[] = Array.from(
+    new Set(
+      scoreProgressList.map(
+        (scoreInfo: ScoreInfo) => scoreInfo.player_name as string
+      )
+    )
+  );
+  playerList.forEach((player) => {
+    const point = scoreProgressList
+      .filter((item) => item.player_name === player && item.score_type === 'T')
+      .reduce((accumulator) => {
+        return accumulator + 1;
+      }, 0);
+
+    const scoreObject = {
+      scorer: player,
+      point: point,
+      scoreObject: scoreProgressList.filter(
+        (item) => item.player_name === player
+      ),
+    };
+    scoreObjectList = [...scoreObjectList, ...[scoreObject]];
+  });
+  return scoreObjectList
+    .sort((a, b) => b.point - a.point)
+    .filter((_item, index) => index < 10);
+};
