@@ -1,8 +1,8 @@
 import { Dispatch, useState } from 'react';
 import { dataSet } from '../App';
 import { Game } from '../types/game';
-import { YearSelectionTabs } from '../stories/yearSelectionTabs';
-import { ScoreRanking } from '../stories/scoreRanking';
+import { YearSelectionTabs } from './yearSelectionTabs';
+import { ScoreRanking } from './scoreRanking';
 import {
   ConcatOverAllScoreProgress,
   GetTop10ScorerByPlayerName,

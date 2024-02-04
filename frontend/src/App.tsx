@@ -5,10 +5,10 @@ import leagueData2021 from './datas/2021_league_one_game_data.json';
 import leagueData2022 from './datas/2022_league_one_game_data.json';
 import leagueData2023 from './datas/2023_league_one_game_data.json';
 import { Game } from './types/game';
-import { Page } from './pages/Page';
-import { GameDetailPage } from './pages/gameDetailPage';
+import { Page } from './stories/Page';
+import { GameDetailPage } from './stories/gameDetailPage';
 import { Header } from './stories/Header';
-import { RankingPage } from './pages/rankingPage';
+import { RankingPage } from './stories/rankingPage';
 
 export const dataOf2021 = leagueData2021 as Game[];
 export const dataOf2022 = leagueData2022 as Game[];

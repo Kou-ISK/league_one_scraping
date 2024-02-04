@@ -1,9 +1,9 @@
 import React, { Dispatch, useState } from 'react';
 
 import './page.css';
-import { GameInfoTable } from '../stories/gameInfoTable';
+import { GameInfoTable } from './gameInfoTable';
 import { Game } from '../types/game';
-import { YearSelectionTabs } from '../stories/yearSelectionTabs';
+import { YearSelectionTabs } from './yearSelectionTabs';
 import { dataSet } from '../App';
 
 interface PageProps {
