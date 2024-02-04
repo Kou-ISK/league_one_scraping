@@ -24,9 +24,7 @@ const scoreTypeAndPoint = {
   Gx: 0,
 } as const;
 
-export const GroupScoreObjectByPlayerName = (
-  scoreProgressList: ScoreInfo[]
-) => {
+export const GetTop10ScorerByPlayerName = (scoreProgressList: ScoreInfo[]) => {
   var scoreObjectList: any[] = [];
   // 選手名のリストを作成
   const playerList: string[] = Array.from(
@@ -37,16 +35,17 @@ export const GroupScoreObjectByPlayerName = (
     )
   );
   playerList.forEach((player) => {
-    var point: number = 0;
-    scoreProgressList
+    var point: number = scoreProgressList
       .filter((item) => item.player_name === player)
-      .map((item) => {
-        point += Number(
+      .map(
+        (item) =>
           scoreTypeAndPoint[
             item.score_type as 'T' | 'PG' | 'PGx' | 'DG' | 'DGx' | 'G' | 'Gx'
-          ]
-        );
-      });
+          ] as number
+      )
+      .reduce((accumulator, currentValue) => {
+        return accumulator + currentValue;
+      }, 0);
 
     const scoreObject = {
       scorer: player,
@@ -57,5 +56,7 @@ export const GroupScoreObjectByPlayerName = (
     };
     scoreObjectList = [...scoreObjectList, ...[scoreObject]];
   });
-  return scoreObjectList;
+  return scoreObjectList
+    .sort((a, b) => b.point - a.point)
+    .filter((_item, index) => index < 10);
 };

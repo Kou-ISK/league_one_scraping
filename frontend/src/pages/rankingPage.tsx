@@ -1,8 +1,12 @@
 import { Dispatch, useState } from 'react';
 import { dataSet } from '../App';
 import { Game } from '../types/game';
-import { YearSelectionTabs } from './yearSelectionTabs';
-import { ScoreRanking } from './scoreRanking';
+import { YearSelectionTabs } from '../stories/yearSelectionTabs';
+import { ScoreRanking } from '../stories/scoreRanking';
+import {
+  ConcatOverAllScoreProgress,
+  GetTop10ScorerByPlayerName,
+} from '../utils/rankingUtils';
 
 interface RankingPageProps {
   selectedGameList: Game[];
@@ -12,18 +16,24 @@ interface RankingPageProps {
 export const RankingPage = (props: RankingPageProps) => {
   const [year, setYear] = useState(2023);
 
-  // TODO 毎回yearの初期値のタブが選択される問題に対処する
+  const [scoreRankingTop10, setScoreRankingTop10] = useState(
+    GetTop10ScorerByPlayerName(
+      ConcatOverAllScoreProgress(props.selectedGameList)
+    )
+  );
+
   const handleChange = (event: React.ChangeEvent<{}>, value: number) => {
     setYear(value);
-    props.setSelectedGameList(dataSet[year]);
+    setScoreRankingTop10(
+      GetTop10ScorerByPlayerName(ConcatOverAllScoreProgress(dataSet[value]))
+    );
   };
 
   return (
     <>
       <YearSelectionTabs handleChange={handleChange} year={year} />
       <h1>{year}シーズン 個人得点ランキング</h1>
-      <p>注意: タブ選択切り替え時に表示バグがあります</p>
-      <ScoreRanking selectedGameList={props.selectedGameList} />
+      <ScoreRanking scoreRankingTop10={scoreRankingTop10} />
     </>
   );
 };

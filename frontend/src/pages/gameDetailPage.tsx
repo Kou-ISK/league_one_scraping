@@ -1,11 +1,11 @@
 import { Game } from '../types/game';
-import { PlayerObjectList } from './playerObjectList';
+import { PlayerObjectList } from '../stories/playerObjectList';
 import './gameDetailPage.css';
 import { useParams } from 'react-router-dom';
 import { allGame } from '../App';
-import { Button } from './Button';
+import { Button } from '../stories/Button';
 import { useState } from 'react';
-import { GraphModal } from './GraphModal';
+import { GraphModal } from '../stories/GraphModal';
 
 export const GameDetailPage = () => {
   const param = useParams();
