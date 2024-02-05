@@ -4,6 +4,7 @@ import { ScoreInfo } from './scoreInfo';
 
 export type Game = {
   id: number;
+  division: number | null;
   basic_info: string;
   date: string;
   host_team: string;

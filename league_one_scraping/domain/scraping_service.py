@@ -45,6 +45,16 @@ class ScrapingService:
         # CSSセレクタを使って要素を取得
         info = re.sub(r'\s+', ' ', soup.select_one(
             info_selector).text).strip().replace("NTTジャパンラグビー リーグワン", "")
+
+        match_pattern_1 = re.search(r"ディビジョン(\d+)", info)
+        match_pattern_2 = re.search(r"ディビジョン\s(\d+)", info)
+        if match_pattern_1:
+            division = int(match_pattern_1.group(1))
+        elif match_pattern_2:
+            division = int(match_pattern_2.group(1))
+        else:
+            division = None
+
         game_date = soup.select_one(
             game_date_selector).text.strip().split()[0]
         host_team = soup.select_one(host_team_selector).text.strip()
@@ -76,10 +86,11 @@ class ScrapingService:
             soup, 'home')
         away_team_temporary_replacement_list = cls.parse_soup_to_player_temporary_replacement(
             soup, 'away')
-        game = Game(id=int(game_id), basic_info=info, date=game_date, host_team=host_team, stadium=stadium, spectator=spectator,
+        game = Game(id=int(game_id), division=division, basic_info=info, date=game_date, host_team=host_team, stadium=stadium, spectator=spectator,
                     weather=weather, home_team=home_team, home_team_player_list=home_team_player_list, home_team_replacement_list=home_team_replacement_list,
                     away_team=away_team, away_team_player_list=away_team_player_list, away_team_replacement_list=away_team_replacement_list, home_team_score=home_team_score, away_team_score=away_team_score, home_team_temporary_replacement_list=home_team_temporary_replacement_list, away_team_temporary_replacement_list=away_team_temporary_replacement_list,
                     referee_name=ref, score_progress=score_progress)
+        print(game)
         return game
 
     def parse_soup_to_player_list(soup, team_descriptor):

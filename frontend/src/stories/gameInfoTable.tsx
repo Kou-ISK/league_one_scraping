@@ -17,7 +17,7 @@ export const GameInfoTable = (props: GameInfoTableProps) => {
     {
       field: 'id',
       headerName: 'ID',
-      width: 70,
+      width: 50,
       renderCell: (params: GridRenderCellParams<any>) => (
         <Link
           className='text-blue-400 underline'
@@ -27,7 +27,8 @@ export const GameInfoTable = (props: GameInfoTableProps) => {
         </Link>
       ),
     },
-    { field: 'basic_info', headerName: '基本情報', width: 400 },
+    { field: 'division', headerName: 'Div.', width: 50 },
+    { field: 'basic_info', headerName: '基本情報', width: 350 },
     { field: 'home_team', headerName: 'ホストチーム', width: 300 },
     { field: 'home_team_score', headerName: 'ホストチーム得点', width: 150 },
     { field: 'away_team_score', headerName: 'ビジターチーム得点', width: 150 },

@@ -7,6 +7,7 @@ from .player import Player
 @dataclass()
 class Game:
     id: str
+    division: int
     basic_info: str
     date: str
     host_team: str
