@@ -8,7 +8,6 @@ import { Game } from './types/game';
 import { Page } from './stories/Page';
 import { GameDetailPage } from './stories/gameDetailPage';
 import { Header } from './stories/Header';
-import { RankingPage } from './stories/rankingPage';
 
 export const dataOf2021 = leagueData2021 as Game[];
 export const dataOf2022 = leagueData2022 as Game[];
