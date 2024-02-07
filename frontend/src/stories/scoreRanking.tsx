@@ -8,7 +8,7 @@ export const ScoreRanking = (props: ScoreRankingProps) => {
       {props.rankingTop10.map((scoreInfo: any, index: number) => {
         return (
           <li>
-            {index + 1} {scoreInfo.scorer}: {scoreInfo.point}
+            {index + 1}. {scoreInfo.scorer}: {scoreInfo.point}
           </li>
         );
       })}

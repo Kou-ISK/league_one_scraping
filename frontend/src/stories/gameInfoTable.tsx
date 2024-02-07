@@ -5,6 +5,7 @@ import {
   GridColDef,
   GridRenderCellParams,
   GridToolbar,
+  jaJP,
 } from '@mui/x-data-grid';
 import './gameInfoTable.css';
 
@@ -47,6 +48,7 @@ export const GameInfoTable = (props: GameInfoTableProps) => {
         rows={gameList}
         columns={columns}
         slots={{ toolbar: GridToolbar }}
+        localeText={jaJP.components.MuiDataGrid.defaultProps.localeText}
       />
     </>
   );

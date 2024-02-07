@@ -14,35 +14,22 @@ interface RankingPageProps {
 }
 
 export const RankingPage = (props: RankingPageProps) => {
-  const division1GameList = props.selectedGameList.filter(
-    (item) => item.division === 1
-  );
-  const division2GameList = props.selectedGameList.filter(
-    (item) => item.division === 2
-  );
-  const division3GameList = props.selectedGameList.filter(
-    (item) => item.division === 3
-  );
-
-  const division1ScoreRankingTop10 = GetTop10ScorerByPlayerName(
-    ConcatOverAllScoreProgress(division1GameList)
-  );
-  const division2ScoreRankingTop10 = GetTop10ScorerByPlayerName(
-    ConcatOverAllScoreProgress(division2GameList)
-  );
-  const division3ScoreRankingTop10 = GetTop10ScorerByPlayerName(
-    ConcatOverAllScoreProgress(division3GameList)
-  );
-
-  const division1TryRankingTop10 = GetTop10TryScorerByPlayerName(
-    ConcatOverAllScoreProgress(division1GameList)
-  );
-  const division2TryRankingTop10 = GetTop10TryScorerByPlayerName(
-    ConcatOverAllScoreProgress(division2GameList)
-  );
-  const division3TryRankingTop10 = GetTop10TryScorerByPlayerName(
-    ConcatOverAllScoreProgress(division3GameList)
-  );
+  const divisions = [1, 2, 3];
+  var top10Scorers: { [key: number]: any } = {};
+  var top10TryScorers: { [key: number]: any } = {};
+  divisions.forEach((div) => {
+    const selectedDivisionGameList = props.selectedGameList.filter(
+      (item) => item.division === div
+    );
+    const top10Scorer = GetTop10ScorerByPlayerName(
+      ConcatOverAllScoreProgress(selectedDivisionGameList)
+    );
+    const top10TryScorer = GetTop10TryScorerByPlayerName(
+      ConcatOverAllScoreProgress(selectedDivisionGameList)
+    );
+    top10Scorers[div] = top10Scorer;
+    top10TryScorers[div] = top10TryScorer;
+  });
 
   return (
     <>
@@ -50,34 +37,21 @@ export const RankingPage = (props: RankingPageProps) => {
       <div>
         <h2>得点</h2>
         <div style={{ display: 'flex' }}>
-          {/* 中央寄せする */}
-          <div>
-            <h3>Div.1</h3>
-            <ScoreRanking rankingTop10={division1ScoreRankingTop10} />
-          </div>
-          <div>
-            <h3>Div.2</h3>
-            <ScoreRanking rankingTop10={division2ScoreRankingTop10} />
-          </div>
-          <div>
-            <h3>Div.3</h3>
-            <ScoreRanking rankingTop10={division3ScoreRankingTop10} />
-          </div>
+          {divisions.map((division: number) => (
+            <div>
+              <h3>Div.{division}</h3>
+              <ScoreRanking rankingTop10={top10Scorers[division]} />
+            </div>
+          ))}
         </div>
         <h2>トライ数</h2>
         <div style={{ display: 'flex' }}>
-          <div>
-            <h3>Div.1</h3>
-            <ScoreRanking rankingTop10={division1TryRankingTop10} />
-          </div>
-          <div>
-            <h3>Div.2</h3>
-            <ScoreRanking rankingTop10={division2TryRankingTop10} />
-          </div>
-          <div>
-            <h3>Div.3</h3>
-            <ScoreRanking rankingTop10={division3TryRankingTop10} />
-          </div>
+          {divisions.map((division: number) => (
+            <div>
+              <h3>Div.{division}</h3>
+              <ScoreRanking rankingTop10={top10Scorers[division]} />
+            </div>
+          ))}
         </div>
       </div>
     </>
