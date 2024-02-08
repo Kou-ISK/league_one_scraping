@@ -6,18 +6,17 @@ import {
   GetTop10ScorerByPlayerName,
   GetTop10TryScorerByPlayerName,
 } from '../utils/rankingUtils';
+import { DIVISION_LIST } from '../variables';
 
 interface RankingPageProps {
   year: number;
   selectedGameList: Game[];
-  setSelectedGameList: Dispatch<React.SetStateAction<Game[]>>;
 }
 
 export const RankingPage = (props: RankingPageProps) => {
-  const divisions = [1, 2, 3];
   var top10Scorers: { [key: number]: any } = {};
   var top10TryScorers: { [key: number]: any } = {};
-  divisions.forEach((div) => {
+  DIVISION_LIST.forEach((div) => {
     const selectedDivisionGameList = props.selectedGameList.filter(
       (item) => item.division === div
     );
@@ -37,7 +36,7 @@ export const RankingPage = (props: RankingPageProps) => {
       <div>
         <h2>得点</h2>
         <div style={{ display: 'flex' }}>
-          {divisions.map((division: number) => (
+          {DIVISION_LIST.map((division: number) => (
             <div>
               <h3>Div.{division}</h3>
               <ScoreRanking rankingTop10={top10Scorers[division]} />
@@ -46,7 +45,7 @@ export const RankingPage = (props: RankingPageProps) => {
         </div>
         <h2>トライ数</h2>
         <div style={{ display: 'flex' }}>
-          {divisions.map((division: number) => (
+          {DIVISION_LIST.map((division: number) => (
             <div>
               <h3>Div.{division}</h3>
               <ScoreRanking rankingTop10={top10Scorers[division]} />

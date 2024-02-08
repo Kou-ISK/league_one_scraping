@@ -2,14 +2,14 @@ import { Game } from '../types/game';
 import { PlayerObjectList } from './playerObjectList';
 import './gameDetailPage.css';
 import { useParams } from 'react-router-dom';
-import { allGame } from '../App';
 import { Button } from './Button';
 import { useState } from 'react';
 import { GraphModal } from './GraphModal';
+import { ALL_GAME } from '../variables';
 
 export const GameDetailPage = () => {
   const param = useParams();
-  const game = allGame.find((game) => game.id === Number(param.id)) as Game;
+  const game = ALL_GAME.find((game) => game.id === Number(param.id)) as Game;
   const [showGraphModal, setShowGraphModal] = useState(false);
 
   return (

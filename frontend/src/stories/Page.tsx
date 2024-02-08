@@ -4,9 +4,10 @@ import './page.css';
 import { GameInfoTable } from './gameInfoTable';
 import { Game } from '../types/game';
 import { YearSelectionTabs } from './yearSelectionTabs';
-import { dataSet } from '../App';
 import { RankingPage } from './rankingPage';
 import { Button } from './Button';
+import { SpectatorPage } from './spectatorPage';
+import { DATA_SET } from '../variables';
 
 interface PageProps {
   selectedGameList: Game[];
@@ -16,11 +17,13 @@ interface PageProps {
 export const Page = (props: PageProps) => {
   const [year, setYear] = useState(2023);
 
-  const [displayMode, setDisplayMode] = useState<'Table' | 'Ranking'>('Table');
+  const [displayMode, setDisplayMode] = useState<
+    'Table' | 'Ranking' | 'Spectator'
+  >('Table');
 
   const handleChange = (event: React.ChangeEvent<{}>, value: number) => {
     setYear(value);
-    props.setSelectedGameList(dataSet[value]);
+    props.setSelectedGameList(DATA_SET[value]);
   };
 
   return (
@@ -36,6 +39,11 @@ export const Page = (props: PageProps) => {
         primary={displayMode === 'Ranking'}
         onClick={() => setDisplayMode('Ranking')}
       />
+      <Button
+        label='観客動員数情報を表示'
+        primary={displayMode === 'Spectator'}
+        onClick={() => setDisplayMode('Spectator')}
+      />
 
       {displayMode === 'Table' && (
         <>
@@ -44,11 +52,10 @@ export const Page = (props: PageProps) => {
         </>
       )}
       {displayMode === 'Ranking' && (
-        <RankingPage
-          year={year}
-          selectedGameList={props.selectedGameList}
-          setSelectedGameList={props.setSelectedGameList}
-        />
+        <RankingPage year={year} selectedGameList={props.selectedGameList} />
+      )}
+      {displayMode === 'Spectator' && (
+        <SpectatorPage year={year} selectedGameList={props.selectedGameList} />
       )}
     </div>
   );
