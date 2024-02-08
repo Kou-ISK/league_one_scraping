@@ -1,4 +1,3 @@
-import { Dispatch } from 'react';
 import { Game } from '../types/game';
 import { ScoreRanking } from '../stories/scoreRanking';
 import {
