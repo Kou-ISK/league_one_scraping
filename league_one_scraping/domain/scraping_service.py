@@ -28,16 +28,19 @@ class ScrapingService:
     @classmethod
     def get_game_info_from_year(cls, year):
         game_datas = []
-        game_id_list = infrastructure.Infrastructure.get_game_id_list_from_year(
-            year=year)
-        for game_id in game_id_list:
-            soup = infrastructure.Infrastructure.get_individual_match_data_soup(
-                game_id=game_id)
-            if soup:
-                print(game_id)
-                game = cls.parse_soup_to_game_info(soup, game_id)
-                game_datas.append(game)
-                sleep(1)
+        for tab_number in range(4):
+            print(tab_number)
+            game_id_list = infrastructure.Infrastructure.get_game_id_list_from_year_and_tab(
+                year=year, tab_number=tab_number)
+            if (game_id_list):
+                for game_id in game_id_list:
+                    soup = infrastructure.Infrastructure.get_individual_match_data_soup(
+                        game_id=game_id)
+                    if soup:
+                        print(game_id)
+                        game = cls.parse_soup_to_game_info(soup, game_id)
+                        game_datas.append(game)
+                        sleep(1)
         return game_datas
 
     @classmethod
