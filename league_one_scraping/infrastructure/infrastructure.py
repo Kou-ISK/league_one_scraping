@@ -16,12 +16,10 @@ class Infrastructure:
             print(f"Failed to fetch data for game {game_id}")
             return None
 
-    def get_game_id_list_from_year_and_tab(year, tab_number):
-        url = f"https://league-one.jp/schedule/?year={year}?t1={tab_number}"
-        print(url)
+    def get_game_id_list_from_year_and_tab(year):
+        url = f"https://league-one.jp/schedule/?year={year}"
         response = requests.get(url)
         sleep(1)
-        print(response.status_code)
         if response.status_code == 200:
             soup = BeautifulSoup(response.text, "html.parser")
             game_id_list = []

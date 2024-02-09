@@ -4,7 +4,6 @@ from league_one_scraping.domain.data.player import Player
 from league_one_scraping.domain.data.replacement import Replacement
 from league_one_scraping.domain.data.score import Score
 from ..infrastructure import infrastructure
-from time import sleep
 import re
 
 # ================= Variables ========================
@@ -28,19 +27,15 @@ class ScrapingService:
     @classmethod
     def get_game_info_from_year(cls, year):
         game_datas = []
-        for tab_number in range(4):
-            print(tab_number)
-            game_id_list = infrastructure.Infrastructure.get_game_id_list_from_year_and_tab(
-                year=year, tab_number=tab_number)
-            if (game_id_list):
-                for game_id in game_id_list:
-                    soup = infrastructure.Infrastructure.get_individual_match_data_soup(
-                        game_id=game_id)
-                    if soup:
-                        print(game_id)
-                        game = cls.parse_soup_to_game_info(soup, game_id)
-                        game_datas.append(game)
-                        sleep(1)
+        game_id_list = infrastructure.Infrastructure.get_game_id_list_from_year_and_tab(
+            year=year)
+        if (game_id_list):
+            for game_id in game_id_list:
+                soup = infrastructure.Infrastructure.get_individual_match_data_soup(
+                    game_id=game_id)
+                if soup:
+                    game = cls.parse_soup_to_game_info(soup, game_id)
+                    game_datas.append(game)
         return game_datas
 
     @classmethod
