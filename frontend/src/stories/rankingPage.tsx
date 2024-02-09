@@ -47,7 +47,7 @@ export const RankingPage = (props: RankingPageProps) => {
           {DIVISION_LIST.map((division: number) => (
             <div>
               <h3>Div.{division}</h3>
-              <ScoreRanking rankingTop10={top10Scorers[division]} />
+              <ScoreRanking rankingTop10={top10TryScorers[division]} />
             </div>
           ))}
         </div>
