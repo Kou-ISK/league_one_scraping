@@ -34,7 +34,7 @@ export const RankingPage = (props: RankingPageProps) => {
       <h1>{props.year}シーズン 個人ランキング</h1>
       <div>
         <h2>得点</h2>
-        <div style={{ display: 'flex' }}>
+        <div style={{ display: 'flex', justifyContent: 'center' }}>
           {DIVISION_LIST.map((division: number) => (
             <div>
               <h3>Div.{division}</h3>
@@ -43,7 +43,7 @@ export const RankingPage = (props: RankingPageProps) => {
           ))}
         </div>
         <h2>トライ数</h2>
-        <div style={{ display: 'flex' }}>
+        <div style={{ display: 'flex', justifyContent: 'center' }}>
           {DIVISION_LIST.map((division: number) => (
             <div>
               <h3>Div.{division}</h3>

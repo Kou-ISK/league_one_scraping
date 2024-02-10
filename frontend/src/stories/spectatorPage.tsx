@@ -27,7 +27,7 @@ export const SpectatorPage: React.FC<SpectatorPageProps> = (props) => {
               : 'Div.' + division}
           </h3>
           <table>
-            <thead>
+            <thead style={{ backgroundColor: 'lightgray' }}>
               <tr>
                 <th style={{ minWidth: '300px' }}>チーム名</th>
                 {getUniqueDates(games).map((date) => (
