@@ -11,8 +11,6 @@ jobs:
     steps:
       - name: Check out repository code
         uses: actions/checkout@v4
-      - name: print where i am
-        run: ls
 
   update-page:
     uses: Kou-ISK/league_one_scraping/.github/workflows/update_page.yml@main

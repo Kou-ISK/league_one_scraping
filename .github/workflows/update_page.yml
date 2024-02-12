@@ -13,10 +13,6 @@ on:
         required: true
         type: boolean
 
-defaults:
-  run:
-    working-directory: ./
-
 jobs:
   update_page:
     runs-on: ubuntu-latest
