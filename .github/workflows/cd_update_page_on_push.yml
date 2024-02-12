@@ -18,6 +18,7 @@ jobs:
       - name: update page
         uses: ./.github/workflows/update_page.yml
         with:
+          branch: $GITHUB_REF_NAME
           update2021: false
           update2022: false
           update2023: false

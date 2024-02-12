@@ -3,6 +3,9 @@ name: update page
 on:
   workflow_call:
     inputs:
+      branch:
+        required: true
+        type: string
       update2021:
         required: true
         type: boolean
@@ -18,7 +21,7 @@ defaults:
     working-directory: ./
 
 jobs:
-  create-page:
+  update_page:
     runs-on: ubuntu-latest
     steps:
       - name: Setup Python
