@@ -6,10 +6,6 @@ on:
     # UTC の 01:00 は JST だと 10:00 。
     - cron: '0 1 * * 1'
 
-defaults:
-  run:
-    working-directory: ./
-
 jobs:
   update-page:
     runs-on: ubuntu-latest
