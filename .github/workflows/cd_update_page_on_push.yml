@@ -13,10 +13,10 @@ jobs:
   update-page:
     runs-on: ubuntu-latest
     steps:
-      - name: print where i am
-        run: ls
       - name: Check out repository code
         uses: actions/checkout@v4
+      - name: print where i am
+        run: ls
       - name: update page
         uses: ./update_page.yml@main
         with:
