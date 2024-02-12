@@ -16,7 +16,7 @@ jobs:
       - name: Check out repository code
         uses: actions/checkout@v4
       - name: update page
-        uses: ./.github/workflows/update_page.yml@main
+        uses: ./workflows/update_page.yml@main
         with:
           branch: $GITHUB_REF_NAME
           update2021: false
