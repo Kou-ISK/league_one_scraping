@@ -13,10 +13,12 @@ jobs:
   update-page:
     runs-on: ubuntu-latest
     steps:
+      - name: print where i am
+        run: ls
       - name: Check out repository code
         uses: actions/checkout@v4
       - name: update page
-        uses: ./workflows/update_page.yml@main
+        uses: ./update_page.yml@main
         with:
           branch: $GITHUB_REF_NAME
           update2021: false
