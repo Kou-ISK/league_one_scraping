@@ -18,4 +18,4 @@ jobs:
     with:
       update2021: false
       update2022: false
-      update2023: false
+      update2023: true

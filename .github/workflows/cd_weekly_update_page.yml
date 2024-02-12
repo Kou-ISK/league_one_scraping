@@ -12,8 +12,6 @@ jobs:
     steps:
       - name: Check out repository code
         uses: actions/checkout@v4
-      - name: print where i am
-        run: ls
 
   update-page:
     needs: setup
@@ -21,4 +19,4 @@ jobs:
     with:
       update2021: false
       update2022: false
-      update2023: false
+      update2023: true
