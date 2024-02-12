@@ -15,23 +15,19 @@ on:
 
 defaults:
   run:
-    working-directory: ./../
+    working-directory: ./
 
 jobs:
   update_page:
     runs-on: ubuntu-latest
     steps:
-      - name: print where i am
-        run: |
-          pwd
-          ls
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.10'
       - name: Install dependencies
         run: |
-          pwd
+          cd ..
           pip install -r requirements.txt
       - name: Run script
         run: |
