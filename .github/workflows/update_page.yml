@@ -1,13 +1,17 @@
 name: update page
 
 on:
-  schedule:
-    # 月曜日の 10:00 (JST) に処理を実行する。
-    # UTC の 01:00 は JST だと 10:00 。
-    - cron: '0 1 * * 1'
-  push:
-    branches:
-      - main
+  workflow_call:
+    inputs:
+      update2021:
+        required: true
+        type: boolean
+      update2022:
+        required: true
+        type: boolean
+      update2023:
+        required: true
+        type: boolean
 
 defaults:
   run:
@@ -17,8 +21,6 @@ jobs:
   create-page:
     runs-on: ubuntu-latest
     steps:
-      - name: Check out repository code
-        uses: actions/checkout@v4
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
@@ -27,9 +29,15 @@ jobs:
         run: pip install -r requirements.txt
       - name: Run script
         run: |
-          python -m league_one_scraping getInfo 2021
-          python -m league_one_scraping getInfo 2022
-          python -m league_one_scraping getInfo 2023
+          if [${{inputs.update2021}}]; then
+            python -m league_one_scraping getInfo 2021
+          fi
+          if [${{inputs.update2022}}]; then
+            python -m league_one_scraping getInfo 2022
+          fi
+          if [${{inputs.update2023}}]; then
+            python -m league_one_scraping getInfo 2023
+          fi
       - name: Use Node.js
         uses: actions/setup-node@v3
         with:

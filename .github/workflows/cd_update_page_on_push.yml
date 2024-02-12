@@ -1,0 +1,23 @@
+name: cd_update_page_on_push
+
+on:
+  push:
+    branches:
+      - main
+
+defaults:
+  run:
+    working-directory: ./
+
+jobs:
+  update-page:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v4
+      - name: update page
+        uses: ./.github/workflows/update_page.yml
+        with:
+          update2021: false
+          update2022: false
+          update2023: false
