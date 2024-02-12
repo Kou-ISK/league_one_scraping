@@ -14,7 +14,7 @@ jobs:
       - name: print where i am
         run: ls
       - name: update page
-        uses: ./.github/workflows/update_page.yml@main
+        uses: ./.github/workflows/update_page.yml
         with:
           branch: $GITHUB_REF_NAME
           update2021: false
