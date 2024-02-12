@@ -28,17 +28,15 @@ jobs:
         run: pip install -r requirements.txt
       - name: Run script
         run: |
-          if [ "${{inputs.update2021}}" ]; then
-            python -m league_one_scraping getInfo 2021
+          if [ "${{inputs.update2021}}" == "true" ]; then
+          python -m league_one_scraping getInfo 2021
           fi
-          if [ "${{inputs.update2022}}" ]; then
+          if [ "${{inputs.update2022}}" == "true" ]; then
             python -m league_one_scraping getInfo 2022
           fi
-          if [ "${{inputs.update2023}}" ]; then
-            echo yeah
+          if [ "${{inputs.update2023}}" == "true" ]; then
             python -m league_one_scraping getInfo 2023
           fi
-          echo fin
       - name: Use Node.js
         uses: actions/setup-node@v3
         with:
