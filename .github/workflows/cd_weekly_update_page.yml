@@ -16,6 +16,7 @@ jobs:
         run: ls
 
   update-page:
+    needs: setup
     uses: Kou-ISK/league_one_scraping/.github/workflows/update_page.yml@main
     with:
       update2021: false
