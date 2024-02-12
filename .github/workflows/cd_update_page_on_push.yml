@@ -6,17 +6,17 @@ on:
       - main
 
 jobs:
-  update-page:
+  setup:
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository code
         uses: actions/checkout@v4
       - name: print where i am
         run: ls
-      - name: update page
-        uses: Kou-ISK/league_one_scraping/.github/workflows/update_page.yml@main
-        with:
-          branch: $GITHUB_REF_NAME
-          update2021: false
-          update2022: false
-          update2023: false
+
+  update-page:
+    uses: Kou-ISK/league_one_scraping/.github/workflows/update_page.yml@main
+    with:
+      update2021: false
+      update2022: false
+      update2023: false
