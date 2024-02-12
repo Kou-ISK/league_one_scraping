@@ -28,13 +28,13 @@ jobs:
         run: pip install -r requirements.txt
       - name: Run script
         run: |
-          if ["${{inputs.update2021}}"]; then
+          if [ "${{inputs.update2021}}" ]; then
             python -m league_one_scraping getInfo 2021
           fi
-          if ["${{inputs.update2022}}"]; then
+          if [ "${{inputs.update2022}}" ]; then
             python -m league_one_scraping getInfo 2022
           fi
-          if ["${{inputs.update2023}}"]; then
+          if [ "${{inputs.update2023}}" ]; then
             echo yeah
             python -m league_one_scraping getInfo 2023
           fi
