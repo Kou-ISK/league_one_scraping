@@ -93,3 +93,42 @@ export const GetTop10TryScorerByPlayerName = (
     .sort((a, b) => b.point - a.point)
     .filter((_item, index) => index < 10);
 };
+
+export const GetTop10SuccessRateGoalKickers = (
+  scoreProgressList: ScoreInfo[]
+) => {
+  var scoreObjectList: any[] = [];
+  // 選手名のリストを作成
+  const playerList: string[] = Array.from(
+    new Set(
+      scoreProgressList.map(
+        (scoreInfo: ScoreInfo) => scoreInfo.player_name as string
+      )
+    )
+  );
+  playerList.forEach((player) => {
+    const success = scoreProgressList.filter(
+      (item) =>
+        item.player_name === player &&
+        (item.score_type === 'PG' || item.score_type === 'G')
+    ).length;
+    const failure = scoreProgressList.filter(
+      (item) =>
+        item.player_name === player &&
+        (item.score_type === 'PGx' || item.score_type === 'Gx')
+    ).length;
+    const totalKicks = success + failure;
+    const successRate =
+      totalKicks < 10 ? 0 : ((success / totalKicks) * 100).toFixed(1);
+
+    const scoreObject = {
+      scorer: player,
+      point: successRate + '%',
+      rate: successRate,
+    };
+    scoreObjectList = [...scoreObjectList, ...[scoreObject]];
+  });
+  return scoreObjectList
+    .sort((a, b) => b.rate - a.rate)
+    .filter((_item, index) => index < 10 && _item.rate !== 0);
+};

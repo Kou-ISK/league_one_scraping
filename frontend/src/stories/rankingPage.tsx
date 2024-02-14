@@ -3,6 +3,7 @@ import { ScoreRanking } from '../stories/scoreRanking';
 import {
   ConcatOverAllScoreProgress,
   GetTop10ScorerByPlayerName,
+  GetTop10SuccessRateGoalKickers,
   GetTop10TryScorerByPlayerName,
 } from '../utils/rankingUtils';
 import { DIVISION_LIST } from '../variables';
@@ -15,6 +16,8 @@ interface RankingPageProps {
 export const RankingPage = (props: RankingPageProps) => {
   var top10Scorers: { [key: number]: any } = {};
   var top10TryScorers: { [key: number]: any } = {};
+  var top10SuccessRateGoalKickers: { [key: number]: any } = {};
+
   DIVISION_LIST.forEach((div) => {
     const selectedDivisionGameList = props.selectedGameList.filter(
       (item) => item.division === div
@@ -25,8 +28,13 @@ export const RankingPage = (props: RankingPageProps) => {
     const top10TryScorer = GetTop10TryScorerByPlayerName(
       ConcatOverAllScoreProgress(selectedDivisionGameList)
     );
+
+    const top10SuccessRateGoalKicker = GetTop10SuccessRateGoalKickers(
+      ConcatOverAllScoreProgress(selectedDivisionGameList)
+    );
     top10Scorers[div] = top10Scorer;
     top10TryScorers[div] = top10TryScorer;
+    top10SuccessRateGoalKickers[div] = top10SuccessRateGoalKicker;
   });
 
   return (
@@ -51,6 +59,17 @@ export const RankingPage = (props: RankingPageProps) => {
             </div>
           ))}
         </div>
+      </div>
+      <h2>ゴール成功率(10本以上試行)</h2>
+      <div style={{ display: 'flex', justifyContent: 'center' }}>
+        {DIVISION_LIST.map((division: number) => (
+          <div>
+            <h3>Div.{division}</h3>
+            <ScoreRanking
+              rankingTop10={top10SuccessRateGoalKickers[division]}
+            />
+          </div>
+        ))}
       </div>
     </>
   );
