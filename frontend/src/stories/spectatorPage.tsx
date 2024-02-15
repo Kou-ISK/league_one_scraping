@@ -1,5 +1,6 @@
 import React from 'react';
 import { Game } from '../types/game';
+import './spectatorPage.css';
 
 interface SpectatorPageProps {
   year: number;
@@ -26,10 +27,15 @@ export const SpectatorPage: React.FC<SpectatorPageProps> = (props) => {
               ? '入れ替え戦/プレーオフ'
               : 'Div.' + division}
           </h3>
-          <table>
+          <table className='sticky-table'>
             <thead style={{ backgroundColor: 'lightgray' }}>
               <tr>
-                <th style={{ minWidth: '300px' }}>チーム名</th>
+                <th
+                  style={{ minWidth: '300px', backgroundColor: 'lightgray' }}
+                  className='sticky-col'
+                >
+                  チーム名
+                </th>
                 {getUniqueDates(games).map((date) => (
                   <th key={date} style={{ minWidth: '100px' }}>
                     {formatDate(date)}
@@ -41,7 +47,7 @@ export const SpectatorPage: React.FC<SpectatorPageProps> = (props) => {
               {Array.from(new Set(games.map((game) => game.home_team))).map(
                 (team) => (
                   <tr key={team}>
-                    <td>{team}</td>
+                    <td className='sticky-col'>{team}</td>
                     {getUniqueDates(games).map((date) => (
                       <td key={date}>
                         {games

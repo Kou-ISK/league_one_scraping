@@ -1,0 +1,23 @@
+.sticky-table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.sticky-table th,
+.sticky-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
+
+.sticky-table th.sticky-col,
+.sticky-table td.sticky-col {
+  position: sticky;
+  left: 0;
+  background-color: white; /* 左側の列の背景色を指定 */
+  z-index: 1; /* 表のセルよりも上に表示 */
+}
+
+.division-table-container {
+  overflow-x: auto; /* テーブルが横スクロールできるように */
+}
