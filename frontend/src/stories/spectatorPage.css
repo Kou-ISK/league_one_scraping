@@ -1,4 +1,11 @@
+.division-title {
+  position: sticky;
+  left: 0;
+  top: 0;
+}
+
 .sticky-table {
+  overflow: auto;
   border-collapse: collapse;
   width: 100%;
 }

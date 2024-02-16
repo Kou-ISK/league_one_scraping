@@ -19,10 +19,10 @@ export const SpectatorPage: React.FC<SpectatorPageProps> = (props) => {
 
   // ディビジョンごとにテーブルをレンダリング
   return (
-    <div style={{ maxWidth: '100vw', overflow: 'scroll', margin: '15px' }}>
+    <div style={{ maxWidth: '100vw', margin: '15px' }}>
       {Object.entries(gamesByDivision).map(([division, games]) => (
-        <div key={division}>
-          <h3>
+        <div key={division} style={{ overflow: 'scroll' }}>
+          <h3 className='division-title'>
             {division.toString() === '0'
               ? '入れ替え戦/プレーオフ'
               : 'Div.' + division}
