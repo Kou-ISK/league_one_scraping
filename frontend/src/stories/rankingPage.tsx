@@ -5,6 +5,7 @@ import {
   GetTop10ScorerByPlayerName,
   GetTop10SuccessRateGoalKickers,
   GetTop10TryScorerByPlayerName,
+  GetTotalTeamScore,
 } from '../utils/rankingUtils';
 import { DIVISION_LIST } from '../variables';
 
@@ -17,6 +18,8 @@ export const RankingPage = (props: RankingPageProps) => {
   var top10Scorers: { [key: number]: any } = {};
   var top10TryScorers: { [key: number]: any } = {};
   var top10SuccessRateGoalKickers: { [key: number]: any } = {};
+  var scoreForTheTeamList: { [key: number]: any } = {};
+  var scoreAgainstTheTeamList: { [key: number]: any } = {};
 
   DIVISION_LIST.forEach((div) => {
     const selectedDivisionGameList = props.selectedGameList.filter(
@@ -32,6 +35,10 @@ export const RankingPage = (props: RankingPageProps) => {
     const top10SuccessRateGoalKicker = GetTop10SuccessRateGoalKickers(
       ConcatOverAllScoreProgress(selectedDivisionGameList)
     );
+
+    const totalTeamScore = GetTotalTeamScore(selectedDivisionGameList);
+    scoreForTheTeamList[div] = totalTeamScore.scoreFor;
+    scoreAgainstTheTeamList[div] = totalTeamScore.scoreAgainst;
     top10Scorers[div] = top10Scorer;
     top10TryScorers[div] = top10TryScorer;
     top10SuccessRateGoalKickers[div] = top10SuccessRateGoalKicker;
@@ -68,6 +75,26 @@ export const RankingPage = (props: RankingPageProps) => {
             <ScoreRanking
               rankingTop10={top10SuccessRateGoalKickers[division]}
             />
+          </div>
+        ))}
+      </div>
+
+      <h1>{props.year}シーズン チームランキング</h1>
+      <h2>総得点</h2>
+      <div style={{ display: 'flex', justifyContent: 'center' }}>
+        {DIVISION_LIST.map((division: number) => (
+          <div>
+            <h3>Div.{division}</h3>
+            <ScoreRanking rankingTop10={scoreForTheTeamList[division]} />
+          </div>
+        ))}
+      </div>
+      <h2>総失点</h2>
+      <div style={{ display: 'flex', justifyContent: 'center' }}>
+        {DIVISION_LIST.map((division: number) => (
+          <div>
+            <h3>Div.{division}</h3>
+            <ScoreRanking rankingTop10={scoreAgainstTheTeamList[division]} />
           </div>
         ))}
       </div>

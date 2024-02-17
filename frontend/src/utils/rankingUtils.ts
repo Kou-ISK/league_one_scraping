@@ -132,3 +132,56 @@ export const GetTop10SuccessRateGoalKickers = (
     .sort((a, b) => b.rate - a.rate)
     .filter((_item, index) => index < 10 && _item.rate !== 0);
 };
+
+export const GetTotalTeamScore = (games: Game[]) => {
+  var scoreForObjectList: any[] = [];
+  var scoreAgainstObjectList: any[] = [];
+  // チームのリストを作成
+  const teamList: string[] = Array.from(
+    new Set(games.map((game) => game.home_team as string))
+  );
+
+  // 該当チームがhome_teamだった時の得点、失点を算出
+  teamList.forEach((team) => {
+    const scoreForHomeTeam = games
+      .filter((game) => game.home_team === team)
+      .reduce((accumulator, currentValue) => {
+        return accumulator + currentValue.home_team_score;
+      }, 0);
+    const scoreAgainstHomeTeam = games
+      .filter((game) => game.home_team === team)
+      .reduce((accumulator, currentValue) => {
+        return accumulator + currentValue.away_team_score;
+      }, 0);
+
+    const scoreForAwayTeam = games
+      .filter((game) => game.away_team === team)
+      .reduce((accumulator, currentValue) => {
+        return accumulator + currentValue.away_team_score;
+      }, 0);
+    const scoreAgainstAwayTeam = games
+      .filter((game) => game.away_team === team)
+      .reduce((accumulator, currentValue) => {
+        return accumulator + currentValue.home_team_score;
+      }, 0);
+
+    const scoreForObject = {
+      scorer: team,
+      point: scoreForHomeTeam + scoreForAwayTeam,
+    };
+    const scoreAgainstObject = {
+      scorer: team,
+      point: scoreAgainstHomeTeam + scoreAgainstAwayTeam,
+    };
+    scoreForObjectList = [...scoreForObjectList, ...[scoreForObject]];
+    scoreAgainstObjectList = [
+      ...scoreAgainstObjectList,
+      ...[scoreAgainstObject],
+    ];
+  });
+
+  return {
+    scoreFor: scoreForObjectList.sort((a, b) => b.point - a.point),
+    scoreAgainst: scoreAgainstObjectList.sort((a, b) => a.point - b.point),
+  };
+};
