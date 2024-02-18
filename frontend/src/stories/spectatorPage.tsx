@@ -50,13 +50,18 @@ export const SpectatorPage: React.FC<SpectatorPageProps> = (props) => {
                     <td className='sticky-col'>{team}</td>
                     {getUniqueDates(games).map((date) => (
                       <td key={date}>
-                        {games
-                          .filter(
-                            (game) =>
-                              game.date === date && game.home_team === team
-                          )
-                          .map((game) => game.spectator)
-                          .join(', ')}
+                        <a
+                          href={
+                            '/league_one_scraping/game/' +
+                            getGameByDateAndHomeTeam(games, date, team).map(
+                              (game) => game.id
+                            )
+                          }
+                        >
+                          {getGameByDateAndHomeTeam(games, date, team)
+                            .map((game) => game.spectator)
+                            .join(', ')}
+                        </a>
                       </td>
                     ))}
                   </tr>
@@ -83,4 +88,12 @@ const getUniqueDates = (games: Game[]) => {
     dateSet.add(game.date);
   });
   return Array.from(dateSet);
+};
+
+const getGameByDateAndHomeTeam = (
+  games: Game[],
+  date: string,
+  team: string
+) => {
+  return games.filter((game) => game.date === date && game.home_team === team);
 };
