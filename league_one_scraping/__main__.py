@@ -16,6 +16,9 @@ def main(args):
         year = args[2]
         analyzeService = analyze_service.AnalyzeService
         analyzeService.create_table(year=year)
+
+    if (function == 'updateMaster'):
+        application.Application.update_master_data()
     # score_progress_df = analyzeService.get_score_progress_by_id(game_id)
     # df = analyzeService.get_score_progress_by_id(game_id)
     # print(df)

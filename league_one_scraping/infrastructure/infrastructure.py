@@ -33,3 +33,14 @@ class Infrastructure:
             return game_id_list
         else:
             print(f"Could not retrieve data from {year} season")
+
+    def get_team_master_data_by_division(div):
+        url = f"https://league-one.jp/content/ticket_info/div{div}/"
+        response = requests.get(url)
+        sleep(1)
+
+        if response.status_code == 200:
+            return BeautifulSoup(response.content, "html.parser")
+        else:
+            print(f"Failed to fetch data for division {div}")
+            return None

@@ -10,6 +10,7 @@ import {
   XAxis,
   YAxis,
 } from 'recharts';
+import { TEAM_MASTER_DATA } from '../variables';
 
 enum ScoreTypes {
   T = 'トライ',
@@ -28,6 +29,12 @@ interface ScoreGraphProps {
 }
 
 export const ScoreGraph = (props: ScoreGraphProps) => {
+  const homeTeamColor = TEAM_MASTER_DATA.find(
+    (master) => master.team_name === props.homeTeamName
+  )?.color;
+  const awayTeamColor = TEAM_MASTER_DATA.find(
+    (master) => master.team_name === props.awayTeamName
+  )?.color;
   const CustomTooltip = ({ active, payload, label }: any) => {
     if (active && payload && payload.length) {
       return (
@@ -37,9 +44,15 @@ export const ScoreGraph = (props: ScoreGraphProps) => {
           )}`}</p>
           <p className='scorer'>{`Scorer: ${payload[0].payload.player_name}`}</p>
           <div className='current-score'>
-            <p className='home-team-score'>{`${payload[0].payload.home_team_score}`}</p>
+            <p
+              className='home-team-score'
+              color={homeTeamColor}
+            >{`${payload[0].payload.home_team_score}`}</p>
             <p>- </p>
-            <p className='away-team-score'>{`${payload[0].payload.away_team_score}`}</p>
+            <p
+              className='away-team-score'
+              color={awayTeamColor}
+            >{`${payload[0].payload.away_team_score}`}</p>
           </div>
         </Paper>
       );
@@ -72,13 +85,13 @@ export const ScoreGraph = (props: ScoreGraphProps) => {
         type='monotone'
         dataKey='home_team_score'
         name={props.homeTeamName}
-        stroke='#3ba2f6'
+        stroke={homeTeamColor}
       />
       <Line
         type='monotone'
         dataKey='away_team_score'
         name={props.awayTeamName}
-        stroke='#8884d8'
+        stroke={awayTeamColor}
       />
       <Legend />
       <Tooltip content={<CustomTooltip />} />

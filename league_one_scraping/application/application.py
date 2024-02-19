@@ -15,3 +15,13 @@ class Application:
             json.dump(game_datas, f, ensure_ascii=False,
                       indent=2, default=lambda x: x.to_dict())
         print('Job Completed')
+
+    @classmethod
+    def update_master_data(cls):
+        team_datas = scraping_service.ScrapingService.update_master_data()
+        file_path = Path(
+            f'./frontend/src/datas/league_one_team_master_data.json')
+        with open(file_path.resolve(), 'w') as f:
+            json.dump(team_datas, f, ensure_ascii=False,
+                      indent=2, default=lambda x: x.to_dict())
+        print('Job Completed')

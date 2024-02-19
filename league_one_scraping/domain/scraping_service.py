@@ -3,6 +3,7 @@ from league_one_scraping.domain.data.game import Game
 from league_one_scraping.domain.data.player import Player
 from league_one_scraping.domain.data.replacement import Replacement
 from league_one_scraping.domain.data.score import Score
+from league_one_scraping.domain.data.team_master import Team_Master
 from ..infrastructure import infrastructure
 import re
 
@@ -239,3 +240,29 @@ class ScrapingService:
     # カード取得
     def parse_soup_to_card_for_penalty(soup, team_descriptor):
         print('yeah')
+
+    @classmethod
+    def update_master_data(cls):
+        team_master_datas = []
+        for div in range(3):
+            team_master_data_soup = infrastructure.Infrastructure.get_team_master_data_by_division(
+                div+1)
+            if (team_master_data_soup):
+                team_master_data = cls.parse_soup_to_team_master_data(
+                    team_master_data_soup)
+                team_master_datas += team_master_data
+        print(team_master_datas)
+        return team_master_datas
+
+    def parse_soup_to_team_master_data(soup):
+        team_master_data_for_div = []
+        raw_team_datas = soup.find_all(class_="p-team__head")
+        for raw_team_data in raw_team_datas:
+            team_name = raw_team_data.find("h2").text.strip()
+            color = raw_team_data.find(
+                class_='p-team__head-title')['style'].replace('background: ', '').replace(";", "")
+            logo_url = raw_team_data.find('img')['src']
+            team_data = Team_Master(
+                team_name=team_name, color=color, logo_url=logo_url)
+            team_master_data_for_div.append(team_data)
+        return team_master_data_for_div

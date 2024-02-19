@@ -8,6 +8,7 @@ import {
   jaJP,
 } from '@mui/x-data-grid';
 import './gameInfoTable.css';
+import { TEAM_MASTER_DATA } from '../variables';
 
 interface GameInfoTableProps {
   gameList: Game[];
@@ -30,10 +31,40 @@ export const GameInfoTable = (props: GameInfoTableProps) => {
     },
     { field: 'division', headerName: 'Div.', width: 50 },
     { field: 'basic_info', headerName: '基本情報', width: 350 },
-    { field: 'home_team', headerName: 'ホストチーム', width: 300 },
+    {
+      field: 'home_team',
+      headerName: 'ホストチーム',
+      width: 300,
+      renderCell: (params: GridRenderCellParams<any>) => (
+        <p
+          style={{
+            backgroundColor: TEAM_MASTER_DATA.find(
+              (master) => master.team_name === params.value
+            )?.color,
+          }}
+        >
+          {params.value}
+        </p>
+      ),
+    },
     { field: 'home_team_score', headerName: 'ホストチーム得点', width: 150 },
     { field: 'away_team_score', headerName: 'ビジターチーム得点', width: 150 },
-    { field: 'away_team', headerName: 'ビジターチーム', width: 300 },
+    {
+      field: 'away_team',
+      headerName: 'ビジターチーム',
+      width: 300,
+      renderCell: (params: GridRenderCellParams<any>) => (
+        <p
+          style={{
+            backgroundColor: TEAM_MASTER_DATA.find(
+              (master) => master.team_name === params.value
+            )?.color,
+          }}
+        >
+          {params.value}
+        </p>
+      ),
+    },
     { field: 'date', headerName: '日時', width: 130 },
     { field: 'weather', headerName: '天候', width: 200 },
     { field: 'spectator', headerName: '観客動員数', width: 130 },
