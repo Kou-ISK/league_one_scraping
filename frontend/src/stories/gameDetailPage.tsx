@@ -47,7 +47,7 @@ export const GameDetailPage = () => {
           <div
             style={{
               backgroundColor: homeTeamColor,
-              color: 'white',
+              color: homeTeamColor ? 'white' : 'black',
               display: 'flex',
               justifyContent: 'center',
               textAnchor: 'middle',
@@ -68,7 +68,7 @@ export const GameDetailPage = () => {
           <div
             style={{
               backgroundColor: awayTeamColor,
-              color: 'white',
+              color: awayTeamColor ? 'white' : 'black',
               display: 'flex',
               justifyContent: 'center',
               textAnchor: 'middle',

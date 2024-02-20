@@ -1,117 +1,117 @@
 [
   {
     "team_name": "クボタスピアーズ船橋・東京ベイ",
-    "color": "#ff830b",
-    "logo_url": "https://league-one.s3-ap-northeast-1.amazonaws.com/uploads/ticket_info_assets/img/team-spears.svg"
+    "color": "#ff820a",
+    "logo_url": "https://league-one.s3.ap-northeast-1.amazonaws.com/image/team_info/7138_200x200_652ec32796c8b.png"
   },
   {
     "team_name": "コベルコ神戸スティーラーズ",
-    "color": "#cb0000",
-    "logo_url": "https://league-one.s3-ap-northeast-1.amazonaws.com/uploads/ticket_info_assets/img/team-steelers.svg"
-  },
-  {
-    "team_name": "埼玉ワイルドナイツ",
-    "color": "#005cff",
-    "logo_url": "https://league-one.s3.ap-northeast-1.amazonaws.com/image/team_info/3309_200x200_62df6d0d09bd2.png"
+    "color": "#ff0000",
+    "logo_url": "https://league-one.s3.ap-northeast-1.amazonaws.com/image/team_info/7139_200x200_652ec35b492c2.png"
   },
   {
     "team_name": "静岡ブルーレヴズ",
-    "color": "#050098",
-    "logo_url": "https://league-one.s3-ap-northeast-1.amazonaws.com/uploads/ticket_info_assets/img/team-bluerevs.svg"
+    "color": "#0019ff",
+    "logo_url": "https://league-one.s3.ap-northeast-1.amazonaws.com/image/team_info/7132_200x200_652ec142e6fc3.png"
   },
   {
-    "team_name": "東京サンゴリアス",
+    "team_name": "東京サントリーサンゴリアス",
     "color": "#ffcc00",
-    "logo_url": "https://league-one.s3-ap-northeast-1.amazonaws.com/uploads/ticket_info_assets/img/team-sungoliath.svg"
+    "logo_url": "https://league-one.s3.ap-northeast-1.amazonaws.com/image/team_info/7140_200x200_652ec3e076f73.png"
   },
   {
     "team_name": "東芝ブレイブルーパス東京",
-    "color": "#cb0000",
-    "logo_url": "https://league-one.s3-ap-northeast-1.amazonaws.com/uploads/ticket_info_assets/img/team-bravelupus.svg"
-  },
-  {
-    "team_name": "トヨタヴェルブリッツ",
-    "color": "#004800",
-    "logo_url": "https://league-one.s3-ap-northeast-1.amazonaws.com/uploads/ticket_info_assets/img/team-verblitz.svg"
-  },
-  {
-    "team_name": "花園近鉄ライナーズ",
-    "color": "#0018b0",
-    "logo_url": "https://league-one.s3-ap-northeast-1.amazonaws.com/uploads/ticket_info_assets/img/team-liners.svg"
+    "color": "#ff0000",
+    "logo_url": "https://league-one.s3.ap-northeast-1.amazonaws.com/image/team_info/7144_200x200_652ec5715a918.png"
   },
   {
     "team_name": "三重ホンダヒート",
     "color": "#000000",
-    "logo_url": "https://league-one.s3-ap-northeast-1.amazonaws.com/uploads/ticket_info_assets/img/team-heat.svg"
+    "logo_url": "https://league-one.s3.ap-northeast-1.amazonaws.com/image/team_info/7145_200x200_652ec5ba6987e.png"
+  },
+  {
+    "team_name": "埼玉パナソニックワイルドナイツ",
+    "color": "#005cff",
+    "logo_url": "https://league-one.s3.ap-northeast-1.amazonaws.com/image/team_info/7131_200x200_652ec0d5a773f.png"
+  },
+  {
+    "team_name": "トヨタヴェルブリッツ",
+    "color": "#004700",
+    "logo_url": "https://league-one.s3.ap-northeast-1.amazonaws.com/image/team_info/7134_200x200_652ec20bc7e3e.png"
+  },
+  {
+    "team_name": "花園近鉄ライナーズ",
+    "color": "#0017b0",
+    "logo_url": "https://league-one.s3.ap-northeast-1.amazonaws.com/image/team_info/7141_200x200_652ec423652fd.png"
   },
   {
     "team_name": "三菱重工相模原ダイナボアーズ",
-    "color": "#006500",
-    "logo_url": "https://league-one.s3-ap-northeast-1.amazonaws.com/uploads/ticket_info_assets/img/team-dynaboars.svg"
+    "color": "#159400",
+    "logo_url": "https://league-one.s3.ap-northeast-1.amazonaws.com/image/team_info/7135_200x200_652ec247e7493.png"
   },
   {
     "team_name": "横浜キヤノンイーグルス",
-    "color": "#cc0000",
-    "logo_url": "https://league-one.s3-ap-northeast-1.amazonaws.com/uploads/ticket_info_assets/img/team-eagles.svg"
+    "color": "#e6000d",
+    "logo_url": "https://league-one.s3.ap-northeast-1.amazonaws.com/image/team_info/7142_200x200_652ec4b6c1513.png"
   },
   {
-    "team_name": "ブラックラムズ東京",
+    "team_name": "リコーブラックラムズ東京",
     "color": "#000000",
-    "logo_url": "https://league-one.s3-ap-northeast-1.amazonaws.com/uploads/ticket_info_assets/img/team-blackrams.svg"
+    "logo_url": "https://league-one.s3.ap-northeast-1.amazonaws.com/image/team_info/7136_200x200_652ec278913d1.png"
   },
   {
     "team_name": "浦安D-Rocks",
-    "color": "#202e55",
-    "logo_url": "https://league-one.s3-ap-northeast-1.amazonaws.com/uploads/ticket_info_assets/img/emb-d-rocks.svg"
+    "color": "#303539",
+    "logo_url": "https://league-one.s3.ap-northeast-1.amazonaws.com/image/team_info/7143_200x200_652ec4f00301b.png"
   },
   {
-    "team_name": "グリーンロケッツ東葛",
-    "color": "#026f0f",
-    "logo_url": "https://league-one.s3-ap-northeast-1.amazonaws.com/uploads/ticket_info_assets/img/team-greenrockets.svg"
-  },
-  {
-    "team_name": "九州電力キューデンヴォルテクス",
-    "color": "#980000",
-    "logo_url": "https://league-one.s3-ap-northeast-1.amazonaws.com/uploads/ticket_info_assets/img/team-kyudenvoltex.svg"
-  },
-  {
-    "team_name": "豊田自動織機シャトルズ愛知",
-    "color": "#002698",
-    "logo_url": "https://league-one.s3-ap-northeast-1.amazonaws.com/uploads/ticket_info_assets/img/team-shuttles.svg"
+    "team_name": "NECグリーンロケッツ東葛",
+    "color": "#016f0e",
+    "logo_url": "https://league-one.s3.ap-northeast-1.amazonaws.com/image/team_info/7137_200x200_652ec2f1befb1.png"
   },
   {
     "team_name": "日本製鉄釜石シーウェイブス",
-    "color": "#bc0000",
-    "logo_url": "https://league-one.s3-ap-northeast-1.amazonaws.com/uploads/ticket_info_assets/img/team-seawaves.svg"
+    "color": "#0021d6",
+    "logo_url": "https://league-one.s3.ap-northeast-1.amazonaws.com/image/team_info/7146_200x200_652ec639219b6.png"
+  },
+  {
+    "team_name": "九州電力キューデンヴォルテクス",
+    "color": "#99004d",
+    "logo_url": "https://league-one.s3.ap-northeast-1.amazonaws.com/image/team_info/7147_200x200_652ec68870620.png"
+  },
+  {
+    "team_name": "豊田自動織機シャトルズ愛知",
+    "color": "#0080ff",
+    "logo_url": "https://league-one.s3.ap-northeast-1.amazonaws.com/image/team_info/7148_200x200_652ec6bdd08ed.png"
   },
   {
     "team_name": "レッドハリケーンズ大阪",
     "color": "#ff0000",
-    "logo_url": "https://league-one.s3-ap-northeast-1.amazonaws.com/uploads/ticket_info_assets/img/team-redhurricanes.svg"
+    "logo_url": "https://league-one.s3.ap-northeast-1.amazonaws.com/image/team_info/7149_200x200_652ec70bb9b53.png"
   },
   {
     "team_name": "クリタウォーターガッシュ昭島",
     "color": "#0019fa",
-    "logo_url": "https://league-one.s3-ap-northeast-1.amazonaws.com/uploads/ticket_info_assets/img/team-watergush.svg"
+    "logo_url": "https://league-one.s3.ap-northeast-1.amazonaws.com/image/team_info/7150_200x200_652ec73c8500a.png"
   },
   {
     "team_name": "清水建設江東ブルーシャークス",
-    "color": "#004c98",
-    "logo_url": "https://league-one.s3-ap-northeast-1.amazonaws.com/uploads/ticket_info_assets/img/team-bluesharks.svg"
+    "color": "#005cfa",
+    "logo_url": "https://league-one.s3.ap-northeast-1.amazonaws.com/image/team_info/7154_200x200_652ecb1ce3666.png"
   },
   {
     "team_name": "中国電力レッドレグリオンズ",
     "color": "#ff0000",
-    "logo_url": "https://league-one.s3-ap-northeast-1.amazonaws.com/uploads/ticket_info_assets/img/team-redregulions.svg"
+    "logo_url": "https://league-one.s3.ap-northeast-1.amazonaws.com/image/team_info/7151_200x200_652ec7a4dd144.png"
   },
   {
     "team_name": "日野レッドドルフィンズ",
-    "color": "#e30600",
-    "logo_url": "https://league-one.s3-ap-northeast-1.amazonaws.com/uploads/ticket_info_assets/img/team-reddolphins.svg"
+    "color": "#e30500",
+    "logo_url": "https://league-one.s3.ap-northeast-1.amazonaws.com/image/team_info/7152_200x200_652ec7d03d554.png"
   },
   {
-    "team_name": "スカイアクティブズ広島",
+    "team_name": "マツダスカイアクティブズ広島",
     "color": "#000000",
-    "logo_url": "https://league-one.s3-ap-northeast-1.amazonaws.com/uploads/ticket_info_assets/img/team-skyactivs.svg"
+    "logo_url": "https://league-one.s3.ap-northeast-1.amazonaws.com/image/team_info/7153_200x200_652ec7fe39259.png"
   }
 ]

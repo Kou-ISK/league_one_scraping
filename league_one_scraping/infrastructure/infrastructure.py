@@ -34,13 +34,33 @@ class Infrastructure:
         else:
             print(f"Could not retrieve data from {year} season")
 
-    def get_team_master_data_by_division(div):
-        url = f"https://league-one.jp/content/ticket_info/div{div}/"
+    def get_team_data_by_id(team_id):
+        url = f"https://league-one.jp/team/{team_id}"
         response = requests.get(url)
         sleep(1)
 
         if response.status_code == 200:
             return BeautifulSoup(response.content, "html.parser")
         else:
-            print(f"Failed to fetch data for division {div}")
+            print(f"Failed to fetch data for the team_id: {team_id}")
             return None
+
+    def get_team_id_list():
+        url = f"https://league-one.jp/team/"
+        response = requests.get(url)
+        sleep(1)
+
+        if response.status_code == 200:
+            soup = BeautifulSoup(response.text, "html.parser")
+            team_id_list = []
+            all_division = soup.find_all('section')
+            for division in all_division:
+                team_a_tag_list = division.find_all(
+                    'a')
+                for team_a_tag in team_a_tag_list:
+                    team_href = team_a_tag.get('href')
+                    team_id = team_href.replace('/team/', '')
+                    team_id_list.append(team_id)
+            return team_id_list
+        else:
+            print(f"Could not retrieve team data")

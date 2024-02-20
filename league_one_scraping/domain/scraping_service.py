@@ -244,25 +244,23 @@ class ScrapingService:
     @classmethod
     def update_master_data(cls):
         team_master_datas = []
-        for div in range(3):
-            team_master_data_soup = infrastructure.Infrastructure.get_team_master_data_by_division(
-                div+1)
-            if (team_master_data_soup):
-                team_master_data = cls.parse_soup_to_team_master_data(
-                    team_master_data_soup)
-                team_master_datas += team_master_data
-        print(team_master_datas)
+        team_id_list = infrastructure.Infrastructure.get_team_id_list()
+        for team_id in team_id_list:
+            team_data_soup = infrastructure.Infrastructure.get_team_data_by_id(
+                team_id)
+            if team_data_soup:
+                team_data = cls.parse_soup_to_team_master_data(team_data_soup)
+                team_master_datas.append(team_data)
         return team_master_datas
 
     def parse_soup_to_team_master_data(soup):
-        team_master_data_for_div = []
-        raw_team_datas = soup.find_all(class_="p-team__head")
-        for raw_team_data in raw_team_datas:
-            team_name = raw_team_data.find("h2").text.strip()
-            color = raw_team_data.find(
-                class_='p-team__head-title')['style'].replace('background: ', '').replace(";", "")
-            logo_url = raw_team_data.find('img')['src']
-            team_data = Team_Master(
-                team_name=team_name, color=color, logo_url=logo_url)
-            team_master_data_for_div.append(team_data)
-        return team_master_data_for_div
+        team_detail = soup.find(class_="c-team-detail-ttl")
+
+        team_name = team_detail.find("em", class_="name").text.strip()
+        color = team_detail.find(
+            class_='triangle1')['style'].replace('border-color: ', '').replace(";", "")
+        logo_url = team_detail.find('img')['src']
+        team_data = Team_Master(
+            team_name=team_name, color=color, logo_url=logo_url)
+        print(team_data)
+        return team_data

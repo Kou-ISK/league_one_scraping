@@ -36,15 +36,18 @@ export const GameInfoTable = (props: GameInfoTableProps) => {
       headerName: 'ホストチーム',
       width: 300,
       renderCell: (params: GridRenderCellParams<any>) => (
-        <p
-          style={{
-            backgroundColor: TEAM_MASTER_DATA.find(
-              (master) => master.team_name === params.value
-            )?.color,
-          }}
-        >
-          {params.value}
-        </p>
+        <div style={{ display: 'flex' }}>
+          <img
+            src={
+              TEAM_MASTER_DATA.find(
+                (master) => master.team_name === params.value
+              )?.logo_url
+            }
+            alt={params.value}
+            width='40px'
+          />
+          <p>{params.value}</p>
+        </div>
       ),
     },
     { field: 'home_team_score', headerName: 'ホストチーム得点', width: 150 },
@@ -54,15 +57,18 @@ export const GameInfoTable = (props: GameInfoTableProps) => {
       headerName: 'ビジターチーム',
       width: 300,
       renderCell: (params: GridRenderCellParams<any>) => (
-        <p
-          style={{
-            backgroundColor: TEAM_MASTER_DATA.find(
-              (master) => master.team_name === params.value
-            )?.color,
-          }}
-        >
-          {params.value}
-        </p>
+        <div style={{ display: 'flex' }}>
+          <img
+            src={
+              TEAM_MASTER_DATA.find(
+                (master) => master.team_name === params.value
+              )?.logo_url
+            }
+            alt={params.value}
+            width='40px'
+          />
+          <p>{params.value}</p>
+        </div>
       ),
     },
     { field: 'date', headerName: '日時', width: 130 },

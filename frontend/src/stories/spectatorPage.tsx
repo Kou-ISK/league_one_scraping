@@ -1,6 +1,7 @@
 import React from 'react';
 import { Game } from '../types/game';
 import './spectatorPage.css';
+import { TEAM_MASTER_DATA } from '../variables';
 
 interface SpectatorPageProps {
   year: number;
@@ -47,7 +48,39 @@ export const SpectatorPage: React.FC<SpectatorPageProps> = (props) => {
               {Array.from(new Set(games.map((game) => game.home_team))).map(
                 (team) => (
                   <tr key={team}>
-                    <td className='sticky-col'>{team}</td>
+                    <td
+                      className='sticky-col'
+                      style={{
+                        backgroundColor: TEAM_MASTER_DATA.find(
+                          (master) => master.team_name === team
+                        )?.color,
+                      }}
+                    >
+                      <div style={{ display: 'flex' }}>
+                        <img
+                          src={
+                            TEAM_MASTER_DATA.find(
+                              (master) => master.team_name === team
+                            )?.logo_url
+                          }
+                          alt={team}
+                          height='30px'
+                        />
+                        <p
+                          style={{
+                            fontSize: '14px',
+                            fontWeight: 'bold',
+                            color: TEAM_MASTER_DATA.find(
+                              (master) => master.team_name === team
+                            )
+                              ? 'white'
+                              : 'black',
+                          }}
+                        >
+                          {team}
+                        </p>
+                      </div>
+                    </td>
                     {getUniqueDates(games).map((date) => (
                       <td key={date}>
                         <a
