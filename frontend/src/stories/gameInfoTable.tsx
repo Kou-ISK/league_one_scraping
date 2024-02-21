@@ -50,8 +50,18 @@ export const GameInfoTable = (props: GameInfoTableProps) => {
         </div>
       ),
     },
-    { field: 'home_team_score', headerName: 'ホストチーム得点', width: 150 },
-    { field: 'away_team_score', headerName: 'ビジターチーム得点', width: 150 },
+    {
+      field: 'home_team_score',
+      headerName: 'ホストチーム得点',
+      width: 150,
+      resizable: true,
+    },
+    {
+      field: 'away_team_score',
+      headerName: 'ビジターチーム得点',
+      width: 150,
+      resizable: true,
+    },
     {
       field: 'away_team',
       headerName: 'ビジターチーム',
