@@ -1,6 +1,7 @@
 from league_one_scraping.domain.data import *
 from league_one_scraping.domain.data.game import Game
 from league_one_scraping.domain.data.player import Player
+from league_one_scraping.domain.data.player_master import Player_Master
 from league_one_scraping.domain.data.replacement import Replacement
 from league_one_scraping.domain.data.score import Score
 from league_one_scraping.domain.data.team_master import Team_Master
@@ -254,13 +255,32 @@ class ScrapingService:
         return team_master_datas
 
     def parse_soup_to_team_master_data(soup):
+        # チームの基本情報パート
         team_detail = soup.find(class_="c-team-detail-ttl")
 
         team_name = team_detail.find("em", class_="name").text.strip()
         color = team_detail.find(
             class_='triangle1')['style'].replace('border-color: ', '').replace(";", "")
         logo_url = team_detail.find('img')['src']
+
+        # 選手リスト作成
+        player_table_rows = soup.find('tbody').find_all('tr')
+        player_data_list = []
+        for row in player_table_rows:
+            photo = row.find('img')['src']
+            table_details = row.find_all('td')
+            name = table_details[0].text.strip()
+            position = table_details[1].text.strip().split(" ")[0]
+            height = round(int(
+                table_details[2].text.strip().replace('cm', '')))
+            weight = round(float(
+                table_details[3].text.strip().replace('kg', '')))
+            birth_of_date = table_details[4].text.strip()
+            category = table_details[5].text.strip()
+            player_data = Player_Master(photo=photo, name=name, position=position, height=height,
+                                        weight=weight, birth_of_date=birth_of_date, category=category, team_name=team_name)
+            player_data_list.append(player_data)
         team_data = Team_Master(
-            team_name=team_name, color=color, logo_url=logo_url)
+            team_name=team_name, color=color, logo_url=logo_url, player_list=player_data_list)
         print(team_data)
         return team_data

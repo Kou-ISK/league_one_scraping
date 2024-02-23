@@ -35,7 +35,7 @@ class Infrastructure:
             print(f"Could not retrieve data from {year} season")
 
     def get_team_data_by_id(team_id):
-        url = f"https://league-one.jp/team/{team_id}"
+        url = f"https://league-one.jp/team/{team_id}?t=1"
         response = requests.get(url)
         sleep(1)
 
