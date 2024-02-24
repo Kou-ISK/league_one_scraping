@@ -269,7 +269,7 @@ class ScrapingService:
         for row in player_table_rows:
             photo = row.find('img')['src']
             table_details = row.find_all('td')
-            name = table_details[0].text.strip()
+            name = table_details[0].text.strip().replace(" ", "")
             position = table_details[1].text.strip().split(" ")[0]
             height = round(int(
                 table_details[2].text.strip().replace('cm', '')))
