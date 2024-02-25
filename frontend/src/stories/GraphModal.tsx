@@ -4,6 +4,7 @@ import { Tab, Tabs } from '@mui/material';
 import { ScoreGraph } from './scoreGraph';
 import { Game } from '../types/game';
 import { ConversionSuccessRatePieChart } from './conversionSuccessRatePieChart';
+import { ScoreProgressTimeline } from './ScoreProgressTimeline';
 
 const customStyles = {
   content: {
@@ -53,11 +54,18 @@ export const GraphModal = (props: ScoreGraphModalProps) => {
           />
         </Tabs>
         {selectedGraphType === 'scoreProgress' && (
-          <ScoreGraph
-            scoreProgress={props.game.score_progress}
-            homeTeamName={props.game.home_team}
-            awayTeamName={props.game.away_team}
-          />
+          <div style={{ display: 'flex', justifyContent: 'left' }}>
+            <ScoreGraph
+              scoreProgress={props.game.score_progress}
+              homeTeamName={props.game.home_team}
+              awayTeamName={props.game.away_team}
+            />
+            <ScoreProgressTimeline
+              scoreProgress={props.game.score_progress}
+              homeTeamName={props.game.home_team}
+              awayTeamName={props.game.away_team}
+            />
+          </div>
         )}
         {selectedGraphType === 'conversionSuccessRate' && (
           <ConversionSuccessRatePieChart

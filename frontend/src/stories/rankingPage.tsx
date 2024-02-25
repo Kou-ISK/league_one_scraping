@@ -7,6 +7,7 @@ import {
   GetTop10TryScorerByPlayerName,
   GetTotalTeamScore,
 } from '../utils/rankingUtils';
+import './rankingPage.css';
 import { DIVISION_LIST } from '../variables';
 
 interface RankingPageProps {
@@ -51,7 +52,7 @@ export const RankingPage = (props: RankingPageProps) => {
         <h2>得点</h2>
         <div style={{ display: 'flex', justifyContent: 'center' }}>
           {DIVISION_LIST.map((division: number) => (
-            <div>
+            <div className='ranking-for-division'>
               <h3>Div.{division}</h3>
               <ScoreRanking rankingTop10={top10Scorers[division]} />
             </div>
@@ -60,7 +61,7 @@ export const RankingPage = (props: RankingPageProps) => {
         <h2>トライ数</h2>
         <div style={{ display: 'flex', justifyContent: 'center' }}>
           {DIVISION_LIST.map((division: number) => (
-            <div>
+            <div className='ranking-for-division'>
               <h3>Div.{division}</h3>
               <ScoreRanking rankingTop10={top10TryScorers[division]} />
             </div>
@@ -70,7 +71,7 @@ export const RankingPage = (props: RankingPageProps) => {
       <h2>ゴール成功率(10本以上試行)</h2>
       <div style={{ display: 'flex', justifyContent: 'center' }}>
         {DIVISION_LIST.map((division: number) => (
-          <div>
+          <div className='ranking-for-division'>
             <h3>Div.{division}</h3>
             <ScoreRanking
               rankingTop10={top10SuccessRateGoalKickers[division]}
@@ -83,7 +84,7 @@ export const RankingPage = (props: RankingPageProps) => {
       <h2>総得点</h2>
       <div style={{ display: 'flex', justifyContent: 'center' }}>
         {DIVISION_LIST.map((division: number) => (
-          <div>
+          <div className='ranking-for-division'>
             <h3>Div.{division}</h3>
             <ScoreRanking rankingTop10={scoreForTheTeamList[division]} />
           </div>
@@ -92,7 +93,7 @@ export const RankingPage = (props: RankingPageProps) => {
       <h2>総失点</h2>
       <div style={{ display: 'flex', justifyContent: 'center' }}>
         {DIVISION_LIST.map((division: number) => (
-          <div>
+          <div className='ranking-for-division'>
             <h3>Div.{division}</h3>
             <ScoreRanking rankingTop10={scoreAgainstTheTeamList[division]} />
           </div>

@@ -11,16 +11,7 @@ import {
   YAxis,
 } from 'recharts';
 import { TEAM_MASTER_DATA } from '../variables';
-
-enum ScoreTypes {
-  T = 'トライ',
-  PG = 'ペナルティゴール成功',
-  PGx = 'ペナルティゴール失敗',
-  DG = 'ドロップゴール成功',
-  DGx = 'ドロップゴール失敗',
-  G = 'コンバージョン成功',
-  Gx = 'コンバージョン失敗',
-}
+import { parseScoreTypeName } from '../utils/rankingUtils';
 
 interface ScoreGraphProps {
   homeTeamName: string;
@@ -97,8 +88,4 @@ export const ScoreGraph = (props: ScoreGraphProps) => {
       <Tooltip content={<CustomTooltip />} />
     </LineChart>
   );
-};
-
-const parseScoreTypeName = (scoreType: string): string => {
-  return ScoreTypes[scoreType as keyof typeof ScoreTypes] || scoreType;
 };

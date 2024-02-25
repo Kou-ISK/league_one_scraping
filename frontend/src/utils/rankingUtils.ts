@@ -1,5 +1,7 @@
 import { Game } from '../types/game';
 import { ScoreInfo } from '../types/scoreInfo';
+import { TeamMaster } from '../types/teamMaster';
+import { ScoreTypes, TEAM_MASTER_DATA } from '../variables';
 
 export const ConcatOverAllScoreProgress = (gameList: Game[]) => {
   var overAllscoreProgressList: ScoreInfo[] = [];
@@ -184,4 +186,29 @@ export const GetTotalTeamScore = (games: Game[]) => {
     scoreFor: scoreForObjectList.sort((a, b) => b.point - a.point),
     scoreAgainst: scoreAgainstObjectList.sort((a, b) => a.point - b.point),
   };
+};
+
+export const getPhotoUrl = (scorer: string) => {
+  let teamLogo: string | undefined;
+  let playerPhoto: string | undefined;
+
+  // TEAM_MASTER_DATA 配列をループして選手の写真を探す
+  TEAM_MASTER_DATA.forEach((team: TeamMaster) => {
+    const player = team.player_list.find(
+      (player) => player.name === scorer || player.team_name === scorer
+    );
+    console.log(player);
+    if (player) {
+      // 選手が見つかった場合は写真を設定
+      playerPhoto = player.photo;
+      // チームのロゴも設定
+      teamLogo = team.logo_url;
+    }
+  });
+
+  return { teamLogo, playerPhoto };
+};
+
+export const parseScoreTypeName = (scoreType: string): string => {
+  return ScoreTypes[scoreType as keyof typeof ScoreTypes] || scoreType;
 };

@@ -1,6 +1,7 @@
 import { Cell, Legend, Pie, PieChart } from 'recharts';
 import { ScoreInfo } from '../types/scoreInfo';
 import './conversionSuccessRatePieChart.css';
+import { getPhotoUrl } from '../utils/rankingUtils';
 
 interface ConversionSuccessRatePieChartProps {
   scoreProgress: ScoreInfo[];
@@ -34,7 +35,14 @@ export const ConversionSuccessRatePieChart = (
 
         return (
           <div key={player} className='player'>
-            <h1 className='player-name'>{player}</h1>
+            <div style={{ display: 'flex', justifyContent: 'center' }}>
+              <img
+                src={getPhotoUrl(player as string).teamLogo}
+                alt=''
+                height='30px'
+              />
+              <h1 className='player-name'>{player}</h1>
+            </div>
             <PieChart width={200} height={250}>
               <Pie
                 data={data}

@@ -22,3 +22,14 @@ export const DATA_SET: { [key: number]: Game[] } = {
 };
 
 export const TEAM_MASTER_DATA = teamMasterData as TeamMaster[];
+
+export enum ScoreTypes {
+  PT = 'ペナルティトライ',
+  T = 'トライ',
+  PG = 'ペナルティゴール成功',
+  PGx = 'ペナルティゴール失敗',
+  DG = 'ドロップゴール成功',
+  DGx = 'ドロップゴール失敗',
+  G = 'コンバージョン成功',
+  Gx = 'コンバージョン失敗',
+}
