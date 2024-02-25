@@ -6,6 +6,7 @@ import { Page } from './stories/Page';
 import { GameDetailPage } from './stories/gameDetailPage';
 import { Header } from './stories/Header';
 import { DATA_OF_2023 } from './variables';
+import { Footer } from './stories/Footer';
 
 function App() {
   const [selectedGameList, setSelectedGameList] =
@@ -30,6 +31,7 @@ function App() {
           />
         </Routes>
       </Router>
+      <Footer />
     </>
   );
 }
