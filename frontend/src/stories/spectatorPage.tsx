@@ -63,7 +63,7 @@ export const SpectatorPage: React.FC<SpectatorPageProps> = (props) => {
                               (master) => master.team_name === team
                             )?.logo_url
                           }
-                          alt={team}
+                          alt=''
                           height='30px'
                         />
                         <p

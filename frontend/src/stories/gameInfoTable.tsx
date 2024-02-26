@@ -43,7 +43,7 @@ export const GameInfoTable = (props: GameInfoTableProps) => {
                 (master) => master.team_name === params.value
               )?.logo_url
             }
-            alt={params.value}
+            alt=''
             width='40px'
           />
           <p>{params.value}</p>
@@ -74,7 +74,7 @@ export const GameInfoTable = (props: GameInfoTableProps) => {
                 (master) => master.team_name === params.value
               )?.logo_url
             }
-            alt={params.value}
+            alt=''
             width='40px'
           />
           <p>{params.value}</p>
