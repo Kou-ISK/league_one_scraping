@@ -2,6 +2,7 @@ import { Cell, Legend, Pie, PieChart } from 'recharts';
 import { ScoreInfo } from '../types/scoreInfo';
 import './conversionSuccessRatePieChart.css';
 import { getPhotoUrl } from '../utils/rankingUtils';
+import { LEAGUE_ONE_ROOT_URL, TEAM_MASTER_DATA } from '../variables';
 
 interface ConversionSuccessRatePieChartProps {
   scoreProgress: ScoreInfo[];
@@ -41,7 +42,19 @@ export const ConversionSuccessRatePieChart = (
                 alt=''
                 height='30px'
               />
-              <h1 className='player-name'>{player}</h1>
+              <h1 className='player-name'>
+                <a
+                  href={
+                    LEAGUE_ONE_ROOT_URL +
+                    'player/' +
+                    TEAM_MASTER_DATA.flatMap((team) => team.player_list).find(
+                      (player) => player.name
+                    )?.player_id
+                  }
+                >
+                  {player}
+                </a>
+              </h1>
             </div>
             <PieChart width={200} height={250}>
               <Pie

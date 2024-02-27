@@ -5,6 +5,8 @@ import teamMasterData from './datas/league_one_team_master_data.json';
 import { Game } from './types/game';
 import { TeamMaster } from './types/teamMaster';
 
+export const LEAGUE_ONE_ROOT_URL = 'https://league-one.jp/';
+
 export const DIVISION_LIST = [1, 2, 3];
 
 export const DATA_OF_2021 = leagueData2021 as Game[];

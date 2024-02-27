@@ -277,7 +277,9 @@ class ScrapingService:
                 table_details[3].text.strip().replace('kg', '')))
             birth_of_date = table_details[4].text.strip()
             category = table_details[5].text.strip()
-            player_data = Player_Master(photo=photo, name=name, position=position, height=height,
+            player_id = int(table_details[0].find(
+                'a')['href'].strip().replace('/player/', ''))
+            player_data = Player_Master(player_id=player_id, photo=photo, name=name, position=position, height=height,
                                         weight=weight, birth_of_date=birth_of_date, category=category, team_name=team_name)
             player_data_list.append(player_data)
         team_data = Team_Master(
