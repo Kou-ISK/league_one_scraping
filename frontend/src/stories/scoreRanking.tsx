@@ -22,12 +22,14 @@ export const ScoreRanking = (props: ScoreRankingProps) => {
           >
             <h1>{index + 1}. </h1>
             {teamlogo && (
-              <img src={teamlogo} alt='' width='60px' height='60px' />
+              <img src={teamlogo} alt='' width='auto' height='60px' />
             )}
             {!TEAM_MASTER_DATA.find(
               (team) => team.team_name === scoreInfo.scorer
             ) &&
-              playerPhoto && <img src={playerPhoto} alt='' width='60px' />}
+              playerPhoto && (
+                <img src={playerPhoto} alt='' width='auto' height='60px' />
+              )}
             {scoreInfo.scorer}: {scoreInfo.point}
           </Card>
         );
