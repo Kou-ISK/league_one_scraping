@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/league_one_scraping/static/css/main.c89daf97.css",
+    "main.js": "/league_one_scraping/static/js/main.44873a43.js",
+    "static/js/787.9e9f4ffd.chunk.js": "/league_one_scraping/static/js/787.9e9f4ffd.chunk.js",
+    "index.html": "/league_one_scraping/index.html",
+    "main.c89daf97.css.map": "/league_one_scraping/static/css/main.c89daf97.css.map",
+    "main.44873a43.js.map": "/league_one_scraping/static/js/main.44873a43.js.map",
+    "787.9e9f4ffd.chunk.js.map": "/league_one_scraping/static/js/787.9e9f4ffd.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c89daf97.css",
+    "static/js/main.44873a43.js"
+  ]
+}
