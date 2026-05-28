@@ -1,0 +1,210 @@
+[
+  {
+    "teamId": "jrlo-div1_1",
+    "teamName": "クボタスピアーズ船橋・東京ベイ",
+    "companyName": "クボタ",
+    "yahooTicker": "6326.T",
+    "stockEnabled": true,
+    "note": "親会社としてクボタを表示"
+  },
+  {
+    "teamId": "jrlo-div1_2",
+    "teamName": "コベルコ神戸スティーラーズ",
+    "companyName": "神戸製鋼所",
+    "yahooTicker": "5406.T",
+    "stockEnabled": true,
+    "note": "KOBELCOグループ"
+  },
+  {
+    "teamId": "jrlo-div1_3",
+    "teamName": "トヨタヴェルブリッツ",
+    "companyName": "トヨタ自動車",
+    "yahooTicker": "7203.T",
+    "stockEnabled": true,
+    "note": "親会社としてトヨタ自動車を表示"
+  },
+  {
+    "teamId": "jrlo-div1_4",
+    "teamName": "ブラックラムズ東京",
+    "companyName": "リコー",
+    "yahooTicker": "7752.T",
+    "stockEnabled": true,
+    "note": "親会社としてリコーを表示"
+  },
+  {
+    "teamId": "jrlo-div1_5",
+    "teamName": "三菱重工相模原ダイナボアーズ",
+    "companyName": "三菱重工業",
+    "yahooTicker": "7011.T",
+    "stockEnabled": true,
+    "note": "親会社として三菱重工業を表示"
+  },
+  {
+    "teamId": "jrlo-div1_6",
+    "teamName": "三重ホンダヒート",
+    "companyName": "本田技研工業",
+    "yahooTicker": "7267.T",
+    "stockEnabled": true,
+    "note": "親会社としてHondaを表示"
+  },
+  {
+    "teamId": "jrlo-div1_7",
+    "teamName": "埼玉パナソニックワイルドナイツ",
+    "companyName": "パナソニック ホールディングス",
+    "yahooTicker": "6752.T",
+    "stockEnabled": true,
+    "note": "親会社としてパナソニックHDを表示"
+  },
+  {
+    "teamId": "jrlo-div1_8",
+    "teamName": "東京サントリーサンゴリアス",
+    "companyName": "サントリーホールディングス",
+    "yahooTicker": "",
+    "stockEnabled": false,
+    "note": "サントリーホールディングスは非上場のため株価表示なし"
+  },
+  {
+    "teamId": "jrlo-div1_9",
+    "teamName": "東芝ブレイブルーパス東京",
+    "companyName": "東芝",
+    "yahooTicker": "",
+    "stockEnabled": false,
+    "note": "東芝は上場廃止済みのため株価表示なし"
+  },
+  {
+    "teamId": "jrlo-div1_10",
+    "teamName": "横浜キヤノンイーグルス",
+    "companyName": "キヤノン",
+    "yahooTicker": "7751.T",
+    "stockEnabled": true,
+    "note": "親会社としてキヤノンを表示"
+  },
+  {
+    "teamId": "jrlo-div1_11",
+    "teamName": "浦安D-Rocks",
+    "companyName": "日本電信電話",
+    "yahooTicker": "9432.T",
+    "stockEnabled": true,
+    "note": "NTTグループとして日本電信電話を表示"
+  },
+  {
+    "teamId": "jrlo-div1_12",
+    "teamName": "静岡ブルーレヴズ",
+    "companyName": "ヤマハ発動機",
+    "yahooTicker": "7272.T",
+    "stockEnabled": true,
+    "note": "前身チームの母体企業としてヤマハ発動機を表示"
+  },
+  {
+    "teamId": "jrlo-div2_1",
+    "teamName": "グリーンロケッツ東葛",
+    "companyName": "日本電気",
+    "yahooTicker": "6701.T",
+    "stockEnabled": true,
+    "note": "親会社としてNECを表示"
+  },
+  {
+    "teamId": "jrlo-div2_2",
+    "teamName": "レッドハリケーンズ大阪",
+    "companyName": "日本電信電話",
+    "yahooTicker": "9432.T",
+    "stockEnabled": true,
+    "note": "NTTグループとして日本電信電話を表示"
+  },
+  {
+    "teamId": "jrlo-div2_3",
+    "teamName": "九州電力キューデンヴォルテクス",
+    "companyName": "九州電力",
+    "yahooTicker": "9508.T",
+    "stockEnabled": true,
+    "note": "親会社として九州電力を表示"
+  },
+  {
+    "teamId": "jrlo-div2_4",
+    "teamName": "日本製鉄釜石シーウェイブス",
+    "companyName": "日本製鉄",
+    "yahooTicker": "5401.T",
+    "stockEnabled": true,
+    "note": "親会社として日本製鉄を表示"
+  },
+  {
+    "teamId": "jrlo-div2_5",
+    "teamName": "日野レッドドルフィンズ",
+    "companyName": "日野自動車",
+    "yahooTicker": "7205.T",
+    "stockEnabled": true,
+    "note": "親会社として日野自動車を表示"
+  },
+  {
+    "teamId": "jrlo-div2_6",
+    "teamName": "清水建設江東ブルーシャークス",
+    "companyName": "清水建設",
+    "yahooTicker": "1803.T",
+    "stockEnabled": true,
+    "note": "親会社として清水建設を表示"
+  },
+  {
+    "teamId": "jrlo-div2_7",
+    "teamName": "花園近鉄ライナーズ",
+    "companyName": "近鉄グループホールディングス",
+    "yahooTicker": "9041.T",
+    "stockEnabled": true,
+    "note": "近鉄グループとして近鉄GHDを表示"
+  },
+  {
+    "teamId": "jrlo-div2_8",
+    "teamName": "豊田自動織機シャトルズ愛知",
+    "companyName": "豊田自動織機",
+    "yahooTicker": "6201.T",
+    "stockEnabled": true,
+    "note": "親会社として豊田自動織機を表示"
+  },
+  {
+    "teamId": "jrlo-div3_1",
+    "teamName": "クリタウォーターガッシュ昭島",
+    "companyName": "栗田工業",
+    "yahooTicker": "6370.T",
+    "stockEnabled": true,
+    "note": "親会社として栗田工業を表示"
+  },
+  {
+    "teamId": "jrlo-div3_2",
+    "teamName": "マツダスカイアクティブズ広島",
+    "companyName": "マツダ",
+    "yahooTicker": "7261.T",
+    "stockEnabled": true,
+    "note": "親会社としてマツダを表示"
+  },
+  {
+    "teamId": "jrlo-div3_3",
+    "teamName": "ヤクルトレビンズ戸田",
+    "companyName": "ヤクルト本社",
+    "yahooTicker": "2267.T",
+    "stockEnabled": true,
+    "note": "親会社としてヤクルト本社を表示"
+  },
+  {
+    "teamId": "jrlo-div3_4",
+    "teamName": "ルリーロ福岡",
+    "companyName": "",
+    "yahooTicker": "",
+    "stockEnabled": false,
+    "note": "親会社または対応する上場tickerを未設定"
+  },
+  {
+    "teamId": "jrlo-div3_5",
+    "teamName": "中国電力レッドレグリオンズ",
+    "companyName": "中国電力",
+    "yahooTicker": "9504.T",
+    "stockEnabled": true,
+    "note": "親会社として中国電力を表示"
+  },
+  {
+    "teamId": "jrlo-div3_6",
+    "teamName": "狭山セコムラガッツ",
+    "companyName": "セコム",
+    "yahooTicker": "9735.T",
+    "stockEnabled": true,
+    "note": "親会社としてセコムを表示"
+  }
+]

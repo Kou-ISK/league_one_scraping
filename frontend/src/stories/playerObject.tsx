@@ -1,8 +1,6 @@
 import React from 'react';
 import { Player } from '../types/player';
-import Typography from '@mui/material/Typography';
 import { TEAM_MASTER_DATA, LEAGUE_ONE_ROOT_URL } from '../variables';
-import { Paper } from '@mui/material';
 
 interface PlayerObjectProps {
   player: Player;
@@ -10,9 +8,9 @@ interface PlayerObjectProps {
 export const PlayerObject = (props: PlayerObjectProps) => {
   const player = props.player;
   return (
-    <Paper sx={{ margin: '5px' }}>
-      <Typography sx={{ padding: '10px' }}>
-        {player.number}.{' '}
+    <div className='player-card'>
+      <span className='player-number'>{player.number}</span>
+      <span className='player-name'>
         <a
           href={
             LEAGUE_ONE_ROOT_URL +
@@ -24,7 +22,7 @@ export const PlayerObject = (props: PlayerObjectProps) => {
         >
           {player.name}
         </a>
-      </Typography>
-    </Paper>
+      </span>
+    </div>
   );
 };

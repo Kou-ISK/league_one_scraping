@@ -1,13 +1,16 @@
 import React, { Dispatch, useState } from 'react';
 
-import './page.css';
 import { GameInfoTable } from './gameInfoTable';
 import { Game } from '../types/game';
 import { YearSelectionTabs } from './yearSelectionTabs';
 import { RankingPage } from './rankingPage';
-import { Button } from './Button';
 import { SpectatorPage } from './spectatorPage';
 import { DATA_SET } from '../variables';
+import { PageHero } from '../components/molecules/PageHero';
+import { SectionPanel } from '../components/molecules/SectionPanel';
+import { SegmentedControl } from '../components/molecules/SegmentedControl';
+import { StatGrid } from '../components/molecules/StatGrid';
+import { PageShell } from '../components/templates/PageShell';
 
 interface PageProps {
   selectedGameList: Game[];
@@ -26,37 +29,56 @@ export const Page = (props: PageProps) => {
     props.setSelectedGameList(DATA_SET[value]);
   };
 
+  const totalSpectators = props.selectedGameList.reduce(
+    (sum, game) => sum + Number(String(game.spectator).replace(/,/g, '') || 0),
+    0
+  );
+
   return (
-    <div className='page'>
-      <YearSelectionTabs handleChange={handleChange} year={year} />
-      <Button
-        label='表を表示'
-        primary={displayMode === 'Table'}
-        onClick={() => setDisplayMode('Table')}
-      />
-      <Button
-        label='ランキングを表示'
-        primary={displayMode === 'Ranking'}
-        onClick={() => setDisplayMode('Ranking')}
-      />
-      <Button
-        label='観客動員数情報を表示'
-        primary={displayMode === 'Spectator'}
-        onClick={() => setDisplayMode('Spectator')}
+    <PageShell wide className='legacy-page'>
+      <PageHero
+        eyebrow='ARCHIVE'
+        title='過去試合データ'
+        description='過去シーズンの試合一覧、スコアランキング、観客動員数を確認できます。'
       />
 
-      {displayMode === 'Table' && (
-        <>
-          <h1>{year}シーズン</h1>
+      <section className='legacy-controls'>
+        <YearSelectionTabs handleChange={handleChange} year={year} />
+        <SegmentedControl
+          ariaLabel='表示切替'
+          value={displayMode}
+          onChange={setDisplayMode}
+          options={[
+            { label: '試合一覧', value: 'Table' },
+            { label: 'ランキング', value: 'Ranking' },
+            { label: '観客動員', value: 'Spectator' },
+          ]}
+        />
+      </section>
+
+      <StatGrid
+        compact
+        items={[
+          { label: '試合数', value: props.selectedGameList.length },
+          {
+            label: '総観客動員',
+            value: totalSpectators.toLocaleString(),
+          },
+          { label: '表示シーズン', value: `${year}` },
+        ]}
+      />
+
+      {displayMode === 'Table' ? (
+        <SectionPanel title={`${year}シーズン 試合一覧`} meta={`${props.selectedGameList.length} matches`}>
           <GameInfoTable gameList={props.selectedGameList} />
-        </>
-      )}
-      {displayMode === 'Ranking' && (
+        </SectionPanel>
+      ) : null}
+      {displayMode === 'Ranking' ? (
         <RankingPage year={year} selectedGameList={props.selectedGameList} />
-      )}
-      {displayMode === 'Spectator' && (
+      ) : null}
+      {displayMode === 'Spectator' ? (
         <SpectatorPage year={year} selectedGameList={props.selectedGameList} />
-      )}
-    </div>
+      ) : null}
+    </PageShell>
   );
 };

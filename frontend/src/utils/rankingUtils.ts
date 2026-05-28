@@ -197,7 +197,6 @@ export const getPhotoUrl = (scorer: string) => {
     const player = team.player_list.find(
       (player) => player.name === scorer || player.team_name === scorer
     );
-    console.log(player);
     if (player) {
       // 選手が見つかった場合は写真を設定
       playerPhoto = player.photo;

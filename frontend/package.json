@@ -2,46 +2,33 @@
   "name": "frontend",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://Kou-ISK.github.io/league_one_scraping/",
   "dependencies": {
     "@emotion/react": "^11.11.3",
     "@emotion/styled": "^11.11.0",
     "@mui/icons-material": "^5.15.5",
     "@mui/material": "^5.15.5",
     "@mui/x-data-grid": "^6.19.1",
-    "@testing-library/jest-dom": "^5.17.0",
-    "@testing-library/react": "^13.4.0",
-    "@testing-library/user-event": "^13.5.0",
-    "@types/jest": "^27.5.2",
     "@types/node": "^16.18.73",
     "@types/react": "^18.2.48",
     "@types/react-dom": "^18.2.18",
+    "next": "^15.5.18",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-modal": "^3.16.1",
-    "react-router-dom": "^6.21.3",
-    "react-scripts": "5.0.1",
     "recharts": "^2.11.0",
-    "typescript": "^4.9.5",
-    "web-vitals": "^2.1.4"
+    "typescript": "^4.9.5"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
+    "dev": "next dev",
+    "start": "next dev",
+    "generate-data": "node scripts/generateLeagueOneData.js",
+    "build": "npm run generate-data && next build",
+    "test": "tsc --noEmit",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "rm": "rm -rf ../docs",
-    "mv": "mv build ../docs",
+    "mv": "mv out ../docs",
     "deploy-prepare": "npm run rm && npm run build && npm run mv"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest",
-      "plugin:storybook/recommended"
-    ]
   },
   "browserslist": {
     "production": [

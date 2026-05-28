@@ -1,9 +1,31 @@
 div.pie-container {
+  display: grid;
+  gap: 14px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  overflow-x: auto;
+  padding-top: 14px;
+}
+
+.player {
+  background: #ffffff;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 12px;
+}
+
+.conversion-player-heading {
+  align-items: center;
   display: flex;
-  overflow: scroll;
+  gap: 8px;
   justify-content: center;
 }
 
+.conversion-team-logo {
+  height: 30px;
+  object-fit: contain;
+  width: 30px;
+}
+
 h1.player-name {
-  font-size: 14px;
+  font-size: 0.88rem;
 }

@@ -1,30 +1,63 @@
-.division-title {
-  position: sticky;
-  left: 0;
-  top: 0;
+.spectator-page {
+  display: grid;
+  gap: 18px;
+}
+
+.table-scroll {
+  overflow-x: auto;
 }
 
 .sticky-table {
-  overflow: auto;
-  border-collapse: collapse;
+  border-collapse: separate;
+  border-spacing: 0;
+  min-width: 980px;
   width: 100%;
 }
 
 .sticky-table th,
 .sticky-table td {
-  border: 1px solid #ddd;
-  padding: 8px;
+  border-bottom: 1px solid var(--line);
+  font-size: 0.86rem;
+  padding: 10px 12px;
   text-align: center;
+  white-space: nowrap;
+}
+
+.sticky-table th {
+  background: #eef6f5;
+  color: var(--muted);
+  font-size: 0.76rem;
+  font-weight: 900;
 }
 
 .sticky-table th.sticky-col,
 .sticky-table td.sticky-col {
-  position: sticky;
+  background: #ffffff;
+  box-shadow: 8px 0 16px rgba(24, 33, 36, 0.06);
   left: 0;
-  background-color: white; /* 左側の列の背景色を指定 */
-  z-index: 1; /* 表のセルよりも上に表示 */
+  min-width: 280px;
+  position: sticky;
+  text-align: left;
+  z-index: 2;
 }
 
-.division-table-container {
-  overflow-x: auto; /* テーブルが横スクロールできるように */
+.team-cell {
+  align-items: center;
+  display: flex;
+  gap: 9px;
+  min-width: 0;
+}
+
+.team-cell p {
+  font-size: 0.86rem;
+  margin: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.team-cell-logo {
+  flex: 0 0 30px;
+  height: 30px;
+  object-fit: contain;
+  width: 30px;
 }

@@ -51,7 +51,7 @@ export const PlayerObjectList = (props: PlayerObjectListProps) => {
   };
 
   return (
-    <>
+    <div className='player-list'>
       {getParticipatedPlayerList().map((value) => {
         return (
           <PlayerReplacementObject
@@ -61,7 +61,7 @@ export const PlayerObjectList = (props: PlayerObjectListProps) => {
         );
       })}
       {getNotParticipatedOrReReplacedPlayerList().length > 0 && (
-        <p>未出場/再入替</p>
+        <p className='lineup-subheading'>未出場/再入替</p>
       )}
       {getNotParticipatedOrReReplacedPlayerList().map((value) => {
         return (
@@ -71,6 +71,6 @@ export const PlayerObjectList = (props: PlayerObjectListProps) => {
           />
         );
       })}
-    </>
+    </div>
   );
 };

@@ -1,7 +1,29 @@
+.ranking-page {
+  display: grid;
+  gap: 18px;
+}
+
+.ranking-page > h2 {
+  font-size: 1.35rem;
+  margin-top: 8px;
+}
+
+.ranking-grid {
+  display: grid;
+  gap: 14px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
 .ranking-for-division {
-  width: 30%;
-  margin: 5px;
-  background-color: white;
-  border: 10px;
-  border-radius: 1%;
+  background: #f8faf8;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  min-width: 0;
+  padding: 14px;
+}
+
+.ranking-for-division h3 {
+  border-bottom: 1px solid var(--line);
+  margin-bottom: 10px;
+  padding-bottom: 8px;
 }

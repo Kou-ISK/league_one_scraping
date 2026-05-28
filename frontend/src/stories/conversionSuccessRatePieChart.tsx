@@ -1,6 +1,5 @@
 import { Cell, Legend, Pie, PieChart } from 'recharts';
 import { ScoreInfo } from '../types/scoreInfo';
-import './conversionSuccessRatePieChart.css';
 import { getPhotoUrl } from '../utils/rankingUtils';
 import { LEAGUE_ONE_ROOT_URL, TEAM_MASTER_DATA } from '../variables';
 
@@ -36,11 +35,11 @@ export const ConversionSuccessRatePieChart = (
 
         return (
           <div key={player} className='player'>
-            <div style={{ display: 'flex', justifyContent: 'center' }}>
+            <div className='conversion-player-heading'>
               <img
                 src={getPhotoUrl(player as string).teamLogo}
                 alt=''
-                height='30px'
+                className='conversion-team-logo'
               />
               <h1 className='player-name'>
                 <a

@@ -10,6 +10,11 @@
 
 # production
 /build
+/out
+/.next
+
+# TypeScript
+*.tsbuildinfo
 
 # misc
 .DS_Store

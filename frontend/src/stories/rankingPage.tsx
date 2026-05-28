@@ -7,8 +7,8 @@ import {
   GetTop10TryScorerByPlayerName,
   GetTotalTeamScore,
 } from '../utils/rankingUtils';
-import './rankingPage.css';
 import { DIVISION_LIST } from '../variables';
+import { SectionPanel } from '../components/molecules/SectionPanel';
 
 interface RankingPageProps {
   year: number;
@@ -45,60 +45,29 @@ export const RankingPage = (props: RankingPageProps) => {
     top10SuccessRateGoalKickers[div] = top10SuccessRateGoalKicker;
   });
 
-  return (
-    <>
-      <h1>{props.year}シーズン 個人ランキング</h1>
-      <div>
-        <h2>得点</h2>
-        <div style={{ display: 'flex', justifyContent: 'center' }}>
-          {DIVISION_LIST.map((division: number) => (
-            <div className='ranking-for-division'>
-              <h3>Div.{division}</h3>
-              <ScoreRanking rankingTop10={top10Scorers[division]} />
-            </div>
-          ))}
-        </div>
-        <h2>トライ数</h2>
-        <div style={{ display: 'flex', justifyContent: 'center' }}>
-          {DIVISION_LIST.map((division: number) => (
-            <div className='ranking-for-division'>
-              <h3>Div.{division}</h3>
-              <ScoreRanking rankingTop10={top10TryScorers[division]} />
-            </div>
-          ))}
-        </div>
-      </div>
-      <h2>ゴール成功率(10本以上試行)</h2>
-      <div style={{ display: 'flex', justifyContent: 'center' }}>
+  const renderRankingGroup = (title: string, rankings: { [key: number]: any }) => (
+    <SectionPanel title={title}>
+      <div className='ranking-grid'>
         {DIVISION_LIST.map((division: number) => (
-          <div className='ranking-for-division'>
+          <div className='ranking-for-division' key={`${title}-${division}`}>
             <h3>Div.{division}</h3>
-            <ScoreRanking
-              rankingTop10={top10SuccessRateGoalKickers[division]}
-            />
+            <ScoreRanking rankingTop10={rankings[division]} />
           </div>
         ))}
       </div>
+    </SectionPanel>
+  );
 
-      <h1>{props.year}シーズン チームランキング</h1>
-      <h2>総得点</h2>
-      <div style={{ display: 'flex', justifyContent: 'center' }}>
-        {DIVISION_LIST.map((division: number) => (
-          <div className='ranking-for-division'>
-            <h3>Div.{division}</h3>
-            <ScoreRanking rankingTop10={scoreForTheTeamList[division]} />
-          </div>
-        ))}
-      </div>
-      <h2>総失点</h2>
-      <div style={{ display: 'flex', justifyContent: 'center' }}>
-        {DIVISION_LIST.map((division: number) => (
-          <div className='ranking-for-division'>
-            <h3>Div.{division}</h3>
-            <ScoreRanking rankingTop10={scoreAgainstTheTeamList[division]} />
-          </div>
-        ))}
-      </div>
-    </>
+  return (
+    <div className='ranking-page'>
+      <h2>{props.year}シーズン 個人ランキング</h2>
+      {renderRankingGroup('得点', top10Scorers)}
+      {renderRankingGroup('トライ数', top10TryScorers)}
+      {renderRankingGroup('ゴール成功率 10本以上試行', top10SuccessRateGoalKickers)}
+
+      <h2>{props.year}シーズン チームランキング</h2>
+      {renderRankingGroup('総得点', scoreForTheTeamList)}
+      {renderRankingGroup('総失点', scoreAgainstTheTeamList)}
+    </div>
   );
 };

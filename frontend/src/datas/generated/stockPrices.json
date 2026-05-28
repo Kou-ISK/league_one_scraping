@@ -1,0 +1,3007 @@
+{
+  "jrlo-div1_1": {
+    "teamId": "jrlo-div1_1",
+    "ticker": "6326.T",
+    "status": "ok",
+    "source": "yahoo-chart-api",
+    "note": "",
+    "seasonReturns": [
+      {
+        "seasonId": "2022",
+        "startDate": "2022-01-01",
+        "endDate": "2022-05-31",
+        "startClose": 2553.5,
+        "endClose": 2374,
+        "averageClose": 2282.55,
+        "returnPct": -7.03
+      },
+      {
+        "seasonId": "2022-23",
+        "startDate": "2022-12-01",
+        "endDate": "2023-05-31",
+        "startClose": 2053.5,
+        "endClose": 1927,
+        "averageClose": 1969.57,
+        "returnPct": -6.16
+      },
+      {
+        "seasonId": "2023-24",
+        "startDate": "2023-12-01",
+        "endDate": "2024-05-31",
+        "startClose": 2117,
+        "endClose": 2221,
+        "averageClose": 2267.95,
+        "returnPct": 4.91
+      },
+      {
+        "seasonId": "2025-26",
+        "startDate": "2025-12-01",
+        "endDate": "2026-06-30",
+        "startClose": 2279,
+        "endClose": 2801.5,
+        "averageClose": 2582.22,
+        "returnPct": 22.93
+      }
+    ],
+    "prices": [
+      {
+        "date": "2025-12-13",
+        "close": 2270.5,
+        "changePct": -11.05
+      },
+      {
+        "date": "2025-12-20",
+        "close": 2286.5,
+        "changePct": -10.42
+      },
+      {
+        "date": "2025-12-27",
+        "close": 2219.5,
+        "changePct": -13.05
+      },
+      {
+        "date": "2026-01-11",
+        "close": 2371,
+        "changePct": -7.11
+      },
+      {
+        "date": "2026-01-17",
+        "close": 2517,
+        "changePct": -1.39
+      },
+      {
+        "date": "2026-01-24",
+        "close": 2373.5,
+        "changePct": -7.01
+      },
+      {
+        "date": "2026-02-07",
+        "close": 2659,
+        "changePct": 4.17
+      },
+      {
+        "date": "2026-02-14",
+        "close": 3137,
+        "changePct": 22.9
+      },
+      {
+        "date": "2026-02-21",
+        "close": 3046,
+        "changePct": 19.33
+      },
+      {
+        "date": "2026-03-01",
+        "close": 3176,
+        "changePct": 24.43
+      },
+      {
+        "date": "2026-03-14",
+        "close": 2682.5,
+        "changePct": 5.09
+      },
+      {
+        "date": "2026-03-21",
+        "close": 2580.5,
+        "changePct": 1.1
+      },
+      {
+        "date": "2026-03-28",
+        "close": 2583,
+        "changePct": 1.19
+      },
+      {
+        "date": "2026-04-04",
+        "close": 2520,
+        "changePct": -1.27
+      },
+      {
+        "date": "2026-04-18",
+        "close": 2571,
+        "changePct": 0.72
+      },
+      {
+        "date": "2026-04-25",
+        "close": 2559,
+        "changePct": 0.25
+      },
+      {
+        "date": "2026-05-03",
+        "close": 2588.5,
+        "changePct": 1.41
+      },
+      {
+        "date": "2026-05-10",
+        "close": 2814,
+        "changePct": 10.24
+      },
+      {
+        "date": "2026-05-24",
+        "close": 2700,
+        "changePct": 5.78
+      },
+      {
+        "date": "2026-05-31",
+        "close": 2801.5,
+        "changePct": 9.76
+      }
+    ]
+  },
+  "jrlo-div1_2": {
+    "teamId": "jrlo-div1_2",
+    "ticker": "5406.T",
+    "status": "ok",
+    "source": "yahoo-chart-api",
+    "note": "",
+    "seasonReturns": [
+      {
+        "seasonId": "2022",
+        "startDate": "2022-01-01",
+        "endDate": "2022-05-31",
+        "startClose": 577,
+        "endClose": 680,
+        "averageClose": 594.73,
+        "returnPct": 17.85
+      },
+      {
+        "seasonId": "2022-23",
+        "startDate": "2022-12-01",
+        "endDate": "2023-05-31",
+        "startClose": 622,
+        "endClose": 1103,
+        "averageClose": 872.63,
+        "returnPct": 77.33
+      },
+      {
+        "seasonId": "2023-24",
+        "startDate": "2023-12-01",
+        "endDate": "2024-05-31",
+        "startClose": 1754,
+        "endClose": 2039.5,
+        "averageClose": 1939.14,
+        "returnPct": 16.28
+      },
+      {
+        "seasonId": "2025-26",
+        "startDate": "2025-12-01",
+        "endDate": "2026-06-30",
+        "startClose": 1916.5,
+        "endClose": 1956,
+        "averageClose": 2060.53,
+        "returnPct": 2.06
+      }
+    ],
+    "prices": [
+      {
+        "date": "2025-12-13",
+        "close": 2055,
+        "changePct": 258.01
+      },
+      {
+        "date": "2025-12-21",
+        "close": 2018,
+        "changePct": 251.57
+      },
+      {
+        "date": "2025-12-27",
+        "close": 2052,
+        "changePct": 257.49
+      },
+      {
+        "date": "2026-01-10",
+        "close": 2163.5,
+        "changePct": 276.92
+      },
+      {
+        "date": "2026-01-17",
+        "close": 2294,
+        "changePct": 299.65
+      },
+      {
+        "date": "2026-01-24",
+        "close": 2318,
+        "changePct": 303.83
+      },
+      {
+        "date": "2026-02-07",
+        "close": 2321.5,
+        "changePct": 304.44
+      },
+      {
+        "date": "2026-02-15",
+        "close": 2236.5,
+        "changePct": 289.63
+      },
+      {
+        "date": "2026-02-21",
+        "close": 2287,
+        "changePct": 298.43
+      },
+      {
+        "date": "2026-02-28",
+        "close": 2275,
+        "changePct": 296.34
+      },
+      {
+        "date": "2026-03-14",
+        "close": 2029,
+        "changePct": 253.48
+      },
+      {
+        "date": "2026-03-20",
+        "close": 2006,
+        "changePct": 249.48
+      },
+      {
+        "date": "2026-03-28",
+        "close": 1965,
+        "changePct": 242.33
+      },
+      {
+        "date": "2026-04-05",
+        "close": 1943.5,
+        "changePct": 238.59
+      },
+      {
+        "date": "2026-04-18",
+        "close": 1931.5,
+        "changePct": 236.5
+      },
+      {
+        "date": "2026-04-25",
+        "close": 1853.5,
+        "changePct": 222.91
+      },
+      {
+        "date": "2026-05-02",
+        "close": 1941,
+        "changePct": 238.15
+      },
+      {
+        "date": "2026-05-10",
+        "close": 1937,
+        "changePct": 237.46
+      },
+      {
+        "date": "2026-05-30",
+        "close": 1956,
+        "changePct": 240.77
+      }
+    ]
+  },
+  "jrlo-div1_3": {
+    "teamId": "jrlo-div1_3",
+    "ticker": "7203.T",
+    "status": "ok",
+    "source": "yahoo-chart-api",
+    "note": "",
+    "seasonReturns": [
+      {
+        "seasonId": "2022",
+        "startDate": "2022-01-01",
+        "endDate": "2022-05-31",
+        "startClose": 2105.5,
+        "endClose": 2122.5,
+        "averageClose": 2160.55,
+        "returnPct": 0.81
+      },
+      {
+        "seasonId": "2022-23",
+        "startDate": "2022-12-01",
+        "endDate": "2023-05-31",
+        "startClose": 1998.5,
+        "endClose": 1908.5,
+        "averageClose": 1873.96,
+        "returnPct": -4.5
+      },
+      {
+        "seasonId": "2023-24",
+        "startDate": "2023-12-01",
+        "endDate": "2024-05-31",
+        "startClose": 2833,
+        "endClose": 3401,
+        "averageClose": 3274.84,
+        "returnPct": 20.05
+      },
+      {
+        "seasonId": "2025-26",
+        "startDate": "2025-12-01",
+        "endDate": "2026-06-30",
+        "startClose": 3082,
+        "endClose": 3031,
+        "averageClose": 3352.37,
+        "returnPct": -1.65
+      }
+    ],
+    "prices": [
+      {
+        "date": "2025-12-13",
+        "close": 3260,
+        "changePct": 55.5
+      },
+      {
+        "date": "2025-12-20",
+        "close": 3424,
+        "changePct": 63.32
+      },
+      {
+        "date": "2025-12-27",
+        "close": 3380,
+        "changePct": 61.22
+      },
+      {
+        "date": "2026-01-10",
+        "close": 3388,
+        "changePct": 61.6
+      },
+      {
+        "date": "2026-01-17",
+        "close": 3670,
+        "changePct": 75.05
+      },
+      {
+        "date": "2026-01-25",
+        "close": 3624,
+        "changePct": 72.86
+      },
+      {
+        "date": "2026-02-07",
+        "close": 3780,
+        "changePct": 80.3
+      },
+      {
+        "date": "2026-02-14",
+        "close": 3774,
+        "changePct": 80.01
+      },
+      {
+        "date": "2026-02-21",
+        "close": 3635,
+        "changePct": 73.38
+      },
+      {
+        "date": "2026-03-01",
+        "close": 3825,
+        "changePct": 82.45
+      },
+      {
+        "date": "2026-03-15",
+        "close": 3370,
+        "changePct": 60.74
+      },
+      {
+        "date": "2026-03-22",
+        "close": 3325,
+        "changePct": 58.6
+      },
+      {
+        "date": "2026-03-28",
+        "close": 3408,
+        "changePct": 62.56
+      },
+      {
+        "date": "2026-04-04",
+        "close": 3255,
+        "changePct": 55.26
+      },
+      {
+        "date": "2026-04-18",
+        "close": 3343,
+        "changePct": 59.46
+      },
+      {
+        "date": "2026-04-26",
+        "close": 3067,
+        "changePct": 46.29
+      },
+      {
+        "date": "2026-05-02",
+        "close": 3000,
+        "changePct": 43.1
+      },
+      {
+        "date": "2026-05-09",
+        "close": 2913,
+        "changePct": 38.95
+      }
+    ]
+  },
+  "jrlo-div1_4": {
+    "teamId": "jrlo-div1_4",
+    "ticker": "7752.T",
+    "status": "ok",
+    "source": "yahoo-chart-api",
+    "note": "",
+    "seasonReturns": [
+      {
+        "seasonId": "2022",
+        "startDate": "2022-01-01",
+        "endDate": "2022-05-31",
+        "startClose": 1071,
+        "endClose": 1084,
+        "averageClose": 1012.13,
+        "returnPct": 1.21
+      },
+      {
+        "seasonId": "2022-23",
+        "startDate": "2022-12-01",
+        "endDate": "2023-05-31",
+        "startClose": 1071,
+        "endClose": 1166,
+        "averageClose": 1033.52,
+        "returnPct": 8.87
+      },
+      {
+        "seasonId": "2023-24",
+        "startDate": "2023-12-01",
+        "endDate": "2024-05-31",
+        "startClose": 1191.5,
+        "endClose": 1403.5,
+        "averageClose": 1252.29,
+        "returnPct": 17.79
+      },
+      {
+        "seasonId": "2025-26",
+        "startDate": "2025-12-01",
+        "endDate": "2026-06-30",
+        "startClose": 1365.5,
+        "endClose": 1447.5,
+        "averageClose": 1394.26,
+        "returnPct": 6.01
+      }
+    ],
+    "prices": [
+      {
+        "date": "2025-12-13",
+        "close": 1384,
+        "changePct": 28.39
+      },
+      {
+        "date": "2025-12-20",
+        "close": 1365,
+        "changePct": 26.62
+      },
+      {
+        "date": "2025-12-27",
+        "close": 1366.5,
+        "changePct": 26.76
+      },
+      {
+        "date": "2026-01-10",
+        "close": 1418.5,
+        "changePct": 31.59
+      },
+      {
+        "date": "2026-01-17",
+        "close": 1482,
+        "changePct": 37.48
+      },
+      {
+        "date": "2026-01-24",
+        "close": 1402,
+        "changePct": 30.06
+      },
+      {
+        "date": "2026-02-07",
+        "close": 1502.5,
+        "changePct": 39.38
+      },
+      {
+        "date": "2026-02-14",
+        "close": 1464,
+        "changePct": 35.81
+      },
+      {
+        "date": "2026-02-21",
+        "close": 1449,
+        "changePct": 34.42
+      },
+      {
+        "date": "2026-02-28",
+        "close": 1470,
+        "changePct": 36.36
+      },
+      {
+        "date": "2026-03-14",
+        "close": 1347.5,
+        "changePct": 25
+      },
+      {
+        "date": "2026-03-21",
+        "close": 1358.5,
+        "changePct": 26.02
+      },
+      {
+        "date": "2026-03-29",
+        "close": 1369,
+        "changePct": 26.99
+      },
+      {
+        "date": "2026-04-05",
+        "close": 1355,
+        "changePct": 25.7
+      },
+      {
+        "date": "2026-04-17",
+        "close": 1406,
+        "changePct": 30.43
+      },
+      {
+        "date": "2026-04-26",
+        "close": 1297,
+        "changePct": 20.32
+      },
+      {
+        "date": "2026-05-03",
+        "close": 1300.5,
+        "changePct": 20.64
+      },
+      {
+        "date": "2026-05-10",
+        "close": 1342,
+        "changePct": 24.49
+      },
+      {
+        "date": "2026-05-23",
+        "close": 1457,
+        "changePct": 35.16
+      }
+    ]
+  },
+  "jrlo-div1_5": {
+    "teamId": "jrlo-div1_5",
+    "ticker": "7011.T",
+    "status": "ok",
+    "source": "yahoo-chart-api",
+    "note": "",
+    "seasonReturns": [
+      {
+        "seasonId": "2022",
+        "startDate": "2022-01-01",
+        "endDate": "2022-05-31",
+        "startClose": 265.9,
+        "endClose": 489,
+        "averageClose": 379.79,
+        "returnPct": 83.9
+      },
+      {
+        "seasonId": "2022-23",
+        "startDate": "2022-12-01",
+        "endDate": "2023-05-31",
+        "startClose": 532.9,
+        "endClose": 590.6,
+        "averageClose": 513.08,
+        "returnPct": 10.83
+      },
+      {
+        "seasonId": "2023-24",
+        "startDate": "2023-12-01",
+        "endDate": "2024-05-31",
+        "startClose": 842.4,
+        "endClose": 1368,
+        "averageClose": 1136.07,
+        "returnPct": 62.39
+      },
+      {
+        "seasonId": "2025-26",
+        "startDate": "2025-12-01",
+        "endDate": "2026-06-30",
+        "startClose": 3902,
+        "endClose": 3888,
+        "averageClose": 4479.27,
+        "returnPct": -0.36
+      }
+    ],
+    "prices": [
+      {
+        "date": "2025-12-13",
+        "close": 4157,
+        "changePct": 1460.44
+      },
+      {
+        "date": "2025-12-21",
+        "close": 3882,
+        "changePct": 1357.21
+      },
+      {
+        "date": "2025-12-28",
+        "close": 3851,
+        "changePct": 1345.57
+      },
+      {
+        "date": "2026-01-10",
+        "close": 4267,
+        "changePct": 1501.73
+      },
+      {
+        "date": "2026-01-17",
+        "close": 4660,
+        "changePct": 1649.25
+      },
+      {
+        "date": "2026-01-24",
+        "close": 4601,
+        "changePct": 1627.1
+      },
+      {
+        "date": "2026-02-14",
+        "close": 5031,
+        "changePct": 1788.51
+      },
+      {
+        "date": "2026-02-21",
+        "close": 4965,
+        "changePct": 1763.74
+      },
+      {
+        "date": "2026-03-01",
+        "close": 5014,
+        "changePct": 1782.13
+      },
+      {
+        "date": "2026-03-07",
+        "close": 4761,
+        "changePct": 1687.16
+      },
+      {
+        "date": "2026-03-14",
+        "close": 4745,
+        "changePct": 1681.16
+      },
+      {
+        "date": "2026-03-21",
+        "close": 4848,
+        "changePct": 1719.82
+      },
+      {
+        "date": "2026-03-29",
+        "close": 4577,
+        "changePct": 1618.09
+      },
+      {
+        "date": "2026-04-04",
+        "close": 4803,
+        "changePct": 1702.93
+      },
+      {
+        "date": "2026-04-18",
+        "close": 4371,
+        "changePct": 1540.77
+      },
+      {
+        "date": "2026-04-25",
+        "close": 4738,
+        "changePct": 1678.53
+      },
+      {
+        "date": "2026-05-03",
+        "close": 4586,
+        "changePct": 1621.47
+      },
+      {
+        "date": "2026-05-10",
+        "close": 4510,
+        "changePct": 1592.94
+      },
+      {
+        "date": "2026-05-23",
+        "close": 3969,
+        "changePct": 1389.86
+      },
+      {
+        "date": "2026-05-30",
+        "close": 3888,
+        "changePct": 1359.46
+      }
+    ]
+  },
+  "jrlo-div1_6": {
+    "teamId": "jrlo-div1_6",
+    "ticker": "7267.T",
+    "status": "ok",
+    "source": "yahoo-chart-api",
+    "note": "",
+    "seasonReturns": [
+      {
+        "seasonId": "2022",
+        "startDate": "2022-01-01",
+        "endDate": "2022-05-31",
+        "startClose": 1076.67,
+        "endClose": 1062.33,
+        "averageClose": 1122.41,
+        "returnPct": -1.33
+      },
+      {
+        "seasonId": "2022-23",
+        "startDate": "2022-12-01",
+        "endDate": "2023-05-31",
+        "startClose": 1111.33,
+        "endClose": 1335,
+        "averageClose": 1137.89,
+        "returnPct": 20.13
+      },
+      {
+        "seasonId": "2023-24",
+        "startDate": "2023-12-01",
+        "endDate": "2024-05-31",
+        "startClose": 1529.5,
+        "endClose": 1769.5,
+        "averageClose": 1693.5,
+        "returnPct": 15.69
+      },
+      {
+        "seasonId": "2025-26",
+        "startDate": "2025-12-01",
+        "endDate": "2026-06-30",
+        "startClose": 1535,
+        "endClose": 1429.5,
+        "averageClose": 1455.56,
+        "returnPct": -6.87
+      }
+    ],
+    "prices": [
+      {
+        "date": "2025-12-13",
+        "close": 1600,
+        "changePct": 50.75
+      },
+      {
+        "date": "2025-12-21",
+        "close": 1557,
+        "changePct": 46.7
+      },
+      {
+        "date": "2025-12-27",
+        "close": 1540.5,
+        "changePct": 45.15
+      },
+      {
+        "date": "2026-01-11",
+        "close": 1572,
+        "changePct": 48.12
+      },
+      {
+        "date": "2026-01-17",
+        "close": 1635.5,
+        "changePct": 54.1
+      },
+      {
+        "date": "2026-01-24",
+        "close": 1616,
+        "changePct": 52.26
+      },
+      {
+        "date": "2026-02-07",
+        "close": 1692,
+        "changePct": 59.42
+      },
+      {
+        "date": "2026-02-14",
+        "close": 1601,
+        "changePct": 50.85
+      },
+      {
+        "date": "2026-02-22",
+        "close": 1543,
+        "changePct": 45.38
+      },
+      {
+        "date": "2026-02-28",
+        "close": 1584.5,
+        "changePct": 49.29
+      },
+      {
+        "date": "2026-03-14",
+        "close": 1368,
+        "changePct": 28.89
+      },
+      {
+        "date": "2026-03-22",
+        "close": 1302,
+        "changePct": 22.68
+      },
+      {
+        "date": "2026-03-29",
+        "close": 1340,
+        "changePct": 26.26
+      },
+      {
+        "date": "2026-04-04",
+        "close": 1269,
+        "changePct": 19.57
+      },
+      {
+        "date": "2026-04-17",
+        "close": 1300.5,
+        "changePct": 22.53
+      },
+      {
+        "date": "2026-04-25",
+        "close": 1296.5,
+        "changePct": 22.16
+      },
+      {
+        "date": "2026-05-02",
+        "close": 1262.5,
+        "changePct": 18.95
+      },
+      {
+        "date": "2026-05-09",
+        "close": 1269,
+        "changePct": 19.57
+      }
+    ]
+  },
+  "jrlo-div1_7": {
+    "teamId": "jrlo-div1_7",
+    "ticker": "6752.T",
+    "status": "ok",
+    "source": "yahoo-chart-api",
+    "note": "",
+    "seasonReturns": [
+      {
+        "seasonId": "2022",
+        "startDate": "2022-01-01",
+        "endDate": "2022-05-31",
+        "startClose": 1265,
+        "endClose": 1184,
+        "averageClose": 1188.11,
+        "returnPct": -6.4
+      },
+      {
+        "seasonId": "2022-23",
+        "startDate": "2022-12-01",
+        "endDate": "2023-05-31",
+        "startClose": 1280,
+        "endClose": 1460.5,
+        "averageClose": 1224.36,
+        "returnPct": 14.1
+      },
+      {
+        "seasonId": "2023-24",
+        "startDate": "2023-12-01",
+        "endDate": "2024-05-31",
+        "startClose": 1508.5,
+        "endClose": 1383.5,
+        "averageClose": 1399.79,
+        "returnPct": -8.29
+      },
+      {
+        "seasonId": "2025-26",
+        "startDate": "2025-12-01",
+        "endDate": "2026-06-30",
+        "startClose": 1896.5,
+        "endClose": 3524,
+        "averageClose": 2554.72,
+        "returnPct": 85.82
+      }
+    ],
+    "prices": [
+      {
+        "date": "2025-12-14",
+        "close": 2175,
+        "changePct": 74.42
+      },
+      {
+        "date": "2025-12-21",
+        "close": 1942.5,
+        "changePct": 55.77
+      },
+      {
+        "date": "2025-12-28",
+        "close": 2092,
+        "changePct": 67.76
+      },
+      {
+        "date": "2026-01-10",
+        "close": 2040,
+        "changePct": 63.59
+      },
+      {
+        "date": "2026-01-17",
+        "close": 2240.5,
+        "changePct": 79.67
+      },
+      {
+        "date": "2026-01-24",
+        "close": 2295,
+        "changePct": 84.04
+      },
+      {
+        "date": "2026-02-07",
+        "close": 2440.5,
+        "changePct": 95.71
+      },
+      {
+        "date": "2026-02-14",
+        "close": 2430,
+        "changePct": 94.87
+      },
+      {
+        "date": "2026-02-21",
+        "close": 2510.5,
+        "changePct": 101.32
+      },
+      {
+        "date": "2026-02-28",
+        "close": 2537,
+        "changePct": 103.45
+      },
+      {
+        "date": "2026-03-14",
+        "close": 2610.5,
+        "changePct": 109.34
+      },
+      {
+        "date": "2026-03-21",
+        "close": 2600.5,
+        "changePct": 108.54
+      },
+      {
+        "date": "2026-03-28",
+        "close": 2667.5,
+        "changePct": 113.91
+      },
+      {
+        "date": "2026-04-04",
+        "close": 2715,
+        "changePct": 117.72
+      },
+      {
+        "date": "2026-04-18",
+        "close": 2897,
+        "changePct": 132.32
+      },
+      {
+        "date": "2026-04-25",
+        "close": 2879,
+        "changePct": 130.87
+      },
+      {
+        "date": "2026-05-01",
+        "close": 3324,
+        "changePct": 166.56
+      },
+      {
+        "date": "2026-05-09",
+        "close": 3318,
+        "changePct": 166.08
+      },
+      {
+        "date": "2026-05-31",
+        "close": 3524,
+        "changePct": 182.6
+      }
+    ]
+  },
+  "jrlo-div1_8": {
+    "teamId": "jrlo-div1_8",
+    "ticker": "",
+    "status": "disabled",
+    "source": "teamCompanyMap",
+    "note": "サントリーホールディングスは非上場のため株価表示なし",
+    "prices": []
+  },
+  "jrlo-div1_9": {
+    "teamId": "jrlo-div1_9",
+    "ticker": "",
+    "status": "disabled",
+    "source": "teamCompanyMap",
+    "note": "東芝は上場廃止済みのため株価表示なし",
+    "prices": []
+  },
+  "jrlo-div1_10": {
+    "teamId": "jrlo-div1_10",
+    "ticker": "7751.T",
+    "status": "ok",
+    "source": "yahoo-chart-api",
+    "note": "",
+    "seasonReturns": [
+      {
+        "seasonId": "2022",
+        "startDate": "2022-01-01",
+        "endDate": "2022-05-31",
+        "startClose": 2801,
+        "endClose": 3242,
+        "averageClose": 2904.85,
+        "returnPct": 15.74
+      },
+      {
+        "seasonId": "2022-23",
+        "startDate": "2022-12-01",
+        "endDate": "2023-05-31",
+        "startClose": 3166,
+        "endClose": 3461,
+        "averageClose": 3007.11,
+        "returnPct": 9.32
+      },
+      {
+        "seasonId": "2023-24",
+        "startDate": "2023-12-01",
+        "endDate": "2024-05-31",
+        "startClose": 3854,
+        "endClose": 4552,
+        "averageClose": 4154.17,
+        "returnPct": 18.11
+      },
+      {
+        "seasonId": "2025-26",
+        "startDate": "2025-12-01",
+        "endDate": "2026-06-30",
+        "startClose": 4525,
+        "endClose": 4204,
+        "averageClose": 4521.06,
+        "returnPct": -7.09
+      }
+    ],
+    "prices": [
+      {
+        "date": "2025-12-14",
+        "close": 4780,
+        "changePct": 67.4
+      },
+      {
+        "date": "2025-12-21",
+        "close": 4654,
+        "changePct": 62.98
+      },
+      {
+        "date": "2025-12-28",
+        "close": 4770,
+        "changePct": 67.05
+      },
+      {
+        "date": "2026-01-10",
+        "close": 4675,
+        "changePct": 63.72
+      },
+      {
+        "date": "2026-01-17",
+        "close": 4733,
+        "changePct": 65.75
+      },
+      {
+        "date": "2026-01-24",
+        "close": 4643,
+        "changePct": 62.6
+      },
+      {
+        "date": "2026-02-07",
+        "close": 4870,
+        "changePct": 70.55
+      },
+      {
+        "date": "2026-02-14",
+        "close": 4824,
+        "changePct": 68.94
+      },
+      {
+        "date": "2026-02-22",
+        "close": 4685,
+        "changePct": 64.07
+      },
+      {
+        "date": "2026-03-01",
+        "close": 4762,
+        "changePct": 66.77
+      },
+      {
+        "date": "2026-03-14",
+        "close": 4408,
+        "changePct": 54.37
+      },
+      {
+        "date": "2026-03-20",
+        "close": 4305,
+        "changePct": 50.76
+      },
+      {
+        "date": "2026-03-28",
+        "close": 4440,
+        "changePct": 55.49
+      },
+      {
+        "date": "2026-04-04",
+        "close": 4488,
+        "changePct": 57.17
+      },
+      {
+        "date": "2026-04-18",
+        "close": 4485,
+        "changePct": 57.07
+      },
+      {
+        "date": "2026-04-25",
+        "close": 4024,
+        "changePct": 40.92
+      },
+      {
+        "date": "2026-05-03",
+        "close": 4017,
+        "changePct": 40.68
+      },
+      {
+        "date": "2026-05-09",
+        "close": 4063,
+        "changePct": 42.29
+      }
+    ]
+  },
+  "jrlo-div1_11": {
+    "teamId": "jrlo-div1_11",
+    "ticker": "9432.T",
+    "status": "ok",
+    "source": "yahoo-chart-api",
+    "note": "",
+    "seasonReturns": [
+      {
+        "seasonId": "2022",
+        "startDate": "2022-01-01",
+        "endDate": "2022-05-31",
+        "startClose": 126,
+        "endClose": 156.44,
+        "averageClose": 141.51,
+        "returnPct": 24.16
+      },
+      {
+        "seasonId": "2022-23",
+        "startDate": "2022-12-01",
+        "endDate": "2023-05-31",
+        "startClose": 152.76,
+        "endClose": 158.2,
+        "averageClose": 157.17,
+        "returnPct": 3.56
+      },
+      {
+        "seasonId": "2023-24",
+        "startDate": "2023-12-01",
+        "endDate": "2024-05-31",
+        "startClose": 173.2,
+        "endClose": 154.3,
+        "averageClose": 174.81,
+        "returnPct": -10.91
+      },
+      {
+        "seasonId": "2025-26",
+        "startDate": "2025-12-01",
+        "endDate": "2026-06-30",
+        "startClose": 155.8,
+        "endClose": 150,
+        "averageClose": 154.62,
+        "returnPct": -3.72
+      }
+    ],
+    "prices": [
+      {
+        "date": "2025-12-13",
+        "close": 155.5,
+        "changePct": 24.2
+      },
+      {
+        "date": "2025-12-21",
+        "close": 157,
+        "changePct": 25.4
+      },
+      {
+        "date": "2025-12-28",
+        "close": 158.8,
+        "changePct": 26.84
+      },
+      {
+        "date": "2026-01-10",
+        "close": 159.1,
+        "changePct": 27.08
+      },
+      {
+        "date": "2026-01-17",
+        "close": 157.1,
+        "changePct": 25.48
+      },
+      {
+        "date": "2026-01-24",
+        "close": 157.5,
+        "changePct": 25.8
+      },
+      {
+        "date": "2026-02-07",
+        "close": 152.5,
+        "changePct": 21.81
+      },
+      {
+        "date": "2026-02-14",
+        "close": 154.6,
+        "changePct": 23.48
+      },
+      {
+        "date": "2026-02-21",
+        "close": 151,
+        "changePct": 20.61
+      },
+      {
+        "date": "2026-02-28",
+        "close": 153.3,
+        "changePct": 22.44
+      },
+      {
+        "date": "2026-03-15",
+        "close": 154.7,
+        "changePct": 23.56
+      },
+      {
+        "date": "2026-03-21",
+        "close": 158.6,
+        "changePct": 26.68
+      },
+      {
+        "date": "2026-03-29",
+        "close": 159,
+        "changePct": 27
+      },
+      {
+        "date": "2026-04-05",
+        "close": 157.8,
+        "changePct": 26.04
+      },
+      {
+        "date": "2026-04-18",
+        "close": 154,
+        "changePct": 23
+      },
+      {
+        "date": "2026-04-24",
+        "close": 151.5,
+        "changePct": 21.01
+      },
+      {
+        "date": "2026-05-01",
+        "close": 152,
+        "changePct": 21.41
+      },
+      {
+        "date": "2026-05-10",
+        "close": 150.2,
+        "changePct": 19.97
+      },
+      {
+        "date": "2026-05-23",
+        "close": 152.6,
+        "changePct": 21.88
+      },
+      {
+        "date": "2026-05-30",
+        "close": 150,
+        "changePct": 19.81
+      }
+    ]
+  },
+  "jrlo-div1_12": {
+    "teamId": "jrlo-div1_12",
+    "ticker": "7272.T",
+    "status": "ok",
+    "source": "yahoo-chart-api",
+    "note": "",
+    "seasonReturns": [
+      {
+        "seasonId": "2022",
+        "startDate": "2022-01-01",
+        "endDate": "2022-05-31",
+        "startClose": 919.67,
+        "endClose": 871,
+        "averageClose": 884.49,
+        "returnPct": -5.29
+      },
+      {
+        "seasonId": "2022-23",
+        "startDate": "2022-12-01",
+        "endDate": "2023-05-31",
+        "startClose": 1133.33,
+        "endClose": 1146.67,
+        "averageClose": 1104.81,
+        "returnPct": 1.18
+      },
+      {
+        "seasonId": "2023-24",
+        "startDate": "2023-12-01",
+        "endDate": "2024-05-31",
+        "startClose": 1285.67,
+        "endClose": 1532.5,
+        "averageClose": 1384.55,
+        "returnPct": 19.2
+      },
+      {
+        "seasonId": "2025-26",
+        "startDate": "2025-12-01",
+        "endDate": "2026-06-30",
+        "startClose": 1122,
+        "endClose": 1252.5,
+        "averageClose": 1168.81,
+        "returnPct": 11.63
+      }
+    ],
+    "prices": [
+      {
+        "date": "2025-12-14",
+        "close": 1204,
+        "changePct": 27.72
+      },
+      {
+        "date": "2025-12-21",
+        "close": 1168,
+        "changePct": 23.9
+      },
+      {
+        "date": "2025-12-28",
+        "close": 1190,
+        "changePct": 26.24
+      },
+      {
+        "date": "2026-01-10",
+        "close": 1234.5,
+        "changePct": 30.96
+      },
+      {
+        "date": "2026-01-17",
+        "close": 1268,
+        "changePct": 34.51
+      },
+      {
+        "date": "2026-01-25",
+        "close": 1202.5,
+        "changePct": 27.56
+      },
+      {
+        "date": "2026-02-07",
+        "close": 1097.5,
+        "changePct": 16.42
+      },
+      {
+        "date": "2026-02-14",
+        "close": 1185,
+        "changePct": 25.71
+      },
+      {
+        "date": "2026-02-22",
+        "close": 1233,
+        "changePct": 30.8
+      },
+      {
+        "date": "2026-03-01",
+        "close": 1243,
+        "changePct": 31.86
+      },
+      {
+        "date": "2026-03-14",
+        "close": 1107,
+        "changePct": 17.43
+      },
+      {
+        "date": "2026-03-22",
+        "close": 1101,
+        "changePct": 16.8
+      },
+      {
+        "date": "2026-03-28",
+        "close": 1139.5,
+        "changePct": 20.88
+      },
+      {
+        "date": "2026-04-04",
+        "close": 1184,
+        "changePct": 25.6
+      },
+      {
+        "date": "2026-04-18",
+        "close": 1141.5,
+        "changePct": 21.09
+      },
+      {
+        "date": "2026-04-24",
+        "close": 1091,
+        "changePct": 15.74
+      },
+      {
+        "date": "2026-05-02",
+        "close": 1089.5,
+        "changePct": 15.58
+      },
+      {
+        "date": "2026-05-09",
+        "close": 1116,
+        "changePct": 18.39
+      }
+    ]
+  },
+  "jrlo-div2_1": {
+    "teamId": "jrlo-div2_1",
+    "ticker": "6701.T",
+    "status": "ok",
+    "source": "yahoo-chart-api",
+    "note": "",
+    "seasonReturns": [
+      {
+        "seasonId": "2022",
+        "startDate": "2022-01-01",
+        "endDate": "2022-05-31",
+        "startClose": 1062,
+        "endClose": 1042,
+        "averageClose": 1023.05,
+        "returnPct": -1.88
+      },
+      {
+        "seasonId": "2022-23",
+        "startDate": "2022-12-01",
+        "endDate": "2023-05-31",
+        "startClose": 965,
+        "endClose": 1310,
+        "averageClose": 1014.06,
+        "returnPct": 35.75
+      },
+      {
+        "seasonId": "2023-24",
+        "startDate": "2023-12-01",
+        "endDate": "2024-05-31",
+        "startClose": 1671.4,
+        "endClose": 2325,
+        "averageClose": 2000.49,
+        "returnPct": 39.1
+      },
+      {
+        "seasonId": "2025-26",
+        "startDate": "2025-12-01",
+        "endDate": "2026-06-30",
+        "startClose": 5697,
+        "endClose": 4139,
+        "averageClose": 4693.99,
+        "returnPct": -27.35
+      }
+    ],
+    "prices": [
+      {
+        "date": "2025-12-13",
+        "close": 5526,
+        "changePct": 425.29
+      },
+      {
+        "date": "2025-12-20",
+        "close": 5436,
+        "changePct": 416.73
+      },
+      {
+        "date": "2026-01-10",
+        "close": 5612,
+        "changePct": 433.46
+      },
+      {
+        "date": "2026-01-24",
+        "close": 5835,
+        "changePct": 454.66
+      },
+      {
+        "date": "2026-02-22",
+        "close": 3916,
+        "changePct": 272.24
+      },
+      {
+        "date": "2026-02-28",
+        "close": 4334,
+        "changePct": 311.98
+      },
+      {
+        "date": "2026-03-07",
+        "close": 4445,
+        "changePct": 322.53
+      },
+      {
+        "date": "2026-03-22",
+        "close": 4124,
+        "changePct": 292.02
+      },
+      {
+        "date": "2026-03-28",
+        "close": 3990,
+        "changePct": 279.28
+      },
+      {
+        "date": "2026-04-04",
+        "close": 4046,
+        "changePct": 284.6
+      },
+      {
+        "date": "2026-04-11",
+        "close": 3860,
+        "changePct": 266.92
+      },
+      {
+        "date": "2026-04-25",
+        "close": 4513,
+        "changePct": 328.99
+      },
+      {
+        "date": "2026-05-02",
+        "close": 4035,
+        "changePct": 283.56
+      },
+      {
+        "date": "2026-05-11",
+        "close": 4101,
+        "changePct": 289.83
+      }
+    ]
+  },
+  "jrlo-div2_2": {
+    "teamId": "jrlo-div2_2",
+    "ticker": "9432.T",
+    "status": "ok",
+    "source": "yahoo-chart-api",
+    "note": "",
+    "seasonReturns": [
+      {
+        "seasonId": "2022",
+        "startDate": "2022-01-01",
+        "endDate": "2022-05-31",
+        "startClose": 126,
+        "endClose": 156.44,
+        "averageClose": 141.51,
+        "returnPct": 24.16
+      },
+      {
+        "seasonId": "2022-23",
+        "startDate": "2022-12-01",
+        "endDate": "2023-05-31",
+        "startClose": 152.76,
+        "endClose": 158.2,
+        "averageClose": 157.17,
+        "returnPct": 3.56
+      },
+      {
+        "seasonId": "2023-24",
+        "startDate": "2023-12-01",
+        "endDate": "2024-05-31",
+        "startClose": 173.2,
+        "endClose": 154.3,
+        "averageClose": 174.81,
+        "returnPct": -10.91
+      },
+      {
+        "seasonId": "2025-26",
+        "startDate": "2025-12-01",
+        "endDate": "2026-06-30",
+        "startClose": 155.8,
+        "endClose": 150,
+        "averageClose": 154.62,
+        "returnPct": -3.72
+      }
+    ],
+    "prices": [
+      {
+        "date": "2025-12-13",
+        "close": 155.5,
+        "changePct": 24.2
+      },
+      {
+        "date": "2025-12-21",
+        "close": 157,
+        "changePct": 25.4
+      },
+      {
+        "date": "2026-01-10",
+        "close": 159.1,
+        "changePct": 27.08
+      },
+      {
+        "date": "2026-01-17",
+        "close": 157.1,
+        "changePct": 25.48
+      },
+      {
+        "date": "2026-02-08",
+        "close": 152.5,
+        "changePct": 21.81
+      },
+      {
+        "date": "2026-02-21",
+        "close": 151,
+        "changePct": 20.61
+      },
+      {
+        "date": "2026-02-28",
+        "close": 153.3,
+        "changePct": 22.44
+      },
+      {
+        "date": "2026-03-15",
+        "close": 154.7,
+        "changePct": 23.56
+      },
+      {
+        "date": "2026-03-27",
+        "close": 159,
+        "changePct": 27
+      },
+      {
+        "date": "2026-04-04",
+        "close": 157.8,
+        "changePct": 26.04
+      },
+      {
+        "date": "2026-04-11",
+        "close": 153.1,
+        "changePct": 22.28
+      },
+      {
+        "date": "2026-04-25",
+        "close": 151.5,
+        "changePct": 21.01
+      },
+      {
+        "date": "2026-05-02",
+        "close": 152,
+        "changePct": 21.41
+      },
+      {
+        "date": "2026-05-11",
+        "close": 148.4,
+        "changePct": 18.53
+      }
+    ]
+  },
+  "jrlo-div2_3": {
+    "teamId": "jrlo-div2_3",
+    "ticker": "9508.T",
+    "status": "ok",
+    "source": "yahoo-chart-api",
+    "note": "",
+    "seasonReturns": [
+      {
+        "seasonId": "2022",
+        "startDate": "2022-01-01",
+        "endDate": "2022-05-31",
+        "startClose": 857,
+        "endClose": 837,
+        "averageClose": 849.47,
+        "returnPct": -2.33
+      },
+      {
+        "seasonId": "2022-23",
+        "startDate": "2022-12-01",
+        "endDate": "2023-05-31",
+        "startClose": 702,
+        "endClose": 873,
+        "averageClose": 755.63,
+        "returnPct": 24.36
+      },
+      {
+        "seasonId": "2023-24",
+        "startDate": "2023-12-01",
+        "endDate": "2024-05-31",
+        "startClose": 997.5,
+        "endClose": 1831.5,
+        "averageClose": 1292.37,
+        "returnPct": 83.61
+      },
+      {
+        "seasonId": "2025-26",
+        "startDate": "2025-12-01",
+        "endDate": "2026-06-30",
+        "startClose": 1684.5,
+        "endClose": 1655,
+        "averageClose": 1758.06,
+        "returnPct": -1.75
+      }
+    ],
+    "prices": [
+      {
+        "date": "2025-12-14",
+        "close": 1632,
+        "changePct": 92.91
+      },
+      {
+        "date": "2025-12-20",
+        "close": 1677.5,
+        "changePct": 98.29
+      },
+      {
+        "date": "2025-12-27",
+        "close": 1689,
+        "changePct": 99.65
+      },
+      {
+        "date": "2026-01-24",
+        "close": 1753.5,
+        "changePct": 107.27
+      },
+      {
+        "date": "2026-02-08",
+        "close": 1792.5,
+        "changePct": 111.88
+      },
+      {
+        "date": "2026-02-14",
+        "close": 1863,
+        "changePct": 120.21
+      },
+      {
+        "date": "2026-02-28",
+        "close": 2014,
+        "changePct": 138.06
+      },
+      {
+        "date": "2026-03-14",
+        "close": 1770.5,
+        "changePct": 109.28
+      },
+      {
+        "date": "2026-03-27",
+        "close": 1844,
+        "changePct": 117.97
+      },
+      {
+        "date": "2026-04-04",
+        "close": 1911,
+        "changePct": 125.89
+      },
+      {
+        "date": "2026-04-12",
+        "close": 1819,
+        "changePct": 115.01
+      },
+      {
+        "date": "2026-04-24",
+        "close": 1713.5,
+        "changePct": 102.54
+      },
+      {
+        "date": "2026-05-02",
+        "close": 1708.5,
+        "changePct": 101.95
+      },
+      {
+        "date": "2026-05-09",
+        "close": 1751.5,
+        "changePct": 107.03
+      }
+    ]
+  },
+  "jrlo-div2_4": {
+    "teamId": "jrlo-div2_4",
+    "ticker": "5401.T",
+    "status": "ok",
+    "source": "yahoo-chart-api",
+    "note": "",
+    "seasonReturns": [
+      {
+        "seasonId": "2022",
+        "startDate": "2022-01-01",
+        "endDate": "2022-05-31",
+        "startClose": 375.7,
+        "endClose": 450.1,
+        "averageClose": 412.67,
+        "returnPct": 19.8
+      },
+      {
+        "seasonId": "2022-23",
+        "startDate": "2022-12-01",
+        "endDate": "2023-05-31",
+        "startClose": 438.8,
+        "endClose": 543.1,
+        "averageClose": 553.17,
+        "returnPct": 23.77
+      },
+      {
+        "seasonId": "2023-24",
+        "startDate": "2023-12-01",
+        "endDate": "2024-05-31",
+        "startClose": 695.8,
+        "endClose": 686.4,
+        "averageClose": 695.9,
+        "returnPct": -1.35
+      },
+      {
+        "seasonId": "2025-26",
+        "startDate": "2025-12-01",
+        "endDate": "2026-06-30",
+        "startClose": 625.4,
+        "endClose": 563,
+        "averageClose": 614.68,
+        "returnPct": -9.98
+      }
+    ],
+    "prices": [
+      {
+        "date": "2025-12-13",
+        "close": 632,
+        "changePct": 68.58
+      },
+      {
+        "date": "2025-12-21",
+        "close": 608.3,
+        "changePct": 62.26
+      },
+      {
+        "date": "2025-12-27",
+        "close": 634.9,
+        "changePct": 69.35
+      },
+      {
+        "date": "2026-01-17",
+        "close": 666.1,
+        "changePct": 77.67
+      },
+      {
+        "date": "2026-02-21",
+        "close": 673.9,
+        "changePct": 79.75
+      },
+      {
+        "date": "2026-03-07",
+        "close": 603.8,
+        "changePct": 61.06
+      },
+      {
+        "date": "2026-03-15",
+        "close": 593.2,
+        "changePct": 58.23
+      },
+      {
+        "date": "2026-03-22",
+        "close": 592.7,
+        "changePct": 58.1
+      },
+      {
+        "date": "2026-03-28",
+        "close": 597.1,
+        "changePct": 59.27
+      },
+      {
+        "date": "2026-04-04",
+        "close": 585,
+        "changePct": 56.04
+      },
+      {
+        "date": "2026-04-12",
+        "close": 600.2,
+        "changePct": 60.1
+      },
+      {
+        "date": "2026-04-25",
+        "close": 573.1,
+        "changePct": 52.87
+      },
+      {
+        "date": "2026-05-03",
+        "close": 571.9,
+        "changePct": 52.55
+      },
+      {
+        "date": "2026-05-09",
+        "close": 570.9,
+        "changePct": 52.28
+      },
+      {
+        "date": "2026-05-22",
+        "close": 553.5,
+        "changePct": 47.64
+      },
+      {
+        "date": "2026-05-31",
+        "close": 563,
+        "changePct": 50.17
+      }
+    ]
+  },
+  "jrlo-div2_5": {
+    "teamId": "jrlo-div2_5",
+    "ticker": "7205.T",
+    "status": "ok",
+    "source": "yahoo-chart-api",
+    "note": "",
+    "seasonReturns": [
+      {
+        "seasonId": "2022",
+        "startDate": "2022-01-01",
+        "endDate": "2022-05-31",
+        "startClose": 948,
+        "endClose": 718,
+        "averageClose": 833.13,
+        "returnPct": -24.26
+      },
+      {
+        "seasonId": "2022-23",
+        "startDate": "2022-12-01",
+        "endDate": "2023-05-31",
+        "startClose": 620,
+        "endClose": 621,
+        "averageClose": 545.98,
+        "returnPct": 0.16
+      },
+      {
+        "seasonId": "2023-24",
+        "startDate": "2023-12-01",
+        "endDate": "2024-05-31",
+        "startClose": 476.1,
+        "endClose": 438.8,
+        "averageClose": 480.16,
+        "returnPct": -7.83
+      },
+      {
+        "seasonId": "2025-26",
+        "startDate": "2025-12-01",
+        "endDate": "2026-06-30",
+        "startClose": 382,
+        "endClose": 368,
+        "averageClose": 399.62,
+        "returnPct": -3.66
+      }
+    ],
+    "prices": [
+      {
+        "date": "2025-12-14",
+        "close": 387,
+        "changePct": -59.31
+      },
+      {
+        "date": "2025-12-21",
+        "close": 391,
+        "changePct": -58.89
+      },
+      {
+        "date": "2026-01-10",
+        "close": 404,
+        "changePct": -57.52
+      },
+      {
+        "date": "2026-01-18",
+        "close": 413,
+        "changePct": -56.57
+      },
+      {
+        "date": "2026-01-31",
+        "close": 416,
+        "changePct": -56.26
+      },
+      {
+        "date": "2026-02-22",
+        "close": 444,
+        "changePct": -53.31
+      },
+      {
+        "date": "2026-02-28",
+        "close": 457,
+        "changePct": -51.95
+      },
+      {
+        "date": "2026-03-07",
+        "close": 414,
+        "changePct": -56.47
+      },
+      {
+        "date": "2026-03-28",
+        "close": 387,
+        "changePct": -59.31
+      },
+      {
+        "date": "2026-04-04",
+        "close": 519,
+        "changePct": -45.43
+      },
+      {
+        "date": "2026-04-11",
+        "close": 398,
+        "changePct": -58.15
+      },
+      {
+        "date": "2026-04-25",
+        "close": 340,
+        "changePct": -64.25
+      },
+      {
+        "date": "2026-05-03",
+        "close": 303,
+        "changePct": -68.14
+      },
+      {
+        "date": "2026-05-09",
+        "close": 295,
+        "changePct": -68.98
+      },
+      {
+        "date": "2026-05-23",
+        "close": 440,
+        "changePct": -53.73
+      },
+      {
+        "date": "2026-05-30",
+        "close": 368,
+        "changePct": -61.3
+      }
+    ]
+  },
+  "jrlo-div2_6": {
+    "teamId": "jrlo-div2_6",
+    "ticker": "1803.T",
+    "status": "ok",
+    "source": "yahoo-chart-api",
+    "note": "",
+    "seasonReturns": [
+      {
+        "seasonId": "2022",
+        "startDate": "2022-01-01",
+        "endDate": "2022-05-31",
+        "startClose": 713,
+        "endClose": 685,
+        "averageClose": 738.07,
+        "returnPct": -3.93
+      },
+      {
+        "seasonId": "2022-23",
+        "startDate": "2022-12-01",
+        "endDate": "2023-05-31",
+        "startClose": 723,
+        "endClose": 846,
+        "averageClose": 751.1,
+        "returnPct": 17.01
+      },
+      {
+        "seasonId": "2023-24",
+        "startDate": "2023-12-01",
+        "endDate": "2024-05-31",
+        "startClose": 978.3,
+        "endClose": 869.7,
+        "averageClose": 942.37,
+        "returnPct": -11.1
+      },
+      {
+        "seasonId": "2025-26",
+        "startDate": "2025-12-01",
+        "endDate": "2026-06-30",
+        "startClose": 2769.5,
+        "endClose": 2687,
+        "averageClose": 2925.48,
+        "returnPct": -2.98
+      }
+    ],
+    "prices": [
+      {
+        "date": "2025-12-13",
+        "close": 2672,
+        "changePct": 272.66
+      },
+      {
+        "date": "2025-12-20",
+        "close": 2700,
+        "changePct": 276.57
+      },
+      {
+        "date": "2026-01-10",
+        "close": 2795,
+        "changePct": 289.82
+      },
+      {
+        "date": "2026-01-18",
+        "close": 2918.5,
+        "changePct": 307.04
+      },
+      {
+        "date": "2026-02-07",
+        "close": 3319,
+        "changePct": 362.9
+      },
+      {
+        "date": "2026-02-14",
+        "close": 3320,
+        "changePct": 363.04
+      },
+      {
+        "date": "2026-02-28",
+        "close": 3493,
+        "changePct": 387.17
+      },
+      {
+        "date": "2026-03-14",
+        "close": 3114,
+        "changePct": 334.31
+      },
+      {
+        "date": "2026-03-28",
+        "close": 2900.5,
+        "changePct": 304.53
+      },
+      {
+        "date": "2026-04-04",
+        "close": 2877,
+        "changePct": 301.26
+      },
+      {
+        "date": "2026-04-11",
+        "close": 2893,
+        "changePct": 303.49
+      },
+      {
+        "date": "2026-04-25",
+        "close": 2816.5,
+        "changePct": 292.82
+      },
+      {
+        "date": "2026-05-02",
+        "close": 2996,
+        "changePct": 317.85
+      },
+      {
+        "date": "2026-05-09",
+        "close": 3048,
+        "changePct": 325.1
+      }
+    ]
+  },
+  "jrlo-div2_7": {
+    "teamId": "jrlo-div2_7",
+    "ticker": "9041.T",
+    "status": "ok",
+    "source": "yahoo-chart-api",
+    "note": "",
+    "seasonReturns": [
+      {
+        "seasonId": "2022",
+        "startDate": "2022-01-01",
+        "endDate": "2022-05-31",
+        "startClose": 3215,
+        "endClose": 3765,
+        "averageClose": 3532.45,
+        "returnPct": 17.11
+      },
+      {
+        "seasonId": "2022-23",
+        "startDate": "2022-12-01",
+        "endDate": "2023-05-31",
+        "startClose": 4770,
+        "endClose": 4615,
+        "averageClose": 4379.18,
+        "returnPct": -3.25
+      },
+      {
+        "seasonId": "2023-24",
+        "startDate": "2023-12-01",
+        "endDate": "2024-05-31",
+        "startClose": 4143,
+        "endClose": 3339,
+        "averageClose": 4314.09,
+        "returnPct": -19.41
+      },
+      {
+        "seasonId": "2025-26",
+        "startDate": "2025-12-01",
+        "endDate": "2026-06-30",
+        "startClose": 2959.5,
+        "endClose": 3533,
+        "averageClose": 3245.37,
+        "returnPct": 19.38
+      }
+    ],
+    "prices": [
+      {
+        "date": "2025-12-13",
+        "close": 2961.5,
+        "changePct": -8.17
+      },
+      {
+        "date": "2025-12-20",
+        "close": 2958.5,
+        "changePct": -8.26
+      },
+      {
+        "date": "2026-01-10",
+        "close": 3195,
+        "changePct": -0.93
+      },
+      {
+        "date": "2026-01-17",
+        "close": 3208,
+        "changePct": -0.53
+      },
+      {
+        "date": "2026-02-07",
+        "close": 3344,
+        "changePct": 3.69
+      },
+      {
+        "date": "2026-02-14",
+        "close": 3376,
+        "changePct": 4.68
+      },
+      {
+        "date": "2026-03-07",
+        "close": 3154,
+        "changePct": -2.2
+      },
+      {
+        "date": "2026-03-14",
+        "close": 3141,
+        "changePct": -2.6
+      },
+      {
+        "date": "2026-03-28",
+        "close": 3289,
+        "changePct": 1.98
+      },
+      {
+        "date": "2026-04-04",
+        "close": 3375,
+        "changePct": 4.65
+      },
+      {
+        "date": "2026-04-11",
+        "close": 3293,
+        "changePct": 2.11
+      },
+      {
+        "date": "2026-04-25",
+        "close": 3372,
+        "changePct": 4.56
+      },
+      {
+        "date": "2026-05-02",
+        "close": 3453,
+        "changePct": 7.07
+      },
+      {
+        "date": "2026-05-10",
+        "close": 3455,
+        "changePct": 7.13
+      }
+    ]
+  },
+  "jrlo-div2_8": {
+    "teamId": "jrlo-div2_8",
+    "ticker": "6201.T",
+    "status": "ok",
+    "source": "yahoo-chart-api",
+    "note": "",
+    "seasonReturns": [
+      {
+        "seasonId": "2022",
+        "startDate": "2022-01-01",
+        "endDate": "2022-05-31",
+        "startClose": 9190,
+        "endClose": 8300,
+        "averageClose": 8472.86,
+        "returnPct": -9.68
+      },
+      {
+        "seasonId": "2022-23",
+        "startDate": "2022-12-01",
+        "endDate": "2023-05-31",
+        "startClose": 7780,
+        "endClose": 8620,
+        "averageClose": 7674.02,
+        "returnPct": 10.8
+      },
+      {
+        "seasonId": "2023-24",
+        "startDate": "2023-12-01",
+        "endDate": "2024-05-31",
+        "startClose": 12920,
+        "endClose": 14800,
+        "averageClose": 13811.98,
+        "returnPct": 14.55
+      },
+      {
+        "seasonId": "2025-26",
+        "startDate": "2025-12-01",
+        "endDate": "2026-06-30",
+        "startClose": 17355,
+        "endClose": 20450,
+        "averageClose": 19625.64,
+        "returnPct": 17.83
+      }
+    ],
+    "prices": [
+      {
+        "date": "2025-12-13",
+        "close": 17550,
+        "changePct": 89.52
+      },
+      {
+        "date": "2025-12-21",
+        "close": 17800,
+        "changePct": 92.22
+      },
+      {
+        "date": "2026-01-10",
+        "close": 18005,
+        "changePct": 94.44
+      },
+      {
+        "date": "2026-01-17",
+        "close": 19450,
+        "changePct": 110.04
+      },
+      {
+        "date": "2026-01-31",
+        "close": 19755,
+        "changePct": 113.34
+      },
+      {
+        "date": "2026-02-14",
+        "close": 20450,
+        "changePct": 120.84
+      },
+      {
+        "date": "2026-02-28",
+        "close": 20230,
+        "changePct": 118.47
+      },
+      {
+        "date": "2026-03-14",
+        "close": 20560,
+        "changePct": 122.03
+      },
+      {
+        "date": "2026-03-28",
+        "close": 20405,
+        "changePct": 120.36
+      },
+      {
+        "date": "2026-04-04",
+        "close": 20435,
+        "changePct": 120.68
+      },
+      {
+        "date": "2026-04-11",
+        "close": 20435,
+        "changePct": 120.68
+      },
+      {
+        "date": "2026-04-24",
+        "close": 20470,
+        "changePct": 121.06
+      },
+      {
+        "date": "2026-05-02",
+        "close": 20425,
+        "changePct": 120.57
+      },
+      {
+        "date": "2026-05-10",
+        "close": 20430,
+        "changePct": 120.63
+      }
+    ]
+  },
+  "jrlo-div3_1": {
+    "teamId": "jrlo-div3_1",
+    "ticker": "6370.T",
+    "status": "ok",
+    "source": "yahoo-chart-api",
+    "note": "",
+    "seasonReturns": [
+      {
+        "seasonId": "2022",
+        "startDate": "2022-01-01",
+        "endDate": "2022-05-31",
+        "startClose": 5460,
+        "endClose": 4985,
+        "averageClose": 4692.7,
+        "returnPct": -8.7
+      },
+      {
+        "seasonId": "2022-23",
+        "startDate": "2022-12-01",
+        "endDate": "2023-05-31",
+        "startClose": 6070,
+        "endClose": 5710,
+        "averageClose": 5863.11,
+        "returnPct": -5.93
+      },
+      {
+        "seasonId": "2023-24",
+        "startDate": "2023-12-01",
+        "endDate": "2024-05-31",
+        "startClose": 5131,
+        "endClose": 6720,
+        "averageClose": 5955.18,
+        "returnPct": 30.97
+      },
+      {
+        "seasonId": "2025-26",
+        "startDate": "2025-12-01",
+        "endDate": "2026-06-30",
+        "startClose": 6180,
+        "endClose": 8779,
+        "averageClose": 7654.08,
+        "returnPct": 42.06
+      }
+    ],
+    "prices": [
+      {
+        "date": "2025-12-13",
+        "close": 6619,
+        "changePct": 23.72
+      },
+      {
+        "date": "2025-12-21",
+        "close": 6360,
+        "changePct": 18.88
+      },
+      {
+        "date": "2026-01-11",
+        "close": 6862,
+        "changePct": 28.26
+      },
+      {
+        "date": "2026-01-17",
+        "close": 7313,
+        "changePct": 36.69
+      },
+      {
+        "date": "2026-01-31",
+        "close": 7713,
+        "changePct": 44.17
+      },
+      {
+        "date": "2026-02-15",
+        "close": 8041,
+        "changePct": 50.3
+      },
+      {
+        "date": "2026-02-21",
+        "close": 8307,
+        "changePct": 55.27
+      },
+      {
+        "date": "2026-03-01",
+        "close": 8713,
+        "changePct": 62.86
+      },
+      {
+        "date": "2026-03-15",
+        "close": 7792,
+        "changePct": 45.64
+      },
+      {
+        "date": "2026-03-21",
+        "close": 7698,
+        "changePct": 43.89
+      },
+      {
+        "date": "2026-04-05",
+        "close": 7685,
+        "changePct": 43.64
+      },
+      {
+        "date": "2026-04-12",
+        "close": 8118,
+        "changePct": 51.74
+      },
+      {
+        "date": "2026-04-26",
+        "close": 7796,
+        "changePct": 45.72
+      },
+      {
+        "date": "2026-05-02",
+        "close": 8044,
+        "changePct": 50.36
+      },
+      {
+        "date": "2026-05-10",
+        "close": 8648,
+        "changePct": 61.64
+      }
+    ]
+  },
+  "jrlo-div3_2": {
+    "teamId": "jrlo-div3_2",
+    "ticker": "7261.T",
+    "status": "ok",
+    "source": "yahoo-chart-api",
+    "note": "",
+    "seasonReturns": [
+      {
+        "seasonId": "2022",
+        "startDate": "2022-01-01",
+        "endDate": "2022-05-31",
+        "startClose": 885,
+        "endClose": 1089,
+        "averageClose": 921.84,
+        "returnPct": 23.05
+      },
+      {
+        "seasonId": "2022-23",
+        "startDate": "2022-12-01",
+        "endDate": "2023-05-31",
+        "startClose": 1072,
+        "endClose": 1194,
+        "averageClose": 1127.02,
+        "returnPct": 11.38
+      },
+      {
+        "seasonId": "2023-24",
+        "startDate": "2023-12-01",
+        "endDate": "2024-05-31",
+        "startClose": 1601.5,
+        "endClose": 1657.5,
+        "averageClose": 1687.58,
+        "returnPct": 3.5
+      },
+      {
+        "seasonId": "2025-26",
+        "startDate": "2025-12-01",
+        "endDate": "2026-06-30",
+        "startClose": 1139.5,
+        "endClose": 1125.5,
+        "averageClose": 1162.1,
+        "returnPct": -1.23
+      }
+    ],
+    "prices": [
+      {
+        "date": "2025-12-13",
+        "close": 1187,
+        "changePct": 32.77
+      },
+      {
+        "date": "2025-12-21",
+        "close": 1209.5,
+        "changePct": 35.29
+      },
+      {
+        "date": "2026-01-10",
+        "close": 1253,
+        "changePct": 40.16
+      },
+      {
+        "date": "2026-01-25",
+        "close": 1217,
+        "changePct": 36.13
+      },
+      {
+        "date": "2026-01-31",
+        "close": 1186.5,
+        "changePct": 32.72
+      },
+      {
+        "date": "2026-02-07",
+        "close": 1250.5,
+        "changePct": 39.88
+      },
+      {
+        "date": "2026-02-21",
+        "close": 1342,
+        "changePct": 50.11
+      },
+      {
+        "date": "2026-02-28",
+        "close": 1388.5,
+        "changePct": 55.31
+      },
+      {
+        "date": "2026-03-07",
+        "close": 1201.5,
+        "changePct": 34.4
+      },
+      {
+        "date": "2026-03-28",
+        "close": 1123,
+        "changePct": 25.62
+      },
+      {
+        "date": "2026-04-04",
+        "close": 1035,
+        "changePct": 15.77
+      },
+      {
+        "date": "2026-04-11",
+        "close": 1054.5,
+        "changePct": 17.95
+      },
+      {
+        "date": "2026-04-26",
+        "close": 1024,
+        "changePct": 14.54
+      },
+      {
+        "date": "2026-05-02",
+        "close": 1008.5,
+        "changePct": 12.81
+      },
+      {
+        "date": "2026-05-09",
+        "close": 990.9,
+        "changePct": 10.84
+      }
+    ]
+  },
+  "jrlo-div3_3": {
+    "teamId": "jrlo-div3_3",
+    "ticker": "2267.T",
+    "status": "ok",
+    "source": "yahoo-chart-api",
+    "note": "",
+    "seasonReturns": [
+      {
+        "seasonId": "2022",
+        "startDate": "2022-01-01",
+        "endDate": "2022-05-31",
+        "startClose": 3000,
+        "endClose": 3545,
+        "averageClose": 3184.69,
+        "returnPct": 18.17
+      },
+      {
+        "seasonId": "2022-23",
+        "startDate": "2022-12-01",
+        "endDate": "2023-05-31",
+        "startClose": 4375,
+        "endClose": 4525,
+        "averageClose": 4656.8,
+        "returnPct": 3.43
+      },
+      {
+        "seasonId": "2023-24",
+        "startDate": "2023-12-01",
+        "endDate": "2024-05-31",
+        "startClose": 3292,
+        "endClose": 2861,
+        "averageClose": 3127.48,
+        "returnPct": -13.09
+      },
+      {
+        "seasonId": "2025-26",
+        "startDate": "2025-12-01",
+        "endDate": "2026-06-30",
+        "startClose": 2456.5,
+        "endClose": 2738,
+        "averageClose": 2601.19,
+        "returnPct": 11.46
+      }
+    ],
+    "prices": [
+      {
+        "date": "2025-12-14",
+        "close": 2366,
+        "changePct": -21.26
+      },
+      {
+        "date": "2025-12-21",
+        "close": 2443.5,
+        "changePct": -18.69
+      },
+      {
+        "date": "2026-01-10",
+        "close": 2508,
+        "changePct": -16.54
+      },
+      {
+        "date": "2026-01-25",
+        "close": 2569.5,
+        "changePct": -14.49
+      },
+      {
+        "date": "2026-01-31",
+        "close": 2492,
+        "changePct": -17.07
+      },
+      {
+        "date": "2026-02-07",
+        "close": 2635,
+        "changePct": -12.31
+      },
+      {
+        "date": "2026-02-22",
+        "close": 2583,
+        "changePct": -14.04
+      },
+      {
+        "date": "2026-02-28",
+        "close": 2614.5,
+        "changePct": -13
+      },
+      {
+        "date": "2026-03-07",
+        "close": 2579,
+        "changePct": -14.18
+      },
+      {
+        "date": "2026-03-21",
+        "close": 2581.5,
+        "changePct": -14.09
+      },
+      {
+        "date": "2026-04-05",
+        "close": 2701,
+        "changePct": -10.12
+      },
+      {
+        "date": "2026-04-11",
+        "close": 2647,
+        "changePct": -11.91
+      },
+      {
+        "date": "2026-04-26",
+        "close": 2768.5,
+        "changePct": -7.87
+      },
+      {
+        "date": "2026-05-03",
+        "close": 3087,
+        "changePct": 2.73
+      },
+      {
+        "date": "2026-05-10",
+        "close": 2924.5,
+        "changePct": -2.68
+      }
+    ]
+  },
+  "jrlo-div3_4": {
+    "teamId": "jrlo-div3_4",
+    "ticker": "",
+    "status": "disabled",
+    "source": "teamCompanyMap",
+    "note": "親会社または対応する上場tickerを未設定",
+    "prices": []
+  },
+  "jrlo-div3_5": {
+    "teamId": "jrlo-div3_5",
+    "ticker": "9504.T",
+    "status": "ok",
+    "source": "yahoo-chart-api",
+    "note": "",
+    "seasonReturns": [
+      {
+        "seasonId": "2022",
+        "startDate": "2022-01-01",
+        "endDate": "2022-05-31",
+        "startClose": 931,
+        "endClose": 853,
+        "averageClose": 895.33,
+        "returnPct": -8.38
+      },
+      {
+        "seasonId": "2022-23",
+        "startDate": "2022-12-01",
+        "endDate": "2023-05-31",
+        "startClose": 688,
+        "endClose": 854,
+        "averageClose": 689.6,
+        "returnPct": 24.13
+      },
+      {
+        "seasonId": "2023-24",
+        "startDate": "2023-12-01",
+        "endDate": "2024-05-31",
+        "startClose": 989.8,
+        "endClose": 1125,
+        "averageClose": 1057.21,
+        "returnPct": 13.66
+      },
+      {
+        "seasonId": "2025-26",
+        "startDate": "2025-12-01",
+        "endDate": "2026-06-30",
+        "startClose": 1007,
+        "endClose": 882.4,
+        "averageClose": 982.41,
+        "returnPct": -12.37
+      }
+    ],
+    "prices": [
+      {
+        "date": "2025-12-13",
+        "close": 983,
+        "changePct": 5.93
+      },
+      {
+        "date": "2025-12-21",
+        "close": 989.8,
+        "changePct": 6.66
+      },
+      {
+        "date": "2026-01-10",
+        "close": 1002,
+        "changePct": 7.97
+      },
+      {
+        "date": "2026-01-18",
+        "close": 1016,
+        "changePct": 9.48
+      },
+      {
+        "date": "2026-01-31",
+        "close": 987.7,
+        "changePct": 6.43
+      },
+      {
+        "date": "2026-02-22",
+        "close": 1078,
+        "changePct": 16.16
+      },
+      {
+        "date": "2026-02-28",
+        "close": 1088.5,
+        "changePct": 17.3
+      },
+      {
+        "date": "2026-03-15",
+        "close": 969.7,
+        "changePct": 4.49
+      },
+      {
+        "date": "2026-03-22",
+        "close": 999.9,
+        "changePct": 7.75
+      },
+      {
+        "date": "2026-03-29",
+        "close": 1020.5,
+        "changePct": 9.97
+      },
+      {
+        "date": "2026-04-04",
+        "close": 1024,
+        "changePct": 10.34
+      },
+      {
+        "date": "2026-04-11",
+        "close": 991.9,
+        "changePct": 6.89
+      },
+      {
+        "date": "2026-04-25",
+        "close": 940.3,
+        "changePct": 1.33
+      },
+      {
+        "date": "2026-05-03",
+        "close": 896.4,
+        "changePct": -3.41
+      },
+      {
+        "date": "2026-05-10",
+        "close": 898.8,
+        "changePct": -3.15
+      }
+    ]
+  },
+  "jrlo-div3_6": {
+    "teamId": "jrlo-div3_6",
+    "ticker": "9735.T",
+    "status": "ok",
+    "source": "yahoo-chart-api",
+    "note": "",
+    "seasonReturns": [
+      {
+        "seasonId": "2022",
+        "startDate": "2022-01-01",
+        "endDate": "2022-05-31",
+        "startClose": 3993,
+        "endClose": 4248.5,
+        "averageClose": 4263.45,
+        "returnPct": 6.4
+      },
+      {
+        "seasonId": "2022-23",
+        "startDate": "2022-12-01",
+        "endDate": "2023-05-31",
+        "startClose": 4193.5,
+        "endClose": 4568,
+        "averageClose": 4076.2,
+        "returnPct": 8.93
+      },
+      {
+        "seasonId": "2023-24",
+        "startDate": "2023-12-01",
+        "endDate": "2024-05-31",
+        "startClose": 5170,
+        "endClose": 4886,
+        "averageClose": 5346.21,
+        "returnPct": -5.49
+      },
+      {
+        "seasonId": "2025-26",
+        "startDate": "2025-12-01",
+        "endDate": "2026-06-30",
+        "startClose": 5337,
+        "endClose": 6527,
+        "averageClose": 5875.75,
+        "returnPct": 22.3
+      }
+    ],
+    "prices": [
+      {
+        "date": "2025-12-13",
+        "close": 5527,
+        "changePct": 39.31
+      },
+      {
+        "date": "2025-12-21",
+        "close": 5648,
+        "changePct": 42.36
+      },
+      {
+        "date": "2026-01-10",
+        "close": 5661,
+        "changePct": 42.68
+      },
+      {
+        "date": "2026-01-17",
+        "close": 5822,
+        "changePct": 46.74
+      },
+      {
+        "date": "2026-01-31",
+        "close": 5659,
+        "changePct": 42.63
+      },
+      {
+        "date": "2026-02-15",
+        "close": 6075,
+        "changePct": 53.12
+      },
+      {
+        "date": "2026-02-21",
+        "close": 5985,
+        "changePct": 50.85
+      },
+      {
+        "date": "2026-02-28",
+        "close": 6038,
+        "changePct": 52.19
+      },
+      {
+        "date": "2026-03-07",
+        "close": 5953,
+        "changePct": 50.04
+      },
+      {
+        "date": "2026-03-29",
+        "close": 5962,
+        "changePct": 50.27
+      },
+      {
+        "date": "2026-04-05",
+        "close": 6123,
+        "changePct": 54.33
+      },
+      {
+        "date": "2026-04-12",
+        "close": 6053,
+        "changePct": 52.56
+      },
+      {
+        "date": "2026-04-25",
+        "close": 5670,
+        "changePct": 42.91
+      },
+      {
+        "date": "2026-05-02",
+        "close": 5730,
+        "changePct": 44.42
+      },
+      {
+        "date": "2026-05-09",
+        "close": 5647,
+        "changePct": 42.33
+      }
+    ]
+  }
+}

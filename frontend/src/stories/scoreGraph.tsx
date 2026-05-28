@@ -1,11 +1,11 @@
 import { Paper } from '@mui/material';
 import { ScoreInfo } from '../types/scoreInfo';
-import './scoreGraph.css';
 import {
   CartesianGrid,
   Legend,
   Line,
   LineChart,
+  ResponsiveContainer,
   Tooltip,
   XAxis,
   YAxis,
@@ -58,34 +58,36 @@ export const ScoreGraph = (props: ScoreGraphProps) => {
       ? 'home_team_score'
       : 'away_team_score';
   return (
-    <LineChart
-      width={700}
-      height={300}
-      data={props.scoreProgress}
-      margin={{
-        top: 5,
-        right: 5,
-        left: 5,
-        bottom: 5,
-      }}
-    >
-      <CartesianGrid strokeDasharray='3 3' />
-      <XAxis dataKey='time' />
-      <YAxis dataKey={yAxisDataKey} />
-      <Line
-        type='monotone'
-        dataKey='home_team_score'
-        name={props.homeTeamName}
-        stroke={homeTeamColor}
-      />
-      <Line
-        type='monotone'
-        dataKey='away_team_score'
-        name={props.awayTeamName}
-        stroke={awayTeamColor}
-      />
-      <Legend />
-      <Tooltip content={<CustomTooltip />} />
-    </LineChart>
+    <div className='score-graph-wrap'>
+      <ResponsiveContainer width='100%' height={320}>
+        <LineChart
+          data={props.scoreProgress}
+          margin={{
+            top: 8,
+            right: 8,
+            left: 8,
+            bottom: 8,
+          }}
+        >
+          <CartesianGrid strokeDasharray='3 3' />
+          <XAxis dataKey='time' />
+          <YAxis dataKey={yAxisDataKey} />
+          <Line
+            type='monotone'
+            dataKey='home_team_score'
+            name={props.homeTeamName}
+            stroke={homeTeamColor}
+          />
+          <Line
+            type='monotone'
+            dataKey='away_team_score'
+            name={props.awayTeamName}
+            stroke={awayTeamColor}
+          />
+          <Legend />
+          <Tooltip content={<CustomTooltip />} />
+        </LineChart>
+      </ResponsiveContainer>
+    </div>
   );
 };

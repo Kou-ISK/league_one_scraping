@@ -1,7 +1,8 @@
 import React from 'react';
+import Link from 'next/link';
 import { Game } from '../types/game';
-import './spectatorPage.css';
 import { TEAM_MASTER_DATA } from '../variables';
+import { SectionPanel } from '../components/molecules/SectionPanel';
 
 interface SpectatorPageProps {
   year: number;
@@ -20,25 +21,20 @@ export const SpectatorPage: React.FC<SpectatorPageProps> = (props) => {
 
   // ディビジョンごとにテーブルをレンダリング
   return (
-    <div style={{ maxWidth: '100vw', margin: '15px' }}>
+    <div className='spectator-page'>
       {Object.entries(gamesByDivision).map(([division, games]) => (
-        <div key={division} style={{ overflow: 'scroll' }}>
-          <h3 className='division-title'>
-            {division.toString() === '0'
-              ? '入れ替え戦/プレーオフ'
-              : 'Div.' + division}
-          </h3>
-          <table className='sticky-table'>
-            <thead style={{ backgroundColor: 'lightgray' }}>
+        <SectionPanel
+          key={division}
+          title={division.toString() === '0' ? '入れ替え戦/プレーオフ' : `Div.${division}`}
+          meta={`${games.length} matches`}
+        >
+          <div className='table-scroll'>
+          <table className='sticky-table spectator-table'>
+            <thead>
               <tr>
-                <th
-                  style={{ minWidth: '300px', backgroundColor: 'lightgray' }}
-                  className='sticky-col'
-                >
-                  チーム名
-                </th>
+                <th className='sticky-col'>チーム名</th>
                 {getUniqueDates(games).map((date) => (
-                  <th key={date} style={{ minWidth: '100px' }}>
+                  <th key={date}>
                     {formatDate(date)}
                   </th>
                 ))}
@@ -48,15 +44,8 @@ export const SpectatorPage: React.FC<SpectatorPageProps> = (props) => {
               {Array.from(new Set(games.map((game) => game.home_team))).map(
                 (team) => (
                   <tr key={team}>
-                    <td
-                      className='sticky-col'
-                      style={{
-                        backgroundColor: TEAM_MASTER_DATA.find(
-                          (master) => master.team_name === team
-                        )?.color,
-                      }}
-                    >
-                      <div style={{ display: 'flex' }}>
+                    <td className='sticky-col'>
+                      <div className='team-cell'>
                         <img
                           src={
                             TEAM_MASTER_DATA.find(
@@ -64,45 +53,33 @@ export const SpectatorPage: React.FC<SpectatorPageProps> = (props) => {
                             )?.logo_url
                           }
                           alt=''
-                          height='30px'
+                          className='team-cell-logo'
                         />
-                        <p
-                          style={{
-                            fontSize: '14px',
-                            fontWeight: 'bold',
-                            color: TEAM_MASTER_DATA.find(
-                              (master) => master.team_name === team
-                            )
-                              ? 'white'
-                              : 'black',
-                          }}
-                        >
-                          {team}
-                        </p>
+                        <p>{team}</p>
                       </div>
                     </td>
-                    {getUniqueDates(games).map((date) => (
-                      <td key={date}>
-                        <a
-                          href={
-                            '/league_one_scraping/game/' +
-                            getGameByDateAndHomeTeam(games, date, team).map(
-                              (game) => game.id
-                            )
-                          }
-                        >
-                          {getGameByDateAndHomeTeam(games, date, team)
-                            .map((game) => game.spectator)
-                            .join(', ')}
-                        </a>
-                      </td>
-                    ))}
+                    {getUniqueDates(games).map((date) => {
+                      const matchedGames = getGameByDateAndHomeTeam(games, date, team);
+                      const firstGame = matchedGames[0];
+                      return (
+                        <td key={date}>
+                          {firstGame ? (
+                            <Link href={`/game/${firstGame.id}`}>
+                              {matchedGames.map((game) => game.spectator).join(', ')}
+                            </Link>
+                          ) : (
+                            '-'
+                          )}
+                        </td>
+                      );
+                    })}
                   </tr>
                 )
               )}
             </tbody>
           </table>
-        </div>
+          </div>
+        </SectionPanel>
       ))}
     </div>
   );

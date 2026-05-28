@@ -1,3 +1,31 @@
 .game-info-table {
-  margin: 20px;
+  background: #ffffff;
+  border: 0;
+  min-height: 640px;
+}
+
+.data-grid-team {
+  align-items: center;
+  display: flex;
+  gap: 8px;
+  min-width: 0;
+}
+
+.data-grid-team p {
+  font-size: 0.86rem;
+  margin: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.data-grid-team-logo {
+  flex: 0 0 34px;
+  height: 34px;
+  object-fit: contain;
+  width: 34px;
+}
+
+.table-link {
+  color: var(--accent);
+  font-weight: 900;
 }

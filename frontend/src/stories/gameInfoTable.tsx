@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import { Game } from '../types/game';
 import {
   DataGrid,
@@ -7,7 +7,6 @@ import {
   GridToolbar,
   jaJP,
 } from '@mui/x-data-grid';
-import './gameInfoTable.css';
 import { TEAM_MASTER_DATA } from '../variables';
 
 interface GameInfoTableProps {
@@ -22,8 +21,8 @@ export const GameInfoTable = (props: GameInfoTableProps) => {
       width: 50,
       renderCell: (params: GridRenderCellParams<any>) => (
         <Link
-          className='text-blue-400 underline'
-          to={`/league_one_scraping/game/${params.id}`}
+          className='table-link'
+          href={`/game/${params.id}`}
         >
           {params.value}
         </Link>
@@ -36,7 +35,7 @@ export const GameInfoTable = (props: GameInfoTableProps) => {
       headerName: 'ホストチーム',
       width: 300,
       renderCell: (params: GridRenderCellParams<any>) => (
-        <div style={{ display: 'flex' }}>
+        <div className='data-grid-team'>
           <img
             src={
               TEAM_MASTER_DATA.find(
@@ -44,7 +43,7 @@ export const GameInfoTable = (props: GameInfoTableProps) => {
               )?.logo_url
             }
             alt=''
-            width='40px'
+            className='data-grid-team-logo'
           />
           <p>{params.value}</p>
         </div>
@@ -67,7 +66,7 @@ export const GameInfoTable = (props: GameInfoTableProps) => {
       headerName: 'ビジターチーム',
       width: 300,
       renderCell: (params: GridRenderCellParams<any>) => (
-        <div style={{ display: 'flex' }}>
+        <div className='data-grid-team'>
           <img
             src={
               TEAM_MASTER_DATA.find(
@@ -75,7 +74,7 @@ export const GameInfoTable = (props: GameInfoTableProps) => {
               )?.logo_url
             }
             alt=''
-            width='40px'
+            className='data-grid-team-logo'
           />
           <p>{params.value}</p>
         </div>

@@ -1,4 +1,3 @@
-import { Card } from '@mui/material';
 import { ScoreInfo } from '../types/scoreInfo';
 import { getPhotoUrl, parseScoreTypeName } from '../utils/rankingUtils';
 
@@ -10,29 +9,16 @@ interface ScoreProgressTimelineProps {
 
 export const ScoreProgressTimeline = (props: ScoreProgressTimelineProps) => {
   return (
-    <div
-      style={{
-        maxHeight: '50vh',
-        width: '30%',
-        justifyContent: 'center',
-        overflowY: 'scroll',
-      }}
-    >
+    <div className='score-timeline'>
       {props.scoreProgress.map((item) => (
-        <Card
-          sx={{
-            display: 'flex',
-            justifyContent: 'center',
-            margin: '10px',
-          }}
-        >
+        <div className='score-timeline-item' key={`${item.half_type}-${item.time}-${item.player_name}-${item.score_type}`}>
           <img
-            height='40px'
             src={getPhotoUrl(item.player_name as string).teamLogo}
             alt=''
+            className='score-timeline-logo'
           />
 
-          <div style={{ textAlign: 'center' }}>
+          <div>
             <p>
               {item.half_type}
               {item.time}分 {item.player_name}
@@ -42,7 +28,7 @@ export const ScoreProgressTimeline = (props: ScoreProgressTimelineProps) => {
               {item.home_team_score} - {item.away_team_score}
             </h2>
           </div>
-        </Card>
+        </div>
       ))}
     </div>
   );

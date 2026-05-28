@@ -1,5 +1,5 @@
 import React from 'react';
-import './button.css';
+import { Button as AtomicButton } from '../components/atoms/Button';
 
 interface ButtonProps {
   /**
@@ -30,19 +30,16 @@ interface ButtonProps {
 export const Button = ({
   primary = false,
   size = 'medium',
-  backgroundColor,
   label,
   ...props
 }: ButtonProps) => {
-  const mode = primary ? 'storybook-button--primary' : 'storybook-button--secondary';
   return (
-    <button
-      type="button"
-      className={['storybook-button', `storybook-button--${size}`, mode].join(' ')}
-      style={{ backgroundColor }}
-      {...props}
+    <AtomicButton
+      variant={primary ? 'primary' : 'secondary'}
+      size={size}
+      onClick={props.onClick}
     >
       {label}
-    </button>
+    </AtomicButton>
   );
 };

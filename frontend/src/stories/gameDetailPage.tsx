@@ -1,23 +1,30 @@
 import { Game } from '../types/game';
 import { PlayerObjectList } from './playerObjectList';
-import './gameDetailPage.css';
-import { useParams } from 'react-router-dom';
+import { useRouter } from 'next/router';
 import { Button } from './Button';
 import { useState } from 'react';
 import { GraphModal } from './GraphModal';
 import { ALL_GAME, TEAM_MASTER_DATA } from '../variables';
+import { Badge } from '../components/atoms/Badge';
+import { PageHero } from '../components/molecules/PageHero';
+import { SectionPanel } from '../components/molecules/SectionPanel';
+import { StatGrid } from '../components/molecules/StatGrid';
+import { PageShell } from '../components/templates/PageShell';
 
 export const GameDetailPage = () => {
-  const param = useParams();
-  const game = ALL_GAME.find((game) => game.id === Number(param.id)) as Game;
+  const router = useRouter();
+  const id = Array.isArray(router.query.id) ? router.query.id[0] : router.query.id;
+  const game = ALL_GAME.find((game) => game.id === Number(id)) as Game | undefined;
   const [showGraphModal, setShowGraphModal] = useState(false);
 
-  const homeTeamColor = TEAM_MASTER_DATA.find(
-    (master) => master.team_name === game.home_team
-  )?.color;
-  const awayTeamColor = TEAM_MASTER_DATA.find(
-    (master) => master.team_name === game.away_team
-  )?.color;
+  if (!game) {
+    return (
+      <PageShell>
+        <PageHero title='試合が見つかりません' />
+      </PageShell>
+    );
+  }
+
   const homeTeamLogo = TEAM_MASTER_DATA.find(
     (master) => master.team_name === game.home_team
   )?.logo_url;
@@ -26,36 +33,49 @@ export const GameDetailPage = () => {
   )?.logo_url;
 
   return (
-    <div className='page'>
-      <h1>{game.basic_info}</h1>
-      <h2>{game.date}</h2>
-      <h2>レフェリー: {game.referee_name}</h2>
-      <h2>天気: {game.weather}</h2>
-      <h2>観客動員数: {game.spectator}</h2>
-      <div className='show-graph'>
-        <Button
-          label='各種グラフを表示'
-          primary={true}
-          onClick={() => setShowGraphModal(true)}
-        />
-      </div>
-      <h3 className='score'>
-        {game.home_team_score} - {game.away_team_score}
-      </h3>
-      <div style={{ display: 'flex', justifyContent: 'center' }}>
-        <div style={{ margin: '10px' }}>
-          <div
-            style={{
-              backgroundColor: homeTeamColor,
-              color: homeTeamColor ? 'white' : 'black',
-              display: 'flex',
-              justifyContent: 'center',
-              textAnchor: 'middle',
-            }}
-          >
-            <img src={homeTeamLogo} alt='' width='50' height='50' />
-            <h2>{game.home_team}</h2>
-          </div>
+    <PageShell wide className='game-detail-page'>
+      <PageHero
+        eyebrow={`DIVISION ${game.division}`}
+        title={game.basic_info}
+        description={`${game.date} / ${game.stadium}`}
+        actions={
+          <Button
+            label='各種グラフを表示'
+            primary={true}
+            onClick={() => setShowGraphModal(true)}
+          />
+        }
+      />
+
+      <section className='scoreboard-panel'>
+        <div className='score-team'>
+          <img src={homeTeamLogo} alt='' className='score-team-logo' />
+          <h2>{game.home_team}</h2>
+          <Badge tone='accent'>HOME</Badge>
+        </div>
+        <div className='score-center'>
+          <span>{game.home_team_score}</span>
+          <strong>-</strong>
+          <span>{game.away_team_score}</span>
+        </div>
+        <div className='score-team away'>
+          <img src={awayTeamLogo} alt='' className='score-team-logo' />
+          <h2>{game.away_team}</h2>
+          <Badge tone='gold'>AWAY</Badge>
+        </div>
+      </section>
+
+      <StatGrid
+        compact
+        items={[
+          { label: 'レフェリー', value: game.referee_name || '-' },
+          { label: '天気', value: game.weather || '-' },
+          { label: '観客動員数', value: game.spectator || '-' },
+        ]}
+      />
+
+      <div className='lineup-grid'>
+        <SectionPanel title={game.home_team} meta='Home'>
           <PlayerObjectList
             playerList={game.home_team_player_list}
             replacementList={[
@@ -63,20 +83,8 @@ export const GameDetailPage = () => {
               ...game.home_team_temporary_replacement_list,
             ]}
           />
-        </div>
-        <div style={{ margin: '10px' }}>
-          <div
-            style={{
-              backgroundColor: awayTeamColor,
-              color: awayTeamColor ? 'white' : 'black',
-              display: 'flex',
-              justifyContent: 'center',
-              textAnchor: 'middle',
-            }}
-          >
-            <img src={awayTeamLogo} alt='' width='50' height='50' />
-            <h2>{game.away_team}</h2>
-          </div>
+        </SectionPanel>
+        <SectionPanel title={game.away_team} meta='Away'>
           <PlayerObjectList
             playerList={game.away_team_player_list}
             replacementList={[
@@ -84,7 +92,7 @@ export const GameDetailPage = () => {
               ...game.away_team_temporary_replacement_list,
             ]}
           />
-        </div>
+        </SectionPanel>
       </div>
       {showGraphModal && (
         <GraphModal
@@ -93,6 +101,6 @@ export const GameDetailPage = () => {
           game={game}
         />
       )}
-    </div>
+    </PageShell>
   );
 };
