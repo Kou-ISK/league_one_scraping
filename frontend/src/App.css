@@ -316,88 +316,53 @@ h3 {
   padding: 20px 0;
 }
 
-.division-tabs {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-}
-
-.division-tabs button {
+.selector-card {
   background: #ffffff;
   border: 1px solid var(--line);
-  border-radius: 999px;
-  color: var(--ink);
-  cursor: pointer;
-  font-weight: 800;
-  min-height: 40px;
-  padding: 0 16px;
+  border-radius: 8px;
+  display: grid;
+  gap: 8px;
+  min-width: 0;
+  padding: 12px;
 }
 
-.division-tabs button.active {
-  background: var(--accent);
-  border-color: var(--accent);
-  color: #ffffff;
+.team-selector-card {
+  flex: 1 1 420px;
+}
+
+.selector-label,
+.team-select-label {
+  color: var(--muted);
+  font-size: 0.75rem;
+  font-weight: 900;
 }
 
 .team-select-label {
-  color: var(--muted);
-  display: grid;
-  font-size: 0.82rem;
-  font-weight: 800;
-  gap: 6px;
-  min-width: min(420px, 100%);
+  display: block;
 }
 
-.team-select-label select {
+.team-selector-card select {
+  appearance: none;
   background: #ffffff;
   border: 1px solid var(--line);
   border-radius: 8px;
   color: var(--ink);
   font-size: 1rem;
+  font-weight: 800;
   min-height: 44px;
   padding: 0 12px;
+  width: 100%;
 }
 
-.team-overview,
 .chart-panel,
 .summary-panel,
 .insight-panel,
 .season-trend-panel,
-.match-section {
+.match-section,
+.team-facts-panel {
   background: var(--panel);
   border: 1px solid var(--line);
   border-radius: 8px;
-}
-
-.team-overview {
-  display: grid;
-  gap: 22px;
-  grid-template-columns: minmax(0, 1.1fr) minmax(320px, 0.9fr);
-  padding: 22px;
-}
-
-.team-identity {
-  align-items: center;
-  display: flex;
-  gap: 18px;
-  min-width: 0;
-}
-
-.team-logo {
-  aspect-ratio: 1;
-  flex: 0 0 96px;
-  max-width: 96px;
-  object-fit: contain;
-}
-
-.team-logo.placeholder {
-  align-items: center;
-  background: #e5eceb;
-  border-radius: 8px;
-  color: var(--accent);
-  display: flex;
-  font-weight: 800;
-  justify-content: center;
 }
 
 .division-pill,
@@ -416,7 +381,7 @@ h3 {
 .company-grid {
   display: grid;
   gap: 10px;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   margin: 0;
 }
 
@@ -454,10 +419,10 @@ h3 {
   display: flex;
   gap: 14px;
   justify-content: space-between;
-  margin-top: 12px;
-  padding: 10px 12px;
+  margin-top: 0;
+  padding: 12px 14px;
   position: sticky;
-  top: 0;
+  top: 64px;
   z-index: 20;
 }
 
@@ -470,13 +435,13 @@ h3 {
 
 .sticky-team-logo {
   aspect-ratio: 1;
-  flex: 0 0 42px;
-  height: 42px;
+  flex: 0 0 58px;
+  height: 58px;
   object-fit: contain;
-  width: 42px;
+  width: 58px;
 }
 
-.sticky-team-main strong,
+.sticky-team-main h2,
 .sticky-team-main span {
   display: block;
   overflow: hidden;
@@ -484,8 +449,8 @@ h3 {
   white-space: nowrap;
 }
 
-.sticky-team-main strong {
-  font-size: 0.96rem;
+.sticky-team-main h2 {
+  font-size: clamp(1.1rem, 2vw, 1.6rem);
 }
 
 .sticky-team-main span {
@@ -515,8 +480,13 @@ h3 {
 .summary-panel,
 .insight-panel,
 .season-trend-panel,
-.match-section {
+.match-section,
+.team-facts-panel {
   padding: 18px;
+}
+
+.team-facts-panel {
+  margin-top: 12px;
 }
 
 .section-heading {
@@ -675,7 +645,7 @@ h3 {
 
 .score-ranking-list {
   display: grid;
-  gap: 8px;
+  gap: 10px;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -683,39 +653,87 @@ h3 {
 
 .score-ranking-item {
   align-items: center;
-  background: #ffffff;
+  background: linear-gradient(180deg, #ffffff 0%, #f8faf8 100%);
   border: 1px solid var(--line);
   border-radius: 8px;
   display: grid;
-  gap: 10px;
-  grid-template-columns: 32px 44px minmax(0, 1fr) auto;
-  min-height: 54px;
-  padding: 8px 10px;
+  gap: 12px;
+  grid-template-columns: 34px 46px minmax(0, 1fr) minmax(58px, auto);
+  min-height: 66px;
+  padding: 10px 12px;
 }
 
 .score-ranking-rank {
+  align-items: center;
+  background: #edf1ef;
+  border-radius: 999px;
   color: var(--gold);
+  display: inline-flex;
   font-size: 1rem;
   font-weight: 950;
+  height: 34px;
+  justify-content: center;
+  width: 34px;
+}
+
+.score-ranking-rank.rank-1 {
+  background: #fff7e8;
+}
+
+.score-ranking-media {
+  align-items: center;
+  background: #ffffff;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  display: flex;
+  height: 46px;
+  justify-content: center;
+  width: 46px;
 }
 
 .score-ranking-image {
-  height: 40px;
+  height: 38px;
   object-fit: contain;
-  width: 40px;
+  width: 38px;
+}
+
+.score-ranking-placeholder {
+  color: var(--accent);
+  font-weight: 950;
 }
 
 .score-ranking-name {
-  font-size: 0.84rem;
-  font-weight: 800;
+  display: block;
+  font-size: 0.88rem;
+  font-weight: 900;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
 
+.score-ranking-sub {
+  color: var(--muted);
+  display: block;
+  font-size: 0.7rem;
+  font-weight: 900;
+  margin-top: 3px;
+}
+
+.score-ranking-score {
+  display: grid;
+  justify-items: end;
+}
+
 .score-ranking-point {
   color: var(--accent);
-  font-size: 1.05rem;
+  font-size: 1.2rem;
+  line-height: 1;
+}
+
+.score-ranking-score span {
+  color: var(--muted);
+  font-size: 0.68rem;
+  font-weight: 900;
 }
 
 .scoreboard-panel {
@@ -830,12 +848,15 @@ h3 {
 }
 
 .match-table-wrap {
+  border: 1px solid var(--line);
+  border-radius: 8px;
   overflow-x: auto;
 }
 
 .match-table {
-  border-collapse: collapse;
-  min-width: 1180px;
+  border-collapse: separate;
+  border-spacing: 0;
+  min-width: 1060px;
   table-layout: fixed;
   width: 100%;
 }
@@ -845,28 +866,40 @@ h3 {
   border-bottom: 1px solid var(--line);
   max-height: none;
   overflow: visible;
-  padding: 12px 10px;
+  padding: 11px 12px;
   text-align: left;
-  vertical-align: top;
+  vertical-align: middle;
 }
 
 .match-table th {
+  background: #eef6f5;
   color: var(--muted);
   font-size: 0.76rem;
   font-weight: 800;
+  position: sticky;
+  top: 0;
   width: auto;
+  z-index: 1;
+}
+
+.match-table tbody tr:nth-child(even) td {
+  background: #fbfcfb;
+}
+
+.match-table tbody tr:hover td {
+  background: #f2f8f7;
 }
 
 .match-table th:nth-child(1) {
-  width: 150px;
+  width: 142px;
 }
 
 .match-table th:nth-child(2) {
-  width: 210px;
+  width: 220px;
 }
 
 .match-table th:nth-child(4) {
-  width: 220px;
+  width: 190px;
 }
 
 .match-table th:nth-child(5),
@@ -875,12 +908,18 @@ h3 {
 .match-table th:nth-child(8),
 .match-table th:nth-child(9),
 .match-table th:nth-child(10) {
-  width: 86px;
+  width: 82px;
 }
 
 .match-table td {
   font-size: 0.9rem;
   overflow-wrap: anywhere;
+}
+
+.empty-state {
+  color: var(--muted);
+  font-weight: 800;
+  line-height: 1.7;
 }
 
 .side-badge {
@@ -929,9 +968,7 @@ h3 {
     padding: 18px 12px 36px;
   }
 
-  .dashboard-hero,
-  .control-band,
-  .team-identity {
+  .control-band {
     align-items: stretch;
     flex-direction: column;
   }
@@ -942,7 +979,6 @@ h3 {
   .ranking-grid,
   .scoreboard-panel,
   .lineup-grid,
-  .team-overview,
   .analysis-layout,
   .company-grid {
     grid-template-columns: 1fr;
@@ -952,28 +988,19 @@ h3 {
     min-width: 0;
   }
 
-  .team-overview,
   .chart-panel,
   .summary-panel,
   .insight-panel,
   .season-trend-panel,
-  .match-section {
+  .match-section,
+  .team-facts-panel {
     padding: 14px;
-  }
-
-  .team-logo {
-    flex-basis: 82px;
-    max-width: 82px;
-  }
-
-  .team-select-label {
-    min-width: 0;
   }
 
   .sticky-team-bar {
     align-items: stretch;
     flex-direction: column;
-    top: 0;
+    top: 111px;
   }
 
   .sticky-team-stats {

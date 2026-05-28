@@ -15,6 +15,7 @@ export const YearSelectionTabs = (props: YearSelectionTabsProps) => {
         { label: '2022', value: 2021 },
         { label: '2022-2023', value: 2022 },
         { label: '2023-2024', value: 2023 },
+        { label: '2025-2026', value: 2026 },
       ]}
     />
   );

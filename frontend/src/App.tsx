@@ -13,6 +13,7 @@ import { DATA_OF_2023 } from './variables';
 import { Game } from './types/game';
 import { PortalPage } from './PortalPage';
 import { PageHero } from './components/molecules/PageHero';
+import { SegmentedControl } from './components/molecules/SegmentedControl';
 import { PageShell } from './components/templates/PageShell';
 import teamsData from './datas/generated/leagueOneTeams.json';
 import teamRoundStatsData from './datas/generated/teamRoundStats.json';
@@ -265,21 +266,24 @@ export function LeagueOneDashboard() {
       />
 
       <section className='control-band' aria-label='チーム選択'>
-        <div className='division-tabs'>
-          {divisionOptions.map((division) => (
-            <button
-              key={division}
-              type='button'
-              className={selectedDivision === division ? 'active' : ''}
-              onClick={() => onDivisionChange(division)}
-            >
-              {divisionLabels[division]}
-            </button>
-          ))}
+        <div className='selector-card'>
+          <span className='selector-label'>Division</span>
+          <SegmentedControl
+            ariaLabel='Divisionフィルタ'
+            value={selectedDivision}
+            onChange={onDivisionChange}
+            options={divisionOptions.map((division) => ({
+              label: divisionLabels[division],
+              value: division,
+            }))}
+          />
         </div>
-        <label className='team-select-label'>
-          チーム
+        <div className='selector-card team-selector-card'>
+          <label className='team-select-label' htmlFor='team-select'>
+            チーム
+          </label>
           <select
+            id='team-select'
             value={selectedTeam.id}
             onChange={(event) => setSelectedTeamId(event.target.value)}
           >
@@ -289,22 +293,29 @@ export function LeagueOneDashboard() {
               </option>
             ))}
           </select>
-        </label>
+        </div>
       </section>
 
-      <section className='team-overview'>
-        <div className='team-identity'>
+      <div className='sticky-team-bar' aria-label='選択中チーム'>
+        <div className='sticky-team-main'>
           {selectedTeam.logoUrl ? (
-            <img src={selectedTeam.logoUrl} alt='' className='team-logo' />
-          ) : (
-            <div className='team-logo placeholder'>{selectedTeam.shortName}</div>
-          )}
+            <img src={selectedTeam.logoUrl} alt='' className='sticky-team-logo' />
+          ) : null}
           <div>
             <p className='division-pill'>{divisionLabels[selectedTeam.division]}</p>
             <h2>{selectedTeam.name}</h2>
-            <p>{selectedTeam.shortName}</p>
+            <span>
+              {selectedTeam.companyName || '親会社未設定'} / {selectedTeam.yahooTicker || 'N/A'}
+            </span>
           </div>
         </div>
+        <div className='sticky-team-stats'>
+          <span>{formatRecord(selectedStats)}</span>
+          <span>{formatLatestRank(selectedStats)}</span>
+        </div>
+      </div>
+
+      <section className='team-facts-panel' aria-label='チーム概要'>
         <dl className='company-grid'>
           <div>
             <dt>親会社</dt>
@@ -324,25 +335,6 @@ export function LeagueOneDashboard() {
           </div>
         </dl>
       </section>
-
-      <div className='sticky-team-bar' aria-label='選択中チーム'>
-        <div className='sticky-team-main'>
-          {selectedTeam.logoUrl ? (
-            <img src={selectedTeam.logoUrl} alt='' className='sticky-team-logo' />
-          ) : null}
-          <div>
-            <strong>{selectedTeam.name}</strong>
-            <span>
-              {divisionLabels[selectedTeam.division]} / {selectedTeam.companyName || '親会社未設定'} /{' '}
-              {selectedTeam.yahooTicker || 'N/A'}
-            </span>
-          </div>
-        </div>
-        <div className='sticky-team-stats'>
-          <span>{formatRecord(selectedStats)}</span>
-          <span>{formatLatestRank(selectedStats)}</span>
-        </div>
-      </div>
 
       <section className='analysis-layout'>
         <div className='season-trend-panel'>

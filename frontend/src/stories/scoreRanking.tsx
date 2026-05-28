@@ -13,18 +13,30 @@ export const ScoreRanking = (props: ScoreRankingProps) => {
         const playerPhoto = getPhotoUrl(scoreInfo.scorer).playerPhoto;
         return (
           <li className='score-ranking-item' key={`${scoreInfo.scorer}-${index}`}>
-            <span className='score-ranking-rank'>{index + 1}</span>
-            {teamlogo && (
+            <span className={`score-ranking-rank rank-${index + 1}`}>{index + 1}</span>
+            <div className='score-ranking-media'>
+            {teamlogo ? (
               <img src={teamlogo} alt='' className='score-ranking-image' />
-            )}
-            {!TEAM_MASTER_DATA.find(
-              (team) => team.team_name === scoreInfo.scorer
-            ) &&
-              playerPhoto && (
-                <img src={playerPhoto} alt='' className='score-ranking-image' />
-              )}
-            <span className='score-ranking-name'>{scoreInfo.scorer}</span>
-            <strong className='score-ranking-point'>{scoreInfo.point}</strong>
+            ) : null}
+            {!teamlogo && playerPhoto ? (
+              <img src={playerPhoto} alt='' className='score-ranking-image' />
+            ) : null}
+            {!teamlogo && !playerPhoto ? (
+              <span className='score-ranking-placeholder'>{String(scoreInfo.scorer).slice(0, 1)}</span>
+            ) : null}
+            </div>
+            <div className='score-ranking-body'>
+              <span className='score-ranking-name'>{scoreInfo.scorer}</span>
+              <span className='score-ranking-sub'>
+                {TEAM_MASTER_DATA.find((team) => team.team_name === scoreInfo.scorer)
+                  ? 'Team'
+                  : 'Player'}
+              </span>
+            </div>
+            <div className='score-ranking-score'>
+              <strong className='score-ranking-point'>{scoreInfo.point}</strong>
+              <span>pt</span>
+            </div>
           </li>
         );
       })}
