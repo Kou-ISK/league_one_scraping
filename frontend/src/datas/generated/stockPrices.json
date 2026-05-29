@@ -38,9 +38,9 @@
         "startDate": "2025-12-01",
         "endDate": "2026-06-30",
         "startClose": 2279,
-        "endClose": 2809.5,
-        "averageClose": 2582.29,
-        "returnPct": 23.28
+        "endClose": 2836,
+        "averageClose": 2584.43,
+        "returnPct": 24.44
       }
     ],
     "prices": [
@@ -141,8 +141,8 @@
       },
       {
         "date": "2026-05-31",
-        "close": 2809.5,
-        "changePct": 10.07
+        "close": 2836,
+        "changePct": 11.11
       }
     ]
   },
@@ -185,9 +185,9 @@
         "startDate": "2025-12-01",
         "endDate": "2026-06-30",
         "startClose": 1916.5,
-        "endClose": 1964,
-        "averageClose": 2060.6,
-        "returnPct": 2.48
+        "endClose": 1961,
+        "averageClose": 2059.63,
+        "returnPct": 2.32
       }
     ],
     "prices": [
@@ -283,8 +283,8 @@
       },
       {
         "date": "2026-05-30",
-        "close": 1964,
-        "changePct": 242.16
+        "close": 1961,
+        "changePct": 241.64
       }
     ]
   },
@@ -327,9 +327,9 @@
         "startDate": "2025-12-01",
         "endDate": "2026-06-30",
         "startClose": 3082,
-        "endClose": 3039,
-        "averageClose": 3352.44,
-        "returnPct": -1.4
+        "endClose": 3052,
+        "averageClose": 3349.84,
+        "returnPct": -0.97
       }
     ],
     "prices": [
@@ -464,9 +464,9 @@
         "startDate": "2025-12-01",
         "endDate": "2026-06-30",
         "startClose": 1365.5,
-        "endClose": 1448.5,
-        "averageClose": 1394.27,
-        "returnPct": 6.08
+        "endClose": 1464,
+        "averageClose": 1394.88,
+        "returnPct": 7.21
       }
     ],
     "prices": [
@@ -606,9 +606,9 @@
         "startDate": "2025-12-01",
         "endDate": "2026-06-30",
         "startClose": 3902,
-        "endClose": 3875,
-        "averageClose": 4479.16,
-        "returnPct": -0.69
+        "endClose": 3785,
+        "averageClose": 4472.73,
+        "returnPct": -3
       }
     ],
     "prices": [
@@ -709,8 +709,8 @@
       },
       {
         "date": "2026-05-30",
-        "close": 3875,
-        "changePct": 1354.58
+        "close": 3785,
+        "changePct": 1320.8
       }
     ]
   },
@@ -753,9 +753,9 @@
         "startDate": "2025-12-01",
         "endDate": "2026-06-30",
         "startClose": 1535,
-        "endClose": 1434.5,
-        "averageClose": 1455.61,
-        "returnPct": -6.55
+        "endClose": 1452,
+        "averageClose": 1455.63,
+        "returnPct": -5.41
       }
     ],
     "prices": [
@@ -890,9 +890,9 @@
         "startDate": "2025-12-01",
         "endDate": "2026-06-30",
         "startClose": 1896.5,
-        "endClose": 3535,
-        "averageClose": 2554.82,
-        "returnPct": 86.4
+        "endClose": 3592,
+        "averageClose": 2563.61,
+        "returnPct": 89.4
       }
     ],
     "prices": [
@@ -988,8 +988,8 @@
       },
       {
         "date": "2026-05-31",
-        "close": 3535,
-        "changePct": 183.48
+        "close": 3592,
+        "changePct": 188.05
       }
     ]
   },
@@ -1048,9 +1048,9 @@
         "startDate": "2025-12-01",
         "endDate": "2026-06-30",
         "startClose": 4525,
-        "endClose": 4212,
-        "averageClose": 4521.13,
-        "returnPct": -6.92
+        "endClose": 4271,
+        "averageClose": 4519.13,
+        "returnPct": -5.61
       }
     ],
     "prices": [
@@ -1185,9 +1185,9 @@
         "startDate": "2025-12-01",
         "endDate": "2026-06-30",
         "startClose": 155.8,
-        "endClose": 149.9,
-        "averageClose": 154.62,
-        "returnPct": -3.79
+        "endClose": 150.8,
+        "averageClose": 154.59,
+        "returnPct": -3.21
       }
     ],
     "prices": [
@@ -1288,8 +1288,8 @@
       },
       {
         "date": "2026-05-30",
-        "close": 149.9,
-        "changePct": 19.73
+        "close": 150.8,
+        "changePct": 20.45
       }
     ]
   },
@@ -1332,9 +1332,9 @@
         "startDate": "2025-12-01",
         "endDate": "2026-06-30",
         "startClose": 1122,
-        "endClose": 1262.5,
-        "averageClose": 1168.9,
-        "returnPct": 12.52
+        "endClose": 1298.5,
+        "averageClose": 1170.04,
+        "returnPct": 15.73
       }
     ],
     "prices": [
@@ -1469,9 +1469,9 @@
         "startDate": "2025-12-01",
         "endDate": "2026-06-30",
         "startClose": 5697,
-        "endClose": 4129,
-        "averageClose": 4693.91,
-        "returnPct": -27.52
+        "endClose": 4214,
+        "averageClose": 4689.51,
+        "returnPct": -26.03
       }
     ],
     "prices": [
@@ -1586,9 +1586,9 @@
         "startDate": "2025-12-01",
         "endDate": "2026-06-30",
         "startClose": 155.8,
-        "endClose": 149.9,
-        "averageClose": 154.62,
-        "returnPct": -3.79
+        "endClose": 150.8,
+        "averageClose": 154.59,
+        "returnPct": -3.21
       }
     ],
     "prices": [
@@ -1703,9 +1703,9 @@
         "startDate": "2025-12-01",
         "endDate": "2026-06-30",
         "startClose": 1684.5,
-        "endClose": 1662,
-        "averageClose": 1758.12,
-        "returnPct": -1.34
+        "endClose": 1641.5,
+        "averageClose": 1757.03,
+        "returnPct": -2.55
       }
     ],
     "prices": [
@@ -1820,9 +1820,9 @@
         "startDate": "2025-12-01",
         "endDate": "2026-06-30",
         "startClose": 625.4,
-        "endClose": 564.9,
-        "averageClose": 614.69,
-        "returnPct": -9.67
+        "endClose": 569.6,
+        "averageClose": 614.3,
+        "returnPct": -8.92
       }
     ],
     "prices": [
@@ -1903,8 +1903,8 @@
       },
       {
         "date": "2026-05-31",
-        "close": 564.9,
-        "changePct": 50.68
+        "close": 569.6,
+        "changePct": 51.93
       }
     ]
   },
@@ -1947,9 +1947,9 @@
         "startDate": "2025-12-01",
         "endDate": "2026-06-30",
         "startClose": 382,
-        "endClose": 368,
-        "averageClose": 399.62,
-        "returnPct": -3.66
+        "endClose": 365,
+        "averageClose": 399.32,
+        "returnPct": -4.45
       }
     ],
     "prices": [
@@ -2030,8 +2030,8 @@
       },
       {
         "date": "2026-05-30",
-        "close": 368,
-        "changePct": -61.3
+        "close": 365,
+        "changePct": -61.62
       }
     ]
   },
@@ -2074,9 +2074,9 @@
         "startDate": "2025-12-01",
         "endDate": "2026-06-30",
         "startClose": 2769.5,
-        "endClose": 2697,
-        "averageClose": 2925.57,
-        "returnPct": -2.62
+        "endClose": 2610,
+        "averageClose": 2922.42,
+        "returnPct": -5.76
       }
     ],
     "prices": [
@@ -2191,9 +2191,9 @@
         "startDate": "2025-12-01",
         "endDate": "2026-06-30",
         "startClose": 2959.5,
-        "endClose": 3553,
-        "averageClose": 3245.54,
-        "returnPct": 20.05
+        "endClose": 3559,
+        "averageClose": 3248.17,
+        "returnPct": 20.26
       }
     ],
     "prices": [
@@ -2309,7 +2309,7 @@
         "endDate": "2026-06-30",
         "startClose": 17355,
         "endClose": 20460,
-        "averageClose": 19625.72,
+        "averageClose": 19632.65,
         "returnPct": 17.89
       }
     ],
@@ -2425,9 +2425,9 @@
         "startDate": "2025-12-01",
         "endDate": "2026-06-30",
         "startClose": 6180,
-        "endClose": 8763,
-        "averageClose": 7653.95,
-        "returnPct": 41.8
+        "endClose": 8748,
+        "averageClose": 7662.54,
+        "returnPct": 41.55
       }
     ],
     "prices": [
@@ -2547,9 +2547,9 @@
         "startDate": "2025-12-01",
         "endDate": "2026-06-30",
         "startClose": 1139.5,
-        "endClose": 1130.5,
-        "averageClose": 1162.15,
-        "returnPct": -0.79
+        "endClose": 1134.5,
+        "averageClose": 1161.9,
+        "returnPct": -0.44
       }
     ],
     "prices": [
@@ -2669,9 +2669,9 @@
         "startDate": "2025-12-01",
         "endDate": "2026-06-30",
         "startClose": 2456.5,
-        "endClose": 2733,
-        "averageClose": 2601.15,
-        "returnPct": 11.26
+        "endClose": 2668,
+        "averageClose": 2601.61,
+        "returnPct": 8.61
       }
     ],
     "prices": [
@@ -2799,9 +2799,9 @@
         "startDate": "2025-12-01",
         "endDate": "2026-06-30",
         "startClose": 1007,
-        "endClose": 882.5,
-        "averageClose": 982.41,
-        "returnPct": -12.36
+        "endClose": 871.7,
+        "averageClose": 981.45,
+        "returnPct": -13.44
       }
     ],
     "prices": [
@@ -2921,9 +2921,9 @@
         "startDate": "2025-12-01",
         "endDate": "2026-06-30",
         "startClose": 5337,
-        "endClose": 6530,
-        "averageClose": 5875.77,
-        "returnPct": 22.35
+        "endClose": 6435,
+        "averageClose": 5879.9,
+        "returnPct": 20.57
       }
     ],
     "prices": [
