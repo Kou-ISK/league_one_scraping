@@ -157,6 +157,35 @@ type ChartRow = {
   stockLabel: string;
 };
 
+type CorrelationMetricKey = 'rankScore' | 'wins' | 'winRate' | 'leaguePoints' | 'losses';
+
+type CorrelationRow = {
+  label: string;
+  stockPrice: number | null;
+  rankScore: number | null;
+  wins: number | null;
+  winRate: number | null;
+  leaguePoints: number | null;
+  losses: number | null;
+};
+
+type CorrelationResult = {
+  key: CorrelationMetricKey;
+  label: string;
+  coefficient: number | null;
+  rSquared: number | null;
+  sampleSize: number;
+  note: string;
+};
+
+const correlationMetricLabels: Record<CorrelationMetricKey, string> = {
+  rankScore: '順位スコア',
+  wins: '勝利数',
+  winRate: '勝率',
+  leaguePoints: '勝点',
+  losses: '敗戦数',
+};
+
 function App() {
   return <PortalPage />;
 }
@@ -204,6 +233,10 @@ export function LeagueOneDashboard() {
         label: season.label,
         rank: season.rank,
         stockPrice: getSeasonStockPrice(season, selectedStockMetric),
+        wins: season.wins,
+        losses: season.losses,
+        draws: season.draws,
+        matches: season.matches,
         stockOpenClose: season.stockOpenClose,
         stockEndClose: season.stockEndClose,
         stockAverageClose: season.stockAverageClose,
@@ -238,6 +271,21 @@ export function LeagueOneDashboard() {
             ? '株価 N/A'
             : `株価 ${match.stockChangePct.toFixed(2)}%`,
       })) || [];
+  const selectedCorrelationRows = seasonTrendRows.map((row) => ({
+    label: row.label,
+    stockPrice: row.stockPrice,
+    rankScore: row.rank === null ? null : -row.rank,
+    wins: row.matches > 0 ? row.wins : null,
+    winRate: row.matches > 0 ? row.wins / row.matches : null,
+    leaguePoints: row.leaguePoints,
+    losses: row.matches > 0 ? row.losses : null,
+  }));
+  const crossSectionCorrelationRows = buildCrossSectionCorrelationRows(
+    selectedStockMetric,
+    selectedTeam.division
+  );
+  const selectedCorrelationResults = buildCorrelationResults(selectedCorrelationRows);
+  const crossSectionCorrelationResults = buildCorrelationResults(crossSectionCorrelationRows);
 
   const onDivisionChange = (division: Division) => {
     setSelectedDivision(division);
@@ -491,6 +539,28 @@ export function LeagueOneDashboard() {
         </aside>
       </section>
 
+      <section className='correlation-panel'>
+        <div className='section-heading'>
+          <h3>相関分析</h3>
+          <span>{stockMetricLabels[selectedStockMetric]}</span>
+        </div>
+        <div className='correlation-grid'>
+          <CorrelationSummary
+            title='選択チームの年度推移'
+            subtitle={`${selectedTeam.shortName} / ${selectedCorrelationRows.length} seasons`}
+            results={selectedCorrelationResults}
+          />
+          <CorrelationSummary
+            title={`全チーム横断 ${divisionLabels[selectedTeam.division]}`}
+            subtitle={`2025-26 / ${crossSectionCorrelationRows.length} teams`}
+            results={crossSectionCorrelationResults}
+          />
+        </div>
+        <p className='correlation-note'>
+          Pearson の相関係数 r を表示しています。順位は小さいほど良いため、順位スコアは -順位として計算しています。
+        </p>
+      </section>
+
       <section className='chart-panel in-season-panel'>
         <div className='section-heading'>
           <h3>シーズン内順位 x 終値変化率</h3>
@@ -668,6 +738,129 @@ function getSeasonStockPrice(season: SeasonTrend, metric: StockMetric) {
   if (metric === 'open') return season.stockOpenClose;
   if (metric === 'end') return season.stockEndClose;
   return season.stockAverageClose;
+}
+
+function buildCrossSectionCorrelationRows(
+  stockMetric: StockMetric,
+  division: Division
+): CorrelationRow[] {
+  return seasonTeamTrends
+    .map((trend) => {
+      const team = teams.find((item) => item.id === trend.teamId);
+      const season = trend.seasons.find((item) => item.seasonId === '2025-26');
+      if (!team || !season || team.division !== division) return null;
+
+      return {
+        label: team.shortName || team.name,
+        stockPrice: getSeasonStockPrice(season, stockMetric),
+        rankScore: season.rank === null ? null : -season.rank,
+        wins: season.matches > 0 ? season.wins : null,
+        winRate: season.matches > 0 ? season.wins / season.matches : null,
+        leaguePoints: season.leaguePoints,
+        losses: season.matches > 0 ? season.losses : null,
+      };
+    })
+    .filter((row): row is CorrelationRow => row !== null);
+}
+
+function buildCorrelationResults(rows: CorrelationRow[]): CorrelationResult[] {
+  return (Object.keys(correlationMetricLabels) as CorrelationMetricKey[]).map((key) => {
+    const pairs = rows
+      .map((row) => ({
+        x: row.stockPrice,
+        y: row[key],
+      }))
+      .filter((pair): pair is { x: number; y: number } => (
+        typeof pair.x === 'number' &&
+        Number.isFinite(pair.x) &&
+        typeof pair.y === 'number' &&
+        Number.isFinite(pair.y)
+      ));
+    const coefficient = pearsonCorrelation(pairs);
+
+    return {
+      key,
+      label: correlationMetricLabels[key],
+      coefficient,
+      rSquared: coefficient === null ? null : coefficient * coefficient,
+      sampleSize: pairs.length,
+      note: describeCorrelation(coefficient, pairs.length),
+    };
+  });
+}
+
+function pearsonCorrelation(pairs: Array<{ x: number; y: number }>) {
+  if (pairs.length < 3) return null;
+  const xMean = pairs.reduce((sum, pair) => sum + pair.x, 0) / pairs.length;
+  const yMean = pairs.reduce((sum, pair) => sum + pair.y, 0) / pairs.length;
+  const numerator = pairs.reduce(
+    (sum, pair) => sum + (pair.x - xMean) * (pair.y - yMean),
+    0
+  );
+  const xVariance = pairs.reduce((sum, pair) => sum + (pair.x - xMean) ** 2, 0);
+  const yVariance = pairs.reduce((sum, pair) => sum + (pair.y - yMean) ** 2, 0);
+  const denominator = Math.sqrt(xVariance * yVariance);
+  if (denominator === 0) return null;
+  return numerator / denominator;
+}
+
+function describeCorrelation(coefficient: number | null, sampleSize: number) {
+  if (sampleSize < 3 || coefficient === null) return 'サンプル不足';
+  const absolute = Math.abs(coefficient);
+  const strength = absolute >= 0.7 ? '強い' : absolute >= 0.4 ? '中程度' : absolute >= 0.2 ? '弱い' : 'ほぼなし';
+  const direction = coefficient > 0 ? '正' : '負';
+  return `${strength}${direction}相関`;
+}
+
+function formatCorrelation(value: number | null) {
+  if (value === null) return 'N/A';
+  return value.toFixed(2);
+}
+
+function CorrelationSummary(props: {
+  title: string;
+  subtitle: string;
+  results: CorrelationResult[];
+}) {
+  const strongest = props.results
+    .filter((result) => result.coefficient !== null)
+    .sort((a, b) => Math.abs(b.coefficient || 0) - Math.abs(a.coefficient || 0))[0];
+
+  return (
+    <div className='correlation-card'>
+      <div className='correlation-card-heading'>
+        <div>
+          <h4>{props.title}</h4>
+          <span>{props.subtitle}</span>
+        </div>
+        <strong>{strongest ? strongest.label : 'N/A'}</strong>
+      </div>
+      <div className='correlation-table-wrap'>
+        <table className='correlation-table'>
+          <thead>
+            <tr>
+              <th>指標</th>
+              <th>r</th>
+              <th>R2</th>
+              <th>n</th>
+              <th>解釈</th>
+            </tr>
+          </thead>
+          <tbody>
+            {props.results.map((result) => (
+              <tr key={result.key}>
+                <td>{result.label}</td>
+                <td>{formatCorrelation(result.coefficient)}</td>
+                <td>{formatCorrelation(result.rSquared)}</td>
+                <td>{result.sampleSize}</td>
+                <td>{result.note}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  );
 }
 
 function MatchDot(props: {
