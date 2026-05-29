@@ -65,9 +65,9 @@
         "matches": 18,
         "leaguePoints": 70,
         "stockOpenClose": 2279,
-        "stockEndClose": 2836,
-        "stockAverageClose": 2584.43,
-        "stockReturnPct": 24.44,
+        "stockEndClose": 2840,
+        "stockAverageClose": 2584.47,
+        "stockReturnPct": 24.62,
         "note": ""
       }
     ]
@@ -138,9 +138,9 @@
         "matches": 18,
         "leaguePoints": 75,
         "stockOpenClose": 1916.5,
-        "stockEndClose": 1961,
-        "stockAverageClose": 2059.63,
-        "stockReturnPct": 2.32,
+        "stockEndClose": 1979.5,
+        "stockAverageClose": 2059.79,
+        "stockReturnPct": 3.29,
         "note": ""
       }
     ]
@@ -211,9 +211,9 @@
         "matches": 18,
         "leaguePoints": 33,
         "stockOpenClose": 3082,
-        "stockEndClose": 3052,
-        "stockAverageClose": 3349.84,
-        "stockReturnPct": -0.97,
+        "stockEndClose": 3067,
+        "stockAverageClose": 3349.97,
+        "stockReturnPct": -0.49,
         "note": ""
       }
     ]
@@ -284,9 +284,9 @@
         "matches": 18,
         "leaguePoints": 41,
         "stockOpenClose": 1365.5,
-        "stockEndClose": 1464,
-        "stockAverageClose": 1394.88,
-        "stockReturnPct": 7.21,
+        "stockEndClose": 1467,
+        "stockAverageClose": 1394.91,
+        "stockReturnPct": 7.43,
         "note": ""
       }
     ]
@@ -357,9 +357,9 @@
         "matches": 18,
         "leaguePoints": 20,
         "stockOpenClose": 3902,
-        "stockEndClose": 3785,
-        "stockAverageClose": 4472.73,
-        "stockReturnPct": -3,
+        "stockEndClose": 3782,
+        "stockAverageClose": 4472.71,
+        "stockReturnPct": -3.08,
         "note": ""
       }
     ]
@@ -503,9 +503,9 @@
         "matches": 18,
         "leaguePoints": 74,
         "stockOpenClose": 1896.5,
-        "stockEndClose": 3592,
-        "stockAverageClose": 2563.61,
-        "stockReturnPct": 89.4,
+        "stockEndClose": 3624,
+        "stockAverageClose": 2563.88,
+        "stockReturnPct": 91.09,
         "note": ""
       }
     ]
@@ -722,9 +722,9 @@
         "matches": 18,
         "leaguePoints": 30,
         "stockOpenClose": 4525,
-        "stockEndClose": 4271,
-        "stockAverageClose": 4519.13,
-        "stockReturnPct": -5.61,
+        "stockEndClose": 4272,
+        "stockAverageClose": 4519.14,
+        "stockReturnPct": -5.59,
         "note": ""
       }
     ]
@@ -778,9 +778,9 @@
         "matches": 18,
         "leaguePoints": 20,
         "stockOpenClose": 155.8,
-        "stockEndClose": 150.8,
+        "stockEndClose": 151,
         "stockAverageClose": 154.59,
-        "stockReturnPct": -3.21,
+        "stockReturnPct": -3.08,
         "note": ""
       }
     ]
@@ -851,9 +851,9 @@
         "matches": 18,
         "leaguePoints": 36,
         "stockOpenClose": 1122,
-        "stockEndClose": 1298.5,
-        "stockAverageClose": 1170.04,
-        "stockReturnPct": 15.73,
+        "stockEndClose": 1297.5,
+        "stockAverageClose": 1170.03,
+        "stockReturnPct": 15.64,
         "note": ""
       }
     ]
@@ -924,9 +924,9 @@
         "matches": 14,
         "leaguePoints": 39,
         "stockOpenClose": 5697,
-        "stockEndClose": 4214,
-        "stockAverageClose": 4689.51,
-        "stockReturnPct": -26.03,
+        "stockEndClose": 4220,
+        "stockAverageClose": 4689.56,
+        "stockReturnPct": -25.93,
         "note": ""
       }
     ]
@@ -997,9 +997,9 @@
         "matches": 14,
         "leaguePoints": 29,
         "stockOpenClose": 155.8,
-        "stockEndClose": 150.8,
+        "stockEndClose": 151,
         "stockAverageClose": 154.59,
-        "stockReturnPct": -3.21,
+        "stockReturnPct": -3.08,
         "note": ""
       }
     ]
@@ -1070,9 +1070,9 @@
         "matches": 14,
         "leaguePoints": 31,
         "stockOpenClose": 1684.5,
-        "stockEndClose": 1641.5,
-        "stockAverageClose": 1757.03,
-        "stockReturnPct": -2.55,
+        "stockEndClose": 1649.5,
+        "stockAverageClose": 1757.1,
+        "stockReturnPct": -2.08,
         "note": ""
       }
     ]
@@ -1143,9 +1143,9 @@
         "matches": 14,
         "leaguePoints": 16,
         "stockOpenClose": 625.4,
-        "stockEndClose": 569.6,
-        "stockAverageClose": 614.3,
-        "stockReturnPct": -8.92,
+        "stockEndClose": 571.8,
+        "stockAverageClose": 614.32,
+        "stockReturnPct": -8.57,
         "note": ""
       }
     ]
@@ -1289,9 +1289,9 @@
         "matches": 14,
         "leaguePoints": 45,
         "stockOpenClose": 2769.5,
-        "stockEndClose": 2610,
-        "stockAverageClose": 2922.42,
-        "stockReturnPct": -5.76,
+        "stockEndClose": 2614.5,
+        "stockAverageClose": 2922.45,
+        "stockReturnPct": -5.6,
         "note": ""
       }
     ]
@@ -1362,9 +1362,9 @@
         "matches": 14,
         "leaguePoints": 45,
         "stockOpenClose": 2959.5,
-        "stockEndClose": 3559,
-        "stockAverageClose": 3248.17,
-        "stockReturnPct": 20.26,
+        "stockEndClose": 3572,
+        "stockAverageClose": 3248.28,
+        "stockReturnPct": 20.7,
         "note": ""
       }
     ]
@@ -1508,9 +1508,9 @@
         "matches": 15,
         "leaguePoints": 31,
         "stockOpenClose": 6180,
-        "stockEndClose": 8748,
-        "stockAverageClose": 7662.54,
-        "stockReturnPct": 41.55,
+        "stockEndClose": 8765,
+        "stockAverageClose": 7662.68,
+        "stockReturnPct": 41.83,
         "note": ""
       }
     ]
@@ -1581,9 +1581,9 @@
         "matches": 15,
         "leaguePoints": 67,
         "stockOpenClose": 1139.5,
-        "stockEndClose": 1134.5,
-        "stockAverageClose": 1161.9,
-        "stockReturnPct": -0.44,
+        "stockEndClose": 1144.5,
+        "stockAverageClose": 1161.99,
+        "stockReturnPct": 0.44,
         "note": ""
       }
     ]
@@ -1603,9 +1603,9 @@
         "matches": 15,
         "leaguePoints": 16,
         "stockOpenClose": 2456.5,
-        "stockEndClose": 2668,
-        "stockAverageClose": 2601.61,
-        "stockReturnPct": 8.61,
+        "stockEndClose": 2683.5,
+        "stockAverageClose": 2601.74,
+        "stockReturnPct": 9.24,
         "note": ""
       }
     ]
@@ -1698,9 +1698,9 @@
         "matches": 15,
         "leaguePoints": 16,
         "stockOpenClose": 1007,
-        "stockEndClose": 871.7,
-        "stockAverageClose": 981.45,
-        "stockReturnPct": -13.44,
+        "stockEndClose": 874.9,
+        "stockAverageClose": 981.48,
+        "stockReturnPct": -13.12,
         "note": ""
       }
     ]
@@ -1720,9 +1720,9 @@
         "matches": 15,
         "leaguePoints": 63,
         "stockOpenClose": 5337,
-        "stockEndClose": 6435,
-        "stockAverageClose": 5879.9,
-        "stockReturnPct": 20.57,
+        "stockEndClose": 6431,
+        "stockAverageClose": 5879.87,
+        "stockReturnPct": 20.5,
         "note": ""
       }
     ]
