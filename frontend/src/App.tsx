@@ -143,7 +143,6 @@ type StockMetric = keyof typeof stockMetricLabels;
 
 type ChartRow = {
   date: string;
-  changePct: number | null;
   close: number | null;
   opponent: string;
   result: TeamMatch['result'];
@@ -252,10 +251,9 @@ export function LeagueOneDashboard() {
     .find((row) => row.rank !== null || row.stockPrice !== null);
   const chartRows =
     selectedStats?.matches
-      .filter((match) => match.stockChangePct !== null)
+      .filter((match) => match.stockClose !== null)
       .map((match) => ({
         date: match.displayDate.replace(/\(.+\)/, ''),
-        changePct: match.stockChangePct,
         close: match.stockClose,
         opponent: match.opponentName,
         result: match.result,
@@ -267,11 +265,32 @@ export function LeagueOneDashboard() {
         leaguePoints: match.leaguePoints,
         matchLeaguePoints: match.matchLeaguePoints,
         stockLabel:
-          match.stockChangePct === null
+          match.stockClose === null
             ? '株価 N/A'
-            : `株価 ${match.stockChangePct.toFixed(2)}%`,
+            : `株価終値 ${formatStockPrice(match.stockClose)}`,
       })) || [];
-  const selectedCorrelationRows = seasonTrendRows.map((row) => ({
+  const inSeasonCorrelationRows =
+    selectedStats?.matches
+      .filter((match) => match.countedInRecord && match.stockClose !== null)
+      .map((match) => {
+        const playedMatches =
+          match.wins === null || match.losses === null || match.draws === null
+            ? null
+            : match.wins + match.losses + match.draws;
+        return {
+          label: match.roundNumber === null ? match.displayDate : `第${match.roundNumber}節`,
+          stockPrice: match.stockClose,
+          rankScore: match.rank === null ? null : -match.rank,
+          wins: match.wins,
+          winRate:
+            playedMatches && match.wins !== null
+              ? match.wins / playedMatches
+              : null,
+          leaguePoints: match.leaguePoints,
+          losses: match.losses,
+        };
+      }) || [];
+  const selectedAnnualCorrelationRows = seasonTrendRows.map((row) => ({
     label: row.label,
     stockPrice: row.stockPrice,
     rankScore: row.rank === null ? null : -row.rank,
@@ -280,12 +299,13 @@ export function LeagueOneDashboard() {
     leaguePoints: row.leaguePoints,
     losses: row.matches > 0 ? row.losses : null,
   }));
-  const crossSectionCorrelationRows = buildCrossSectionCorrelationRows(
+  const annualCrossSectionCorrelationRows = buildCrossSectionCorrelationRows(
     selectedStockMetric,
     selectedTeam.division
   );
-  const selectedCorrelationResults = buildCorrelationResults(selectedCorrelationRows);
-  const crossSectionCorrelationResults = buildCorrelationResults(crossSectionCorrelationRows);
+  const inSeasonCorrelationResults = buildCorrelationResults(inSeasonCorrelationRows);
+  const selectedAnnualCorrelationResults = buildCorrelationResults(selectedAnnualCorrelationRows);
+  const annualCrossSectionCorrelationResults = buildCorrelationResults(annualCrossSectionCorrelationRows);
 
   const onDivisionChange = (division: Division) => {
     setSelectedDivision(division);
@@ -534,7 +554,7 @@ export function LeagueOneDashboard() {
             </div>
           </dl>
           <p className='insight-note'>
-            年度推移は順位と株価水準、試合推移は大会中の順位変化と終値変化率を表示します。
+            年度推移は順位と株価水準、試合推移は大会中の順位変化と株価終値を表示します。
           </p>
         </aside>
       </section>
@@ -542,32 +562,56 @@ export function LeagueOneDashboard() {
       <section className='correlation-panel'>
         <div className='section-heading'>
           <h3>相関分析</h3>
-          <span>{stockMetricLabels[selectedStockMetric]}</span>
+          <span>年度内 / 年度単位</span>
+        </div>
+        <div className='correlation-explainer'>
+          <strong>見方</strong>
+          <span>
+            r は -1 から +1 の値です。+ は株価が高い時に成績指標も高い傾向、- は逆方向の傾向、0 に近いほど関係が薄いことを示します。
+          </span>
+        </div>
+        <div className='correlation-scope-heading'>
+          <h4>年度内の推移</h4>
+          <p>試合日ごとの株価終値と、その時点の順位・勝敗・勝点を比較します。</p>
+        </div>
+        <div className='correlation-grid single'>
+          <CorrelationSummary
+            title='選択チームの試合ごとの推移'
+            subtitle={`${selectedTeam.shortName} / ${inSeasonCorrelationRows.length}試合`}
+            stockLabel='株価終値'
+            results={inSeasonCorrelationResults}
+          />
+        </div>
+        <div className='correlation-scope-heading'>
+          <h4>年度単位の推移</h4>
+          <p>シーズンごとの株価水準と、最終順位・勝敗・勝点を比較します。</p>
         </div>
         <div className='correlation-grid'>
           <CorrelationSummary
             title='選択チームの年度推移'
-            subtitle={`${selectedTeam.shortName} / ${selectedCorrelationRows.length} seasons`}
-            results={selectedCorrelationResults}
+            subtitle={`${selectedTeam.shortName} / ${selectedAnnualCorrelationRows.length}シーズン`}
+            stockLabel={stockMetricLabels[selectedStockMetric]}
+            results={selectedAnnualCorrelationResults}
           />
           <CorrelationSummary
             title={`全チーム横断 ${divisionLabels[selectedTeam.division]}`}
-            subtitle={`2025-26 / ${crossSectionCorrelationRows.length} teams`}
-            results={crossSectionCorrelationResults}
+            subtitle={`2025-26 / ${annualCrossSectionCorrelationRows.length}チーム`}
+            stockLabel={stockMetricLabels[selectedStockMetric]}
+            results={annualCrossSectionCorrelationResults}
           />
         </div>
         <p className='correlation-note'>
-          Pearson の相関係数 r を表示しています。順位は小さいほど良いため、順位スコアは -順位として計算しています。
+          順位は小さいほど良いため、順位スコアは -順位として計算しています。サンプルが3件未満の場合は判定しません。
         </p>
       </section>
 
       <section className='chart-panel in-season-panel'>
         <div className='section-heading'>
-          <h3>シーズン内順位 x 終値変化率</h3>
+          <h3>シーズン内順位 x 株価終値</h3>
           <span>{selectedTeam.yahooTicker || 'N/A'}</span>
         </div>
         <div className='chart-legend' aria-hidden='true'>
-          <span className='legend-stock'>株価変化率</span>
+          <span className='legend-stock'>株価終値</span>
           <span className='legend-rank'>節終了時順位</span>
         </div>
         {chartRows.length > 0 ? (
@@ -578,7 +622,7 @@ export function LeagueOneDashboard() {
               <YAxis
                 yAxisId='stock'
                 tick={{ fontSize: 11 }}
-                tickFormatter={(value) => `${value}%`}
+                tickFormatter={(value) => formatStockPrice(Number(value))}
                 width={56}
               />
               <YAxis
@@ -593,8 +637,8 @@ export function LeagueOneDashboard() {
               />
               <Tooltip
                 formatter={(value, name, item) => {
-                  if (name === 'changePct') {
-                    return [`${Number(value).toFixed(2)}%`, '変化率'];
+                  if (name === 'close') {
+                    return [formatStockPrice(Number(value)), '株価終値'];
                   }
                   if (name === 'rank') {
                     return [`${value}位`, '節終了時順位'];
@@ -610,7 +654,7 @@ export function LeagueOneDashboard() {
               <Line
                 yAxisId='stock'
                 type='monotone'
-                dataKey='changePct'
+                dataKey='close'
                 stroke='#006a67'
                 strokeWidth={2.5}
                 dot={<MatchDot />}
@@ -642,41 +686,42 @@ export function LeagueOneDashboard() {
           <table className='match-table'>
             <thead>
               <tr>
+                <th>節</th>
                 <th>日付</th>
                 <th>対戦相手</th>
-                <th>会場</th>
-                <th>放送</th>
-                <th>状態</th>
-                <th>戦績</th>
+                <th>スコア</th>
+                <th>累計戦績</th>
                 <th>勝点</th>
                 <th>順位</th>
-                <th>株価</th>
-                <th>URL</th>
+                <th>株価終値</th>
+                <th>詳細</th>
               </tr>
             </thead>
             <tbody>
               {(selectedStats?.matches || []).map((match) => (
                 <tr key={match.matchId}>
+                  <td>{match.roundNumber === null ? '-' : `第${match.roundNumber}節`}</td>
                   <td>{match.displayDate}</td>
                   <td>
                     <span className='side-badge'>{match.side === 'home' ? 'H' : 'A'}</span>
                     {match.opponentName}
                   </td>
-                  <td>{match.venue || '-'}</td>
-                  <td>{match.broadcasters.length ? match.broadcasters.join(' / ') : '-'}</td>
-                  <td>{match.status}</td>
                   <td>
                     <span className={`result-badge ${match.result}`}>
                       {match.resultLabel}
                     </span>
                     {match.scoreLabel ? ` ${match.scoreLabel}` : ''}
                   </td>
-                  <td>{match.matchLeaguePoints === null ? '-' : `+${match.matchLeaguePoints}`}</td>
+                  <td>{match.recordLabel || '未確定'}</td>
+                  <td>
+                    {match.leaguePoints === null ? '-' : match.leaguePoints}
+                    {match.matchLeaguePoints === null ? '' : ` (+${match.matchLeaguePoints})`}
+                  </td>
                   <td>{match.rank === null ? '順位未定' : `${match.rank}位`}</td>
                   <td>
-                    {match.stockChangePct === null
+                    {match.stockClose === null
                       ? 'N/A'
-                      : `${match.stockChangePct.toFixed(2)}%`}
+                      : formatStockPrice(match.stockClose)}
                   </td>
                   <td>
                     {match.matchUrl ? (
@@ -812,6 +857,24 @@ function describeCorrelation(coefficient: number | null, sampleSize: number) {
   return `${strength}${direction}相関`;
 }
 
+function describeCorrelationPlain(result?: CorrelationResult) {
+  if (!result || result.coefficient === null || result.sampleSize < 3) {
+    return 'データが少ないため、傾向はまだ判断できません。';
+  }
+
+  const absolute = Math.abs(result.coefficient);
+  if (absolute < 0.2) {
+    return `${result.label}と株価の動きは、今のデータではほとんど連動していません。`;
+  }
+
+  const direction =
+    result.coefficient > 0
+      ? `${result.label}が高い時に株価も高い傾向`
+      : `${result.label}が高い時に株価は低い傾向`;
+  const strength = absolute >= 0.7 ? 'かなりはっきり' : absolute >= 0.4 ? 'ある程度' : '少し';
+  return `${direction}が${strength}見えます。`;
+}
+
 function formatCorrelation(value: number | null) {
   if (value === null) return 'N/A';
   return value.toFixed(2);
@@ -820,6 +883,7 @@ function formatCorrelation(value: number | null) {
 function CorrelationSummary(props: {
   title: string;
   subtitle: string;
+  stockLabel: string;
   results: CorrelationResult[];
 }) {
   const strongest = props.results
@@ -831,18 +895,22 @@ function CorrelationSummary(props: {
       <div className='correlation-card-heading'>
         <div>
           <h4>{props.title}</h4>
-          <span>{props.subtitle}</span>
+          <span>{props.subtitle} / {props.stockLabel}</span>
         </div>
         <strong>{strongest ? strongest.label : 'N/A'}</strong>
+      </div>
+      <div className='correlation-plain-summary'>
+        <strong>{strongest ? strongest.note : 'サンプル不足'}</strong>
+        <p>{describeCorrelationPlain(strongest)}</p>
       </div>
       <div className='correlation-table-wrap'>
         <table className='correlation-table'>
           <thead>
             <tr>
               <th>指標</th>
-              <th>r</th>
-              <th>R2</th>
-              <th>n</th>
+              <th>相関 r</th>
+              <th>説明力 R2</th>
+              <th>件数</th>
               <th>解釈</th>
             </tr>
           </thead>

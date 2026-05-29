@@ -648,6 +648,44 @@ h3 {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
+.correlation-grid.single {
+  grid-template-columns: 1fr;
+}
+
+.correlation-explainer {
+  background: #f8faf8;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  color: var(--muted);
+  display: flex;
+  gap: 10px;
+  line-height: 1.7;
+  margin-bottom: 14px;
+  padding: 12px;
+}
+
+.correlation-explainer strong {
+  color: var(--ink);
+  flex: 0 0 auto;
+}
+
+.correlation-scope-heading {
+  margin: 16px 0 10px;
+}
+
+.correlation-scope-heading h4 {
+  font-size: 1rem;
+  margin: 0;
+}
+
+.correlation-scope-heading p {
+  color: var(--muted);
+  font-size: 0.82rem;
+  font-weight: 800;
+  line-height: 1.6;
+  margin-top: 4px;
+}
+
 .correlation-card {
   background: #f8faf8;
   border: 1px solid var(--line);
@@ -685,6 +723,28 @@ h3 {
   flex: 0 0 auto;
   font-size: 0.74rem;
   padding: 5px 9px;
+}
+
+.correlation-plain-summary {
+  background: #ffffff;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  margin-bottom: 12px;
+  padding: 12px;
+}
+
+.correlation-plain-summary strong {
+  color: var(--accent);
+  display: block;
+  font-size: 1.05rem;
+}
+
+.correlation-plain-summary p {
+  color: var(--ink);
+  font-size: 0.9rem;
+  font-weight: 800;
+  line-height: 1.6;
+  margin-top: 5px;
 }
 
 .correlation-table-wrap {
@@ -955,7 +1015,7 @@ h3 {
 .match-table {
   border-collapse: separate;
   border-spacing: 0;
-  min-width: 1060px;
+  min-width: 920px;
   table-layout: fixed;
   width: 100%;
 }
@@ -990,23 +1050,29 @@ h3 {
 }
 
 .match-table th:nth-child(1) {
-  width: 142px;
+  width: 76px;
 }
 
 .match-table th:nth-child(2) {
+  width: 142px;
+}
+
+.match-table th:nth-child(3) {
   width: 220px;
 }
 
-.match-table th:nth-child(4) {
-  width: 190px;
+.match-table th:nth-child(4),
+.match-table th:nth-child(5) {
+  width: 132px;
 }
 
-.match-table th:nth-child(5),
 .match-table th:nth-child(6),
 .match-table th:nth-child(7),
-.match-table th:nth-child(8),
-.match-table th:nth-child(9),
-.match-table th:nth-child(10) {
+.match-table th:nth-child(8) {
+  width: 92px;
+}
+
+.match-table th:nth-child(9) {
   width: 82px;
 }
 
